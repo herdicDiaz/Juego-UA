@@ -1,0 +1,59 @@
+﻿body {
+}
+
+.nombre_formulario {
+    font-family: 'Times New Roman';
+    font-size: 15px;
+    text-align: center;
+    background-color: #002E2C;
+    height: 60px;
+    color:azure;
+}
+.btn_unica {
+    text-align:center;
+}
+
+.card .card-title {
+    text-align:center;
+}
+
+.espacio {
+    height: 10px;
+}
+.algo {
+    border: 0 !important;
+}
+
+.espacio_input {
+    padding-left: 20px;
+}
+
+.table th, .table thead th {
+    font-weight: bold !important;
+    text-align: center;
+}
+.table td, .table th {
+    border:0;
+}
+.unico_position {
+    text-align:center;
+}
+
+.unico_design {
+    text-align: left !important;
+}
+
+.form-control {
+    border: 1px solid #95999f !important;
+}
+
+.alto_texbox {
+    margin-left: 20px;
+    height: 40px;
+    width: 90%;
+}
+
+.card {
+    border: 1px solid #a7a6a6 !important;
+}
+

@@ -1,0 +1,97 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    background-image: url('../Images/uniamazonia3.jpg');
+    background-size: 100vw 100vh;
+    background-attachment: fixed;
+    display: flex;
+    min-height: 100vh;
+}
+
+form {
+    margin: auto;
+    width: 50%;
+    max-width: 500px;
+    background: rgba(169, 169, 169, 0.8);
+    padding: 30px;
+    border: rgba(0,0,0,0.3);
+}
+
+h2 {
+    text-align: center;
+    margin: 20px;
+    color: white;
+}
+
+
+.log input {
+    display: block;
+    padding: 10px;
+    width: 100%;
+    margin: 30px 0;
+    font-size: 20px;
+}
+
+input[type="submit"] {
+    background: linear-gradient(#0fc5f9, #0400ff);
+    border: brown;
+    opacity: 0.8;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-bottom: 0;
+}
+
+        input[type="submit"]:hover {
+            opacity: 1;
+        }
+
+        input[type="submit"]:active {
+            transform: scale(0.9);
+        }
+
+a {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    margin: 10px;
+}
+
+@media(max-width :768px) {
+    form {
+        width: 75%;
+    }
+}
+
+
+
+@media(max-width :480px) {
+    form {
+        width: 95%;
+    }
+}
+
+.centradoUsuario {
+    height:40px;
+}
+
+.entrada {
+    height: 30px
+}
+
+.espacio {
+    height:10px;
+}
+
+u-text-center {
+
+
+}
+
