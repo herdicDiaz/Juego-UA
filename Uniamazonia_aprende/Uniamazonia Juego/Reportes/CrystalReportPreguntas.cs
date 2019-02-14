@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Uniamazonia_Juego {
+namespace Uniamazonia_Juego.Reportes {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace Uniamazonia_Juego {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class CrystalReport1 : ReportClass {
+    public class CrystalReportPreguntas : ReportClass {
         
-        public CrystalReport1() {
+        public CrystalReportPreguntas() {
         }
         
         public override string ResourceName {
             get {
-                return "CrystalReport1.rpt";
+                return "CrystalReportPreguntas.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Uniamazonia_Juego {
         
         public override string FullResourceName {
             get {
-                return "Uniamazonia_Juego.CrystalReport1.rpt";
+                return "Uniamazonia_Juego.Reportes.CrystalReportPreguntas.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace Uniamazonia_Juego {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedCrystalReport1 : Component, ICachedReport {
+    public class CachedCrystalReportPreguntas : Component, ICachedReport {
         
-        public CachedCrystalReport1() {
+        public CachedCrystalReportPreguntas() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace Uniamazonia_Juego {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            CrystalReport1 rpt = new CrystalReport1();
+            CrystalReportPreguntas rpt = new CrystalReportPreguntas();
             rpt.Site = this.Site;
             return rpt;
         }

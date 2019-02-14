@@ -383,5 +383,25 @@ namespace Uniamazonia_Juego.Conexion
             }
             return consulta;
         }
+
+        public DataTable consultaReportes(String Query)
+        {
+            DataTable ds = new DataTable();
+            if (openConnection())
+            {
+                cmd.Connection = connect;
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = Query;
+                try
+                {
+                    MySqlDataAdapter adaptador = new MySqlDataAdapter(cmd);
+                    adaptador.Fill(ds);
+
+                    closeConnection();
+                }
+                catch { }
+            }
+            return ds;
+        }
     }
 }

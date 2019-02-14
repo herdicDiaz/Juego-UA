@@ -1259,19 +1259,19 @@
     <Content Include="Content\dist\css\icons\weather-icons\sass\weather-icons.scss" />
     <Content Include="Content\Bootstrap\dist\js\bootstrap.js.map" />
     <Content Include="Content\Bootstrap\dist\css\bootstrap.css.map" />
-    <Content Include="Datos\xx.xsc">
-      <DependentUpon>xx.xsd</DependentUpon>
+    <Content Include="Datos\Preguntas.xsc">
+      <DependentUpon>Preguntas.xsd</DependentUpon>
     </Content>
-    <None Include="Datos\xx.xsd">
+    <Content Include="Web_forms_reports\ReportePreguntas.aspx" />
+    <None Include="Datos\Preguntas.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>xx.Designer.cs</LastGenOutput>
+      <LastGenOutput>Preguntas.Designer.cs</LastGenOutput>
     </None>
-    <Content Include="Datos\xx.xss">
-      <DependentUpon>xx.xsd</DependentUpon>
+    <Content Include="Datos\Preguntas.xss">
+      <DependentUpon>Preguntas.xsd</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Reportes\Reportes.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -1497,16 +1497,10 @@
     <Compile Include="Controllers\Usuario_PruebaController.cs" />
     <Compile Include="Controllers\VistaController.cs" />
     <Compile Include="Controllers\Vista_RolController.cs" />
-    <Compile Include="CrystalReport1.cs">
+    <Compile Include="Datos\Preguntas.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport1.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Datos\xx.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>xx.xsd</DependentUpon>
+      <DependentUpon>Preguntas.xsd</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1544,12 +1538,11 @@
       <DependentUpon>Principal.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reportes\Reportes.aspx.cs">
-      <DependentUpon>Reportes.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Reportes\Reportes.aspx.designer.cs">
-      <DependentUpon>Reportes.aspx</DependentUpon>
+    <Compile Include="Reportes\CrystalReportPreguntas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportPreguntas.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
@@ -1860,6 +1853,13 @@
     <Compile Include="Views\VistasJugador\Test\Test.aspx.designer.cs">
       <DependentUpon>Test.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Web_forms_reports\ReportePreguntas.aspx.cs">
+      <DependentUpon>ReportePreguntas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web_forms_reports\ReportePreguntas.aspx.designer.cs">
+      <DependentUpon>ReportePreguntas.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1901,9 +1901,9 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CrystalReport1.rpt">
+    <EmbeddedResource Include="Reportes\CrystalReportPreguntas.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+      <LastGenOutput>CrystalReportPreguntas.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

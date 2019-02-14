@@ -7,10 +7,10 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Uniamazonia_Juego.Reportes {
+namespace Uniamazonia_Juego.Web_forms_reports {
     
     
-    public partial class Reportes {
+    public partial class ReportePreguntas {
         
         /// <summary>
         /// Control form1.
@@ -22,12 +22,12 @@ namespace Uniamazonia_Juego.Reportes {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Control CrystalReportViewer1.
+        /// Control IDreportePreguntas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::CrystalDecisions.Web.CrystalReportViewer CrystalReportViewer1;
+        protected global::CrystalDecisions.Web.CrystalReportViewer IDreportePreguntas;
     }
 }
