@@ -121,5 +121,10 @@ namespace Uniamazonia_Juego.Views.Administrador
             cargar_contenido_BD(this.lista_modulo.SelectedValue);
            
         }
+
+        protected void imgenButton_Click(object sender, ImageClickEventArgs e)
+        {
+            ClientScript.RegisterClientScriptBlock(this.GetType(), "Pruebas", "window.open('/Web_forms_reports/ReporteListaPruebas.aspx', '_blank');", true);
+        }
     }
 }

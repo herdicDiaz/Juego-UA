@@ -19,7 +19,7 @@
                         <div class="col-md-4">
                             <div class="card" style="width: 18rem;">
                                 <%--<asp:Image ID="Image1" runat="server" ImageUrl="~/FotosBD/moduloFotos/gestion institucional.jpg" />--%>
-                                <img id="img1" src="<%#Eval("irl_img_modelo") %>" class="card-img-top">
+                                <img id="img1" src="<%#Eval("irl_img_modelo") %>" class="card-img-top" width="100px" height="100px">
                                 <div class="card-body">
                                     <h5 class="card-title">'<%#Eval("nombre_modulo")%>'</h5>
                                     <center>

@@ -27,9 +27,11 @@ namespace Uniamazonia_Juego.Web_forms_reports
             DataTable dt = new DataTable();
             DataSet ds = new DataSet();
             CrystalReportPreguntas cr = new CrystalReportPreguntas();
+
             dt = con.consultaReportes("select id_pregunta, nombre_pregunta from pregunta;");
             ds.Tables.Add(dt);
             cr.SetDataSource(ds.Tables[0]);
+            cr.SetParameterValue("Autordelarchivo1", "Herdic Diaz Munevar");
             IDreportePreguntas.ReportSource = cr;
         }
     }

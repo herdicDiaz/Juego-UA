@@ -72,7 +72,7 @@ namespace Uniamazonia_Juego.Models
         public DataTable consultar_contenido(int id_modulo)
         {
             DataTable cosulta = new DataTable();
-            String Query = "select id_contenido, nombre_contenido,descripcion_contenido,estado_contenido from contenido where fk_id_modulo='"+id_modulo+"';";
+            String Query = "select id_contenido, nombre_contenido,descripcion_contenido,estado_contenido from contenido where fk_id_modulo='"+id_modulo+"' and estado_contenido='A';";
             cosulta = conexion.consultar_BD(Query);
             return cosulta;
         }
@@ -80,7 +80,7 @@ namespace Uniamazonia_Juego.Models
         public DataTable filtrando_registros_contenido(String dato)
         {
             DataTable consulta = new DataTable();
-            String Query = "select id_contenido, nombre_contenido, descripcion_contenido, estado_contenido from contenido where nombre_contenido like '%" + dato + "%';";
+            String Query = "select id_contenido, nombre_contenido, descripcion_contenido, estado_contenido from contenido where nombre_contenido like '%" + dato + "%' and estado_contenido='A';";
 
             consulta = conexion.consultar_BD(Query);
 
@@ -136,7 +136,7 @@ namespace Uniamazonia_Juego.Models
             String query = "select id_modulo from modulo where nombre_modulo='" + nombre_modulo + "';";
             aux_fk_modulo = Convert.ToInt32(conexion.consulta_universal(query));
             String Query = "select contenido.id_contenido,contenido.nombre_contenido,contenido.descripcion_contenido, contenido.estado_contenido " +
-                "from  contenido where fk_id_modulo= '" + aux_fk_modulo + "';";
+                "from  contenido where fk_id_modulo= '" + aux_fk_modulo + "' and estado_contenido='A';";
             consulta = conexion.consultar_BD(Query);
 
 

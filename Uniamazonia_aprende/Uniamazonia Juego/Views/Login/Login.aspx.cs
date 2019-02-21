@@ -13,7 +13,8 @@ namespace Uniamazonia_Juego.Views.Login
     {
         UsuarioController controlador_usuario;
         JugadorController controlador_jugador;
-
+        AdministradorController AdministradorC=new AdministradorController();
+        DataTable consulta_Administrador = new DataTable();
         DataTable datos_usuario;
 
         ProgramaController controlador_programa;
@@ -66,6 +67,9 @@ namespace Uniamazonia_Juego.Views.Login
                     {
                         Session["privilegio"] = rol_usuario(privilegio_bd);
                         Session["id_usuario"] = id_usuario;
+                        int fk_usuario =Convert.ToInt32( Session["id_usuario"].ToString());
+                        //consulta_Administrador = AdministradorC.ConsultaParametroFkUsuario(fk_usuario);
+                        //Session["usuario"] = consulta_Administrador.Rows[0]["nombres_admin"].ToString();
                         Response.Redirect("~/Views/Administrador/Welcome.aspx");
                     }
                     else {
@@ -80,6 +84,7 @@ namespace Uniamazonia_Juego.Views.Login
             }
             catch (Exception)
             {
+                //Response.Redirect("~/Views/Login/Login");
 
                 throw;
             }

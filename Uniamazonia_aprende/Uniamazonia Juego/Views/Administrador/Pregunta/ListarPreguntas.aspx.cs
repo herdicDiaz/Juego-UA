@@ -68,6 +68,11 @@ namespace Uniamazonia_Juego.Views.Administrador.Pregunta
             BindGridView();
         }
 
+        public void imageButton_Click(object sender, EventArgs e){
+            ClientScript.RegisterClientScriptBlock(this.GetType(), "Pruebas", "window.open('/Web_forms_reports/ReportePreguntas.aspx', '_blank');", true);
+        }
+
+
         protected void eventos_grid(object sender, GridViewCommandEventArgs e)
         {
             if (e.CommandName=="editar" || e.CommandName=="eliminar")

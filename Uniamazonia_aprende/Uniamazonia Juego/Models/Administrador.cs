@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using Uniamazonia_Juego.Conexion;
@@ -13,7 +14,7 @@ namespace Uniamazonia_Juego.Models
         private String apellidos_admin { set; get; }
         private String estado_admin {set;get;}
         private int fk_usuario { set; get; }
-        private Connection conexion;
+        Connection conexion=new Connection();
 
         // constructor
         public Administrador(int id_adminstrator, String name_administrator, String last_name_administrator, 
@@ -28,6 +29,10 @@ namespace Uniamazonia_Juego.Models
 
 
 
+        }
+
+        public Administrador()
+        {
         }
 
 
@@ -49,6 +54,14 @@ namespace Uniamazonia_Juego.Models
             return dato;
         }
 
+        public DataTable ConsultaParametroFkUsuario(int fk_usuario)
+        {
+            String Query = "select id_dministrador, nombres_admin, apellidos_admin, estado_admin, fk_usuario from administrador where fk_usuario='"+Convert.ToString( fk_usuario) + "';";
+            DataTable consulta1 = new DataTable();
+            consulta1 = conexion.consultar_BD(Query);
+            return consulta1;
 
+           
+        }
     }
 }

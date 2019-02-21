@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Consultar Pruebas" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="ConsultarPrueba.aspx.cs" Inherits="Uniamazonia_Juego.Views.Administrador.ConsultarPrueba" %>
+﻿    <%@ Page Title="Consultar Pruebas" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="ConsultarPrueba.aspx.cs" Inherits="Uniamazonia_Juego.Views.Administrador.ConsultarPrueba" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MapaPagina" runat="server">
 </asp:Content>
@@ -62,6 +62,7 @@
                 <hr />
 
             </div>
+                <asp:ImageButton runat="server" ID="imgenButton" ImageUrl="~/Images/icon-pdf.png"  OnClick="imgenButton_Click" Width="50px" Height="50px"/>
             <hr />
         </div>
     </div>
