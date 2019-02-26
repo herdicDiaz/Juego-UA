@@ -27,15 +27,15 @@ namespace Uniamazonia_Juego.Views.Administrador.Empresa
             this.nit_actual.Text = controlador_empresa.consulta_nit_BD();
 
 
-            if (Page.IsPostBack) return;
-            if (controlador_empresa.estado_conexion_BD())
-            {
-                ClientScript.RegisterStartupScript(this.GetType(), "mensaje", "<script> swal({position: 'center',type: 'success',title: 'Conexion Establecida BD',showConfirmButton: false,timer: 1500}) </script>");
-            }
-            else {
-                ClientScript.RegisterStartupScript(this.GetType(), "mensaje", "<script> swal({type: 'error',title: 'Conexion BD NO establecidad!',text: 'Algo salió mal!',timer: 2200}) </script>");
+            //if (Page.IsPostBack) return;
+            //if (controlador_empresa.estado_conexion_BD())
+            //{
+            //    ClientScript.RegisterStartupScript(this.GetType(), "mensaje", "<script> swal({position: 'center',type: 'success',title: 'Conexion Establecida BD',showConfirmButton: false,timer: 1500}) </script>");
+            //}
+            //else {
+            //    ClientScript.RegisterStartupScript(this.GetType(), "mensaje", "<script> swal({type: 'error',title: 'Conexion BD NO establecidad!',text: 'Algo salió mal!',timer: 2200}) </script>");
 
-            }
+            //}
 
 
 

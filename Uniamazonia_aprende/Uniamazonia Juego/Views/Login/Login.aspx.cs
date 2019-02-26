@@ -13,6 +13,7 @@ namespace Uniamazonia_Juego.Views.Login
     {
         UsuarioController controlador_usuario;
         JugadorController controlador_jugador;
+        Rol_UsuarioController controlador_rol_usuario;
         AdministradorController AdministradorC=new AdministradorController();
         DataTable consulta_Administrador = new DataTable();
         DataTable datos_usuario;
@@ -126,8 +127,21 @@ namespace Uniamazonia_Juego.Views.Login
 
                 if (controlador_jugador.crear_jugador(fk_programa))
                 {
-                    // creado;
-                    ClientScript.RegisterStartupScript(this.GetType(), "mensaje", "<script> swal({position: 'center',type: 'success',title: 'Registro Exitoso',timer: 2500}) </script>");
+                    // agregarle el menu
+                    controlador_rol_usuario = new Rol_UsuarioController(2,aux_identificacion,"A","J");
+                    if (controlador_rol_usuario.crear_rol_usuario())
+                    {
+                        // creado;
+
+
+
+                        ClientScript.RegisterStartupScript(this.GetType(), "mensaje", "<script> swal({position: 'center',type: 'success',title: 'Registro Exitoso',timer: 2500}) </script>");
+
+                    }
+
+
+
+
                 }
                 else
                 {

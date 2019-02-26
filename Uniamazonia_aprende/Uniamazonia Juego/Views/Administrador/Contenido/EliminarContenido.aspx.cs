@@ -23,21 +23,7 @@ namespace Uniamazonia_Juego.Views.Administrador
 
         }
 
-        protected void eliminar_contenido_Click(object sender, EventArgs e)
-        {
-            controlador_contenido = new ContenidoController(0,this.lista_contenidoss.SelectedValue,"","","");
-            if (controlador_contenido.eliminar_contenido())
-            {
-                ClientScript.RegisterStartupScript(this.GetType(), "mensaje", "<script> swal({position: 'center',type: 'success',title: 'Eliminacion Exitosa',showConfirmButton: false,timer: 2500}) </script>");
 
-            }
-            else {
-                ClientScript.RegisterStartupScript(this.GetType(), "mensaje", "<script> swal({type: 'error',title: 'Contenido No Eliminado',text: 'Algo salió mal!',timer: 3200}) </script>");
-
-            }
-            actualizar_lista_contenido();
-
-        }
 
         public void actualizar_lista_contenido() {
             // actualizando campos
@@ -82,7 +68,9 @@ namespace Uniamazonia_Juego.Views.Administrador
 
             foreach (DataRow fila_lista_modulos in consulta_lista_modulos.Rows)
             {
-                if (fila_lista_modulos["nombre_modulo"].Equals(this.lista_modulos.SelectedValue))
+                // compara el estado
+
+                if (fila_lista_modulos["nombre_modulo"].Equals(this.lista_modulos.SelectedValue) && fila_lista_modulos["estado_modulo"].Equals("A"))
                 {
                     ViewState["id_aux_modulo"] = fila_lista_modulos["id_modulo"];
                 }
@@ -90,7 +78,21 @@ namespace Uniamazonia_Juego.Views.Administrador
             cargar_contenido_BD();
         }
 
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            // eliminar contenido
+            controlador_contenido = new ContenidoController(0, this.lista_contenidoss.SelectedValue, "", "", "");
+            if (controlador_contenido.eliminar_contenido())
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "mensaje", "<script> swal({position: 'center',type: 'success',title: 'Eliminacion Exitosa',showConfirmButton: false,timer: 2500}) </script>");
 
+            }
+            else
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "mensaje", "<script> swal({type: 'error',title: 'Contenido No Eliminado',text: 'Algo salió mal!',timer: 3200}) </script>");
 
+            }
+            actualizar_lista_contenido();
+        }
     }
 }

@@ -73,8 +73,6 @@ namespace Uniamazonia_Juego.Models
                 aux_num++;
             }
 
-
-
         }
 
         

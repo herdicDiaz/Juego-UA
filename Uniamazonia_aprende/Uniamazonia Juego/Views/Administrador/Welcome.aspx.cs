@@ -18,6 +18,8 @@ namespace Uniamazonia_Juego.Views.Administrador
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            
             // pasarle el privilegio del jugador
             controlador_inicio = new InicioController(0, "", "", "", "", "J");
             controlador_inicio.carga_numero_carusel(this.numero_carusel);

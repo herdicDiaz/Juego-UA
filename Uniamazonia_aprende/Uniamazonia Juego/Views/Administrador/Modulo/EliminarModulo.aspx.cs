@@ -23,16 +23,22 @@ namespace Uniamazonia_Juego.Views.Administrador
 
         }
 
-   
 
 
-      
+        public void cargar_modulo_BD() {
 
-        protected void Button1_Click(object sender, EventArgs e)
+            controlador_modulo = new ModuloController(0, "", "", "");
+            consulta_lista_modulos = controlador_modulo.consulta_combox_nombre();
+            this.lista_modulos.DataTextField = "nombre_modulo";
+            this.lista_modulos.DataSource = consulta_lista_modulos;
+            lista_modulos.DataBind();
+
+
+        }
+
+        protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            // eliminar 
-
-            controlador_modulo = new ModuloController(0, this.lista_modulos.SelectedValue, "","");
+            controlador_modulo = new ModuloController(0, this.lista_modulos.SelectedValue, "", "");
 
             if (controlador_modulo.eliminar_modulo())
             {
@@ -51,20 +57,6 @@ namespace Uniamazonia_Juego.Views.Administrador
             this.lista_modulos.Items.Clear();
             this.lista_modulos.Items.Insert(0, new ListItem("-- Seleccione un Modulo -- "));
             cargar_modulo_BD();
-
-
-
-        }
-
-
-        public void cargar_modulo_BD() {
-
-            controlador_modulo = new ModuloController(0, "", "", "");
-            consulta_lista_modulos = controlador_modulo.consulta_combox_nombre();
-            this.lista_modulos.DataTextField = "nombre_modulo";
-            this.lista_modulos.DataSource = consulta_lista_modulos;
-            lista_modulos.DataBind();
-
 
         }
     }

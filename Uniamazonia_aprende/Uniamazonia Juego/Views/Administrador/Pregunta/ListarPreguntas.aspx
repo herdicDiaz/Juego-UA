@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="ListarPreguntas.aspx.cs" Inherits="Uniamazonia_Juego.Views.Administrador.Pregunta.ListarPreguntas" %>
+﻿<%@ Page Title="Listar Pregunta" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="ListarPreguntas.aspx.cs" Inherits="Uniamazonia_Juego.Views.Administrador.Pregunta.ListarPreguntas" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContenidoPagina" runat="server">
     <br />

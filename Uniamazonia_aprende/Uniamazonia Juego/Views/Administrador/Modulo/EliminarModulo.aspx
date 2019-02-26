@@ -19,34 +19,11 @@
 
         });
 
-        function funcionJS() {
-            //alert("holaa");
-            swal({
-                title: "Esta Seguro?",
-                text: "No podra recuperar el archivo una vez eliminado!",
-                type: "warning",
-                showCancelButton: true,
-                confirmButtonClass: "btn-danger",
-                confirmButtonText: "Si, Eliminar!",
-                cancelButtonText: "No, Cacelar!",
-                closeOnConfirm: false,
-                closeOnCancel: false
-            }, function (isConfirm) {
-                if (isConfirm) {
-                    swal("Deleted!", "Su archivo ha sido eliminado", "success");
-                } else {
-                    swal("Cancelled", "No eliminado", "error");
-                }
-            });
-        }
-
-
 
     </script>
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContenidoPagina" runat="server">
-
     <div style="color: black !important;">
         <div id="fondo_busqueda" style="border: 1px #84B59F dotted; background-color: white;">
             <div class="card bg-success text-white">
@@ -65,9 +42,9 @@
                         </asp:DropDownList>
                     </div>
                     <div class="form-group col-md-6" style="margin-top: 29px !important;">
-
-                        <asp:Button ID="Button1" runat="server" CssClass="btn btn-danger" OnClientClick="funcionJS();" Text="Eliminar" OnClick="Button1_Click" />
-
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Eliminar</button>
+                    
+                    
                     </div>
                 </div>
                 <hr />
@@ -76,6 +53,31 @@
         </div>
 
     </div>
+
+    <!-- Delete Record Modal Starts here-->
+    <div id="deleteModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Eliminar Pregunta</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    ¿Está seguro que desea eliminar el Modulo?
+                              <asp:HiddenField ID="hfCode" runat="server" />
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <asp:LinkButton ID="btnEliminar" runat="server" class="btn btn-danger" Text='Eliminar' OnClick="btnEliminar_Click" runat="server">Eliminar</asp:LinkButton>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Delete Record Modal Ends here -->
+
+
+
 
 
 </asp:Content>

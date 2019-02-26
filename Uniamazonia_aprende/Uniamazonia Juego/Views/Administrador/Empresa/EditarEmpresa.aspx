@@ -1,6 +1,29 @@
 ﻿<%@ Page Title="Editar Empresa" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="EditarEmpresa.aspx.cs" Inherits="Uniamazonia_Juego.Views.Administrador.Empresa.CrearEmpresa" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MapaPagina" runat="server">
+
+    
+      <script type="text/javascript">
+        $(document).ready(function () {
+            $("#form1").validate({
+                rules: {
+                   <%=nuevo_nombre.UniqueID%>: "required",
+                   <%=nueva_descripcion.UniqueID%>: "required",
+
+                   <%=nuevo_nit_empresa.UniqueID%>: "required"
+
+                },
+                messages: {
+
+                 <%=nuevo_nombre.UniqueID%> : "* Este campo es obligatorio",
+                 <%=nueva_descripcion.UniqueID%> : "* Este campo es obligatorio",
+                 <%=nuevo_nit_empresa.UniqueID%> : "* Este campo es obligatorio"
+            }
+
+            });
+        });
+    </script>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContenidoPagina" runat="server">
   

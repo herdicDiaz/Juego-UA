@@ -38,7 +38,7 @@ namespace Uniamazonia_Juego.Models
         // metodos
         public Boolean crear_contenido(String nombre_modulo) {
             // 1). buscar fk del contenido al que va amarrado
-            String Query = "select modulo.id_modulo from modulo where nombre_modulo = '" + nombre_modulo + "';";
+            String Query = "select modulo.id_modulo from modulo where nombre_modulo = '" + nombre_modulo + "' and estado_modulo='A';";
             int aux_fK_contenido = conexion.buscar_ID_BD(Query);
 
 
@@ -61,7 +61,7 @@ namespace Uniamazonia_Juego.Models
 
         public DataTable consultar_contenido() {
             DataTable cosulta = new DataTable();
-            String Query = "select id_contenido, nombre_contenido,descripcion_contenido,estado_contenido from contenido;";
+            String Query = "select id_contenido, nombre_contenido,descripcion_contenido,estado_contenido from contenido where estado_contenido='A';";
 
             cosulta = conexion.consultar_BD(Query);
 
@@ -80,7 +80,7 @@ namespace Uniamazonia_Juego.Models
         public DataTable filtrando_registros_contenido(String dato)
         {
             DataTable consulta = new DataTable();
-            String Query = "select id_contenido, nombre_contenido, descripcion_contenido, estado_contenido from contenido where nombre_contenido like '%" + dato + "%' and estado_contenido='A';";
+            String Query = "select id_contenido, nombre_contenido, descripcion_contenido, estado_contenido from contenido where (estado_contenido='A' and nombre_contenido like '%" + dato + "%');";
 
             consulta = conexion.consultar_BD(Query);
 
@@ -100,7 +100,7 @@ namespace Uniamazonia_Juego.Models
         public DataTable consulta_contenido_x_modulo_combox_nombre(int aux_fk_modulo)
         {
             DataTable consulta = new DataTable();
-            String Query = "select id_contenido, nombre_contenido from contenido where estado_contenido='A' and fk_id_modulo='" + aux_fk_modulo + "';";
+            String Query = "select id_contenido, nombre_contenido from contenido where (estado_contenido='A' and fk_id_modulo='" + aux_fk_modulo + "');";
             consulta = conexion.consulta_comboBox(Query);
 
             return consulta;
@@ -147,10 +147,10 @@ namespace Uniamazonia_Juego.Models
 
             DataTable consulta = new DataTable();
             int aux_fk_modulo = 0;
-            String query = "select id_modulo from modulo where nombre_modulo='" + nombre_modulo + "';";
+            String query = "select id_modulo from modulo where (nombre_modulo='" + nombre_modulo + "' and estado_modulo='A');";
             aux_fk_modulo = Convert.ToInt32(conexion.consulta_universal(query));
             String Query = "select contenido.nombre_contenido " +
-                "from  contenido where fk_id_modulo= '" + aux_fk_modulo + "';";
+                "from  contenido where (fk_id_modulo= '" + aux_fk_modulo + "' and estado_contenido='A');";
             consulta = conexion.consultar_BD(Query);
 
 

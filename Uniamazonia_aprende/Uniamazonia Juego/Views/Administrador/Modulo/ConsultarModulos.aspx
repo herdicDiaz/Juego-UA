@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MapaPagina" runat="server">
 
 
-<!--   <script type="text/javascript">
+    <!--   <script type="text/javascript">
         $(document).ready(function () {
             $("#form1").validate({
                 rules: {
@@ -25,6 +25,8 @@
 
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContenidoPagina" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
 
     <div style="color: black !important;">
         <div id="fondo_busqueda" style="border: 1px #84B59F dotted; background-color: white;">
@@ -37,34 +39,37 @@
 
             <div id="busquedas" style="width: 90%; margin: 0 auto;">
                 <hr />
+                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                    <ContentTemplate>
 
+                        <div class="input-group" style="width: 55% !important;">
+                            <asp:TextBox ID="filtro_prueba" runat="server" class="form-control is-invalid" type="text" placeholder="&#128270; Buscar.." required></asp:TextBox>
+                            <asp:Button ID="buscar_modulo" runat="server" class="btn btn-success" OnClick="buscar_modulo_Click" Text="Filtrar" />
+                            <br>
+                        </div>
+                        <hr />
+                        <div id="tabla_unica" class="table-responsive">
+                            <asp:GridView ID="lista_filtro_modulo" runat="server"
+                                AllowPaging="true" AutoGenerateColumns="false"
+                                OnPageIndexChanging="OnPageIndexChanging" CssClass="table table-striped" border="0" PageSize="7">
+                                <PagerStyle CssClass="current-page" />
 
-                <div class="input-group" style="width: 55% !important;">
-                    <asp:TextBox ID="filtro_prueba" runat="server" class="form-control is-invalid" type="text" placeholder="&#128270; Buscar.." required ></asp:TextBox>
-                    <asp:Button ID="buscar_modulo" runat="server" class="btn btn-success" OnClick="buscar_modulo_Click" Text="Filtrar" />
-                    <br>
-                </div>
-                <hr />
-                <div id="tabla_unica" class="table-responsive">
-                    <asp:GridView ID="lista_filtro_modulo" runat="server"
-                        AllowPaging="true" AutoGenerateColumns="false"
-                        OnPageIndexChanging="OnPageIndexChanging" CssClass="table table-striped" border="0" PageSize="7">
-                        <PagerStyle CssClass="current-page" />
-
-                        <Columns>
-                            <asp:BoundField ItemStyle-Width="7%" ItemStyle-CssClass="unico_position" DataField="id_modulo" HeaderText="Codigo" ReadOnly="true" SortExpression="id_modulo" />
-                            <asp:BoundField ItemStyle-Width="150px" ItemStyle-CssClass="unico_design" DataField="nombre_modulo" HeaderText="Nombre Modulo" ReadOnly="true" SortExpression="nombre_modulo" />
-                            <asp:BoundField ItemStyle-Width="8%" ItemStyle-CssClass="unico_position" DataField="estado_modulo" HeaderText="Estado" ReadOnly="true" SortExpression="estado_modulo" />
-                        </Columns>
-                        <PagerSettings Mode="NumericFirstLast" PageButtonCount="4" FirstPageText="Primero" LastPageText="Ultimo" />
-                        <PagerStyle CssClass="pagination-lg" HorizontalAlign="Center" />
-                    </asp:GridView>
-                </div>
-                <hr />
+                                <Columns>
+                                    <asp:BoundField ItemStyle-Width="7%" ItemStyle-CssClass="unico_position" DataField="id_modulo" HeaderText="Codigo" ReadOnly="true" SortExpression="id_modulo" />
+                                    <asp:BoundField ItemStyle-Width="150px" ItemStyle-CssClass="unico_design" DataField="nombre_modulo" HeaderText="Nombre Modulo" ReadOnly="true" SortExpression="nombre_modulo" />
+                                    <asp:BoundField ItemStyle-Width="8%" ItemStyle-CssClass="unico_position" DataField="estado_modulo" HeaderText="Estado" ReadOnly="true" SortExpression="estado_modulo" />
+                                </Columns>
+                                <PagerSettings Mode="NumericFirstLast" PageButtonCount="4" FirstPageText="Primero" LastPageText="Ultimo" />
+                                <PagerStyle CssClass="pagination-lg" HorizontalAlign="Center" />
+                            </asp:GridView>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
 
             </div>
             <hr />
+
         </div>
+        <hr />
     </div>
 
 

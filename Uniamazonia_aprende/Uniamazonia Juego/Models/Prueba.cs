@@ -33,6 +33,7 @@ namespace Uniamazonia_Juego.Models
         // metodos
         public Boolean crear_prueba(String aux_nombre_contenido) {
             // 1). bsucar id del contenido seleccionado
+            
             String Query = "select id_contenido from contenido where nombre_contenido='"+aux_nombre_contenido+"';";
             int aux_fk_contenido = conexion.buscar_ID_BD(Query);
             if (aux_fk_contenido!=777)
@@ -78,7 +79,7 @@ namespace Uniamazonia_Juego.Models
 
         public DataTable filtrando_registros_prueba( String dato) {
             DataTable consulta = new DataTable();
-            String Query = "select * from prueba where nombre_prueba like '%"+dato+"%';";
+            String Query = "select * from prueba where (estado_prueba='A' and nombre_prueba like '%"+dato+"%');";
 
             consulta = conexion.consultar_BD(Query);
 
@@ -95,7 +96,7 @@ namespace Uniamazonia_Juego.Models
 
         public DataTable consulta_pruebas_general() {
             DataTable consulta_aux = new DataTable();
-            String Query = "select id_prueba,nombre_prueba,estado_prueba,fk_contenido from prueba;";
+            String Query = "select id_prueba,nombre_prueba,estado_prueba,fk_contenido from prueba where estado_prueba='A';";
             consulta_aux = conexion.consultar_BD(Query);
             return consulta_aux;
         }
@@ -120,7 +121,7 @@ namespace Uniamazonia_Juego.Models
         public DataTable consulta_prueba_x_contenido_combox()
         {
             DataTable consulta = new DataTable();
-            String Query = "select id_prueba, nombre_prueba from prueba where estado_prueba = 'A' and fk_contenido='"+fk_contenido+"';";
+            String Query = "select id_prueba, nombre_prueba from prueba where (estado_prueba = 'A' and fk_contenido='"+fk_contenido+"');";
             consulta = conexion.consulta_comboBox(Query);
             return consulta;
         }

@@ -11,13 +11,13 @@ insert into vista values("6","#","activo","Preguntas y respuestas","mdi mdi-barc
 insert into vista values("7","#","activo","Gestionar Sancion","mdi mdi-whatsapp","7");
 insert into vista values("8","#","activo","Gestionar Premiacion","mdi mdi-apple","8");
 
+insert into vista values("9","#","activo","Gestionar Tablas Basicas","mdi mdi-security","9");
+
+
 -- MENU PARA EL JUGADOR.
-insert into vista values("9","#","activo","Modulos","mdi mdi-view-list","9");
 
 
 -- SUBMENU ROL JUGADOR
-insert into vista values("54","/Views/VistasJugador/ConsultaModulo/ListaModulo.aspx","activo","Iniciar Juego","mdi mdi-check-all","3");
-
 
 
 -- --------------------------------------------------
@@ -34,8 +34,8 @@ insert into vista values("53","/Views/Administrador/Modulo/EliminarModulo.aspx",
 
 
 -- ROL JUGADOR
-insert into vista values("54","/Views/VistasJugador/ConsultaModulo/ListaModulo","activo","Ver Modulos","mdi mdi-check-all","9");
 
+insert into vista values("54","/Views/VistasJugador/ConsultaModulo/ListaModulo","activo","Ver Modulos","mdi mdi-check-all","3");
 
 -- --------------------------------------------------
 -- GESTIONAR CONTENIDO 70 - 90                       |
@@ -107,13 +107,23 @@ insert into vista values("191","/Views/Administrador/Sancion/ListarSancion.aspx"
 -- GESTIONAR PREMIACION 210 - 230                       |
 -- --------------------------------------------------
 insert into vista values("210","/Views/Administrador/Premiacion/CrearPremiacion.aspx","activo","Crear premiacion","mdi mdi-check-all","8");
-insert into vista values("211","'/Views/Administrador/Premiacion/ListarPremiacion.aspx","activo","Listar premiacion","mdi mdi-check-all","8");
+insert into vista values("211","/Views/Administrador/Premiacion/ListarPremiacion.aspx","activo","Listar premiacion","mdi mdi-check-all","8");
 
 -- ------------------------------------------------------------------------------------------------------
 -- ---------------------------------------------------------------------------------------------
 
+-- --------------------------------------------------
+-- GESTIONAR TABLAS BASICAS 231- 250                       |
+-- --------------------------------------------------
+insert into vista values("231","/Views/Administrador/Icono/Iconos.aspx","activo","Gestionar Iconos","mdi mdi-check-all","9");
+insert into vista values("232","/Views/Administrador/Programa/Programa.aspx","activo","Gestionar Programas","mdi mdi-check-all","9");
+insert into vista values("233","/Views/Administrador/Empresa/EditarEmpresa.aspx","activo","Gestionar Empresa","mdi mdi-check-all","9");
+
+
+-- ------------------------------------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------------------------
 insert into rol values("1","admin ","administrador");
-insert into rol values("2","jugador","administrador");
+insert into rol values("2","jugador","jugador");
 
 -- ------------------------------------------------------------------------------------------------------------------------
 -- ------------------------------------------------------------------------------------------------------------------------
@@ -137,8 +147,9 @@ insert into vista_rol values("5","53","3","1");
 -- GESTIONAR MODULO 1 - 19      Jugaddor                 |
 -- --------------------------------------------------
 
-insert into vista_rol values("8","9","9","2");
-insert into vista_rol values("8","54","9","2");
+insert into vista_rol values("10","3","3","2");
+insert into vista_rol values("11","54","3","2");
+
 
 -- --------------------------------------------------
 -- GESTIONAR CONTENIDO 20 - 39                       |
@@ -205,6 +216,17 @@ insert into vista_rol values("160","8","8","1");
 insert into vista_rol values("161","210","8","1");
 insert into vista_rol values("162","211","8","1");
 
+-- --------------------------------------------------
+-- GESTIONAR  tablas basicas 181 - 200                       |
+-- --------------------------------------------------
+insert into vista_rol values("181","9","9","1");
+insert into vista_rol values("182","231","9","1");
+insert into vista_rol values("183","232","9","1");
+insert into vista_rol values("184","233","9","1");
+
+
+
+
 -- ------------------------------------------------------------------------------------------------------------
 -- -------------------------------------------------------------------------------------------------------------
 insert into usuario values("1","aticristian@hotmail.com","1234","A");
@@ -237,6 +259,7 @@ insert into rol_usuario values("2","1","A","J");
 insert into rol_usuario values("2","2","A","J");
 insert into rol_usuario values("2","3","A","J");
 
+
 -- ----------------------------------------------------------------------
 -- ---------------------------------------------------------------------------
 insert into empresa values('1','Aprender.+','Empresa de juegos Uniamazonia','1210111');
@@ -263,9 +286,9 @@ insert into modulo values('9','Medio Ambiente','../../../FotosBD/moduloFotos/apr
 -- -------------------------------------------------------------------------
 -- -----------------------------------------------------------------------------------------
 insert into inicio values('1','Vision','Los proyectos de formación virtual deben entenderse en el marco de una estrategia integral
-                        de desarrollo del talento, orientada al logro de los objetivos de las empresas y organizaciones, y la mejora de sus niveles de competitividad.','../../Images/paisaje%202%20carrusel.jpg','A','active','J');
-insert into inicio values('2','Mision','Descargue en formato pdf nuestro mapa conceptual del e-learning','../../Images/paisaje%201%20carrusel.jpg','A','','J');
-insert into inicio values('3','Objetivo','Mientras que a las instituciones educativas les proporciona','../../Images/paisaje%203%20carrusel.jpg','A','','J');
+                        de desarrollo del talento, orientada al logro de los objetivos de las empresas y organizaciones, y la mejora de sus niveles de competitividad.','../../Images/uniamazonia.jpg','A','active','J');
+insert into inicio values('2','Mision','Descargue en formato pdf nuestro mapa conceptual del e-learning','../../Images/biblioteca.jpg','A','','J');
+insert into inicio values('3','Objetivo','Mientras que a las instituciones educativas les proporciona','../../Images/auditorio.jpg','A','','J');
 
 
 -- -------------------------------------------------------------------------
@@ -368,13 +391,13 @@ insert into icono values('9','mdi mdi-shopping','A');
 insert into icono values('10','mdi mdi-tag-multiple','D');
 insert into icono values('11','mdi mdi-vector-difference-ab','A');
 insert into icono values('12','mdi mdi-view-grid','A');
-insert into icono values('13','mdi mdi-web','A');
+insert into icono values('13','mdi mdi-web','D');
 insert into icono values('14','mdi mdi-whatsapp','D');
 insert into icono values('15','mdi mdi-traffic-light','A');
 insert into icono values('16','mdi mdi-tag-faces','A');
 insert into icono values('17','mdi mdi-table-edit','A');
 insert into icono values('18','mdi mdi-shopping-music','A');
-insert into icono values('19','mdi mdi-security','A');
+insert into icono values('19','mdi mdi-security','D');
 insert into icono values('20','mdi mdi-puzzle','A');
 insert into icono values('21','mdi mdi-radar','A');
 insert into icono values('22','mdi mdi-view-list','D');
