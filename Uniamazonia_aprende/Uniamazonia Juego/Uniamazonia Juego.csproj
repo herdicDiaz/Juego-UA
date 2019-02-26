@@ -970,6 +970,10 @@
     <Content Include="Content\Js\jquery.flot.time.js" />
     <Content Include="Content\Js\jquery.flot.tooltip.min.js" />
     <Content Include="Content\Js\jquery.min.js" />
+    <Content Include="Content\Js\magnific-popup\animation.css" />
+    <Content Include="Content\Js\magnific-popup\dist\jquery.magnific-popup.min.js" />
+    <Content Include="Content\Js\magnific-popup\dist\magnific-popup.css" />
+    <Content Include="Content\Js\magnific-popup\meg.init.js" />
     <Content Include="Content\Js\perfect-scrollbar.jquery.min.js" />
     <Content Include="Content\Js\popper.min.js" />
     <Content Include="Content\Js\sidebarmenu.js" />
@@ -1070,7 +1074,9 @@
     <Content Include="Images\auditorio.jpg" />
     <Content Include="Images\biblioteca.jpg" />
     <Content Include="Images\diamante.png" />
-    <Content Include="Images\estudiantes.jpg" />
+    <Content Include="Images\docente.jpg" />
+    <Content Include="Images\estudiante.jpg" />
+    <Content Include="Images\estudiante1.jpg" />
     <Content Include="Images\foundLogin.jpg" />
     <Content Include="Images\icon-pdf.png" />
     <Content Include="Images\iconos con\acreditacion.png" />
@@ -1082,6 +1088,7 @@
     <Content Include="Images\iconos con\servicio I.png" />
     <Content Include="Images\iconos con\universidad.png" />
     <Content Include="Images\iconos con\vehiculo.png" />
+    <Content Include="Images\img6.jpg" />
     <Content Include="Images\IMG_20190225_120951.jpg" />
     <Content Include="Images\img_aux\acreditacion.png" />
     <Content Include="Images\img_aux\aprender.jpg" />
@@ -1094,7 +1101,6 @@
     <Content Include="Images\img_aux\vehiculos.png" />
     <Content Include="Images\logo-icon.png" />
     <Content Include="Images\logo-text.png" />
-    <Content Include="Images\profesor.jpg" />
     <Content Include="Images\test1.jpg" />
     <Content Include="Images\uniamazonia.jpg" />
     <Content Include="Images\uniamazonia3.jpg" />

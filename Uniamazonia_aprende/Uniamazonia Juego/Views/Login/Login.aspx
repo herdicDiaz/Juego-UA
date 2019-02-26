@@ -1,10 +1,10 @@
-﻿    <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Uniamazonia_Juego.Views.Login.Login" %>
-    <!DOCTYPE html>
-
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Uniamazonia_Juego.Views.Login.Login" %>
+ 
+<!DOCTYPE html>
 <html dir="ltr" lang="en">
 <head runat="server">
     <meta charset="utf-8">
-    <me ta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -52,14 +52,28 @@
                  <%=lista_semestres.UniqueID%> : "* Este campo es obligatorio select",
                  <%=txt_identificacion.UniqueID%> : "* Este campo es obligatorio",
                  <%=txt_correo.UniqueID%> : "* Este campo es obligatorio"
-            }
+                }
 
             });
-        });
-    </script>
+          });
 
 
+
+
+
+
+          </script>
+
+
+        <style>
+        .error {
+            color: #ff0000;
+        }
+    </style>
 </head>
+
+
+
 
 
 
