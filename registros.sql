@@ -11,6 +11,9 @@ insert into vista values("6","#","activo","Preguntas y respuestas","mdi mdi-barc
 insert into vista values("7","#","activo","Gestionar Sancion","mdi mdi-whatsapp","7");
 insert into vista values("8","#","activo","Gestionar Premiacion","mdi mdi-apple","8");
 
+insert into vista values("9","#","activo","Gestionar Tablas Basicas","mdi mdi-security","9");
+
+
 -- MENU PARA EL JUGADOR.
 insert into vista values("9","#","activo","Modulos","mdi mdi-view-list","9");
 insert into vista VALUES("10","#","activo","Ranking","fas fa-angle-double-up","10");
@@ -31,6 +34,7 @@ insert into vista values("53","/Views/Administrador/Modulo/EliminarModulo.aspx",
 -- ROL JUGADOR
 
 
+insert into vista values("54","/Views/VistasJugador/ConsultaModulo/ListaModulo","activo","Ver Modulos","mdi mdi-check-all","3");
 
 -- --------------------------------------------------
 -- GESTIONAR CONTENIDO 70 - 90                       |
@@ -102,7 +106,7 @@ insert into vista values("191","/Views/Administrador/Sancion/ListarSancion.aspx"
 -- GESTIONAR PREMIACION 210 - 230                       |
 -- --------------------------------------------------
 insert into vista values("210","/Views/Administrador/Premiacion/CrearPremiacion.aspx","activo","Crear premiacion","mdi mdi-check-all","8");
-insert into vista values("211","'/Views/Administrador/Premiacion/ListarPremiacion.aspx","activo","Listar premiacion","mdi mdi-check-all","8");
+insert into vista values("211","/Views/Administrador/Premiacion/ListarPremiacion.aspx","activo","Listar premiacion","mdi mdi-check-all","8");
 
 
 -- --------------------------------------------------
@@ -121,7 +125,7 @@ insert into vista VALUES("251","/Views/VistasJugador/Ranking/Ranking.aspx","acti
 -- ------------------------------------------------------------------------------------------------------------------------
 -- ------------------------------------------------------------------------------------------------------------------------
 insert into rol values("1","admin ","administrador");
-insert into rol values("2","jugador","administrador");
+insert into rol values("2","jugador","jugador");
 
 -- ------------------------------------------------------------------------------------------------------------------------
 -- ------------------------------------------------------------------------------------------------------------------------
@@ -265,6 +269,7 @@ insert into rol_usuario values("2","1","A","J");
 insert into rol_usuario values("2","2","A","J");
 insert into rol_usuario values("2","3","A","J");
 
+
 -- ----------------------------------------------------------------------
 -- ---------------------------------------------------------------------------
 insert into empresa values('1','Aprender.+','Empresa de juegos Uniamazonia','1210111');
@@ -354,7 +359,7 @@ INSERT INTO respuesta VALUES ("3","Bloque 7","Bloque 3","Bloque 1","Bloque audit
 INSERT INTO respuesta VALUES ("4","Bienestar universitario","Facultad","Sistemas","Vigilancia","Bienestar universitario","A","4");
 INSERT INTO respuesta VALUES ("5","Docentes","Todos","Funcionarios","Estdudiantes","Todos","A","5");
 
-insert into respuesta VALUES ("6","Karina","Carolina","Julio","Marcos","Karina","A","6"); 
+insert into respuesta VALUES ("6","Karina","Carolina","Julio","Marcos","Karina","A","6");
 insert into respuesta VALUES ("7","26","23","12","37","23","A","7");
 insert into respuesta VALUES ("8","5","6","3","7","5","A","8");
 insert into respuesta VALUES ("9","1890","1960","1971","1950","1971","A","9");
@@ -378,13 +383,13 @@ insert into icono values('9','mdi mdi-shopping','A');
 insert into icono values('10','mdi mdi-tag-multiple','D');
 insert into icono values('11','mdi mdi-vector-difference-ab','A');
 insert into icono values('12','mdi mdi-view-grid','A');
-insert into icono values('13','mdi mdi-web','A');
+insert into icono values('13','mdi mdi-web','D');
 insert into icono values('14','mdi mdi-whatsapp','D');
 insert into icono values('15','mdi mdi-traffic-light','A');
 insert into icono values('16','mdi mdi-tag-faces','A');
 insert into icono values('17','mdi mdi-table-edit','A');
 insert into icono values('18','mdi mdi-shopping-music','A');
-insert into icono values('19','mdi mdi-security','A');
+insert into icono values('19','mdi mdi-security','D');
 insert into icono values('20','mdi mdi-puzzle','A');
 insert into icono values('21','mdi mdi-radar','A');
 insert into icono values('22','mdi mdi-view-list','D');

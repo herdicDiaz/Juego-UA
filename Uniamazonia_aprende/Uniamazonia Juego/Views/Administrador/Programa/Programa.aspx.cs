@@ -49,7 +49,7 @@ namespace Uniamazonia_Juego.Views.Administrador.Programa
 
 
                 ClientScript.RegisterStartupScript(this.GetType(), "mensaje", "<script> swal({position: 'center',type: 'success',title: 'Registro Exitoso!',showConfirmButton: false,timer: 2500}) </script>");
-
+                this.nombre_programa.Text = "";
 
             }
             else {

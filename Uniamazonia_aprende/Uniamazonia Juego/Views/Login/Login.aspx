@@ -1,6 +1,6 @@
-﻿    <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Uniamazonia_Juego.Views.Login.Login" %>
-    <!DOCTYPE html>
-
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Uniamazonia_Juego.Views.Login.Login" %>
+ 
+<!DOCTYPE html>
 <html dir="ltr" lang="en">
 <head runat="server">
     <meta charset="utf-8">
@@ -27,13 +27,59 @@
 
     <link href="/Content/Css/sweetalert2.min.css" rel="stylesheet" />
     <script src="/Content/Js/sweetalert2.all.min.js" type="text/javascript"></script>
+
+    <!-- validaciones jugador-->
+
+      <script type="text/javascript">
+        $(document).ready(function () {
+            $("#form1").validate({
+                rules: {
+                   <%=txt_nombre_1.UniqueID%>: "required",
+                   <%=txt_apellido_1.UniqueID%>: "required",
+
+                   <%=lista_programas.UniqueID%>: "required",
+                   <%=lista_semestres.UniqueID%>: "required",
+
+                   <%=txt_identificacion.UniqueID%>: "required",
+                   <%=txt_correo.UniqueID%>: "required"
+
+                },
+                messages: {
+
+                 <%=txt_nombre_1.UniqueID%> : "* Este campo es obligatorio",
+                 <%=txt_apellido_1.UniqueID%> : "* Este campo es obligatorio",
+                 <%=lista_programas.UniqueID%> : "* Este campo es obligatorio select",
+                 <%=lista_semestres.UniqueID%> : "* Este campo es obligatorio select",
+                 <%=txt_identificacion.UniqueID%> : "* Este campo es obligatorio",
+                 <%=txt_correo.UniqueID%> : "* Este campo es obligatorio"
+                }
+
+            });
+          });
+
+
+
+
+
+
+          </script>
+
+
+        <style>
+        .error {
+            color: #ff0000;
+        }
+    </style>
 </head>
 
 
 
+
+
+
 <body>
-    <form id="form1" runat="server">
-        <div class="log">
+    <form id="form1" runat="server" style="margin-left: 455px; margin-top:50px">
+        <div class="log" >
             <h2>Iniciar Sesión</h2>
             <asp:TextBox runat="server" placeholder="&#128274; Usuario" type="text" ID="usuario_actual"></asp:TextBox>
             <asp:TextBox runat="server" placeholder="&#128273; Contraseña" type="password" ID="password_actual"></asp:TextBox>
@@ -42,8 +88,8 @@
 
 
 
-            <a href="#registro" data-toggle="modal">Registrarse</a>
-            <a href="#recuperar" data-toggle="modal">¿Olvidó su contraseña?</a>
+            <a href="#registro" data-toggle="modal" style="color: black;">Registrarse</a>
+            <a href="#recuperar" data-toggle="modal" style="color: black;">¿Olvidó su contraseña?</a>
         </div>
 
         <!-- ventanas modales -->

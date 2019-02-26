@@ -13,6 +13,24 @@ namespace Uniamazonia_Juego.Views.Administrador {
     public partial class EliminarContenido {
         
         /// <summary>
+        /// ScriptManager1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        
+        /// <summary>
+        /// UpdatePanel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        
+        /// <summary>
         /// lista_modulos control.
         /// </summary>
         /// <remarks>
@@ -31,12 +49,21 @@ namespace Uniamazonia_Juego.Views.Administrador {
         protected global::System.Web.UI.WebControls.DropDownList lista_contenidoss;
         
         /// <summary>
-        /// eliminar_contenido control.
+        /// hfCode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button eliminar_contenido;
+        protected global::System.Web.UI.WebControls.HiddenField hfCode;
+        
+        /// <summary>
+        /// btnEliminar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnEliminar;
     }
 }

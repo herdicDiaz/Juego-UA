@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Lista sanciones" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="ListarSancion.aspx.cs" Inherits="Uniamazonia_Juego.Views.Administrador.Sancion.ListarSancion" %>
+﻿<%@ Page Title="Lista Sanciones" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="ListarSancion.aspx.cs" Inherits="Uniamazonia_Juego.Views.Administrador.Sancion.ListarSancion" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContenidoPagina" runat="server">
     <asp:ScriptManager runat="server" ID="ScriptManager1" />

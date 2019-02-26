@@ -23,8 +23,7 @@ namespace Uniamazonia_Juego.Views.Administrador.Icono
 
                 BindGridView();
             }
-
-
+            
         }
 
         protected void Metodo_Paginacion(object sender, GridViewPageEventArgs e)
@@ -33,7 +32,6 @@ namespace Uniamazonia_Juego.Views.Administrador.Icono
             BindGridView();
         }
 
-        // <%--OnRowCommand="eventos_grid"--%>
 
 
 
@@ -55,6 +53,7 @@ namespace Uniamazonia_Juego.Views.Administrador.Icono
             {
                 BindGridView();
                 ClientScript.RegisterStartupScript(this.GetType(), "mensaje", "<script> swal({position: 'center',type: 'success',title: 'Registro Exitoso!',showConfirmButton: false,timer: 2500}) </script>");
+                this.nombre_icono.Text = "";
             }
             else {
                 ClientScript.RegisterStartupScript(this.GetType(), "mensaje", "<script> swal({type: 'error',title: 'No Creado!',text: 'Algo salió mal!',timer: 3200}) </script>");
@@ -85,7 +84,7 @@ namespace Uniamazonia_Juego.Views.Administrador.Icono
 
 
             }
-            Tabla_Iconos.EditIndex = 1;
+            Tabla_Iconos.EditIndex = -1;
             BindGridView();
 
         }

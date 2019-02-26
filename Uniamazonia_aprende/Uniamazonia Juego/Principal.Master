@@ -22,7 +22,7 @@
 
     <title><%: Page.Title %> |  <%: Page.Header.Description %></title>
 
-
+        <link href="Content/Js/magnific-popup/dist/magnific-popup.css" rel="stylesheet" />
 
     <link href="/Content/Bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
     <link href="/Content/Bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -45,6 +45,7 @@
 
     <link href="/Content/Css/sweetalert2.min.css" rel="stylesheet" />
     <script src="/Content/Js/sweetalert2.all.min.js" type="text/javascript"></script>
+
 
 
 
@@ -153,9 +154,11 @@
 
                                         <%--<a class="dropdown-item" onclick="CerrarSesion" runat="server"><i class="fa fa-power-off m-r-5 m-l-5" runat="server"></i>Cerrar Sesion</a>--%>
                                         <div class="text-center">
+                                              <div class="p-l-30 p-10"><a href="/Views/VistasJugador/PerfilJugador/VerPerfil.aspx" class="btn btn-info btn-rounded">Ver Perfil</a></div>
+
                                             <asp:Button ID="BtnCerrarSession" Text="Cerrar session" OnClick="CerrarSesion" runat="server" CssClass="btn btn-danger btn-rounded" />
 
-                                            <div class="p-l-30 p-10"><a href="/Views/VistasJugador/PerfilJugador/VerPerfil.aspx" class="btn btn-info btn-rounded">Ver Perfil</a></div>
+                                          
                                         </div>
 
                                     </div>
@@ -223,7 +226,7 @@
                     </div>
                 </div>
                 <footer class="footer text-center">
-                    All Rights Reserved by UNIAMAZONIA. Designed and Developed by <a href="https://wrappixel.com">Aprender.+</a>.
+                    All Rights Reserved by Aprender.+ Designed and Developed by <a href="https://www.uniamazonia.edu.co/Inicio/"> Herdic Diaz & Cristian Tisoy </a>.
                 </footer>
             </div>
         </div>
@@ -256,6 +259,10 @@
     <script src="/Content/dist/js/pages/chart/chart-page-init.js"></script>
 
 
+
+
+    <script src="Content/Js/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
+    <script src="Content/Js/magnific-popup/meg.init.js"></script>
 
 
 </body>

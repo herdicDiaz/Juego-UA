@@ -44,7 +44,7 @@ namespace Uniamazonia_Juego
             PremiacionController controlador_premiacion = new PremiacionController(0, 0, 0, 0, id_jugador_bd);
             controlador_administrador = new AdministradorController(id_administrador_bd, "", "", "", 0);
 
-            Rol_UsuarioController controlador_rol_usuario = new Rol_UsuarioController(0, 0, "");
+            Rol_UsuarioController controlador_rol_usuario = new Rol_UsuarioController(0, 0, "","");
 
 
             // -----> activar con el login
@@ -64,7 +64,7 @@ namespace Uniamazonia_Juego
             {
                 // *nombre *tipo de rol *
                 this.nombre_jugador_actual.Text = controlador_administrador.nombre_bd();
-                controlador_rol_usuario = new Rol_UsuarioController(0, id_administrador_bd, "");
+                controlador_rol_usuario = new Rol_UsuarioController(0, id_administrador_bd, "","");
                 rol_usuario_actual = controlador_rol_usuario.rol_usuario_menu("A");
 
 
@@ -74,7 +74,7 @@ namespace Uniamazonia_Juego
                 if (rol_usuario.Text.Equals("<Strong style='color: green'> Rol: Jugador </Strong>"))
                 {
                     // *nombre *tipo de rol *putos *estrellas
-                    controlador_rol_usuario = new Rol_UsuarioController(0, id_jugador_bd, "");
+                    controlador_rol_usuario = new Rol_UsuarioController(0, id_jugador_bd, "","");
                     rol_usuario_actual = controlador_rol_usuario.rol_usuario_menu("J");
                     this.nombre_jugador_actual.Text = controlador_jugador.consultar_nombre_BD();
                     //puntos_actuales = Convert.ToInt32(controlador_premiacion.obtener_puntos_acomulados());

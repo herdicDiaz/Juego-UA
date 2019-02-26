@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="VerSancionesAsignadas.aspx.cs" Inherits="Uniamazonia_Juego.Views.Administrador.Prueba.VerSancionesAsignadas" %>
+﻿<%@ Page Title="Sanciones Asignadas" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="VerSancionesAsignadas.aspx.cs" Inherits="Uniamazonia_Juego.Views.Administrador.Prueba.VerSancionesAsignadas" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MapaPagina" runat="server">
 </asp:Content>

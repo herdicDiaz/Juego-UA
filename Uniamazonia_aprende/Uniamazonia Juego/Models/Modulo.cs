@@ -63,7 +63,7 @@ namespace Uniamazonia_Juego.Models
         public DataTable consultar_modulo()
         {
             DataTable consulta = new DataTable();
-            String Query = "select modulo.id_modulo,modulo.nombre_modulo,modulo.estado_modulo, modulo.irl_img_modelo from modulo;";
+            String Query = "select modulo.id_modulo,modulo.nombre_modulo,modulo.estado_modulo, modulo.irl_img_modelo from modulo where estado_modulo='A';";
             consulta = conexion.consultar_BD(Query);
 
             return consulta;
@@ -73,7 +73,7 @@ namespace Uniamazonia_Juego.Models
         public DataTable filtrando_registros_modulo(String dato)
         {
             DataTable consulta = new DataTable();
-            String Query = "select id_modulo,nombre_modulo,estado_modulo from modulo where nombre_modulo like '%" + dato + "%';";
+            String Query = "select id_modulo,nombre_modulo,estado_modulo from modulo where (estado_modulo='A' and nombre_modulo like '%" + dato+"%');";
 
             consulta = conexion.consultar_BD(Query);
 
@@ -85,7 +85,7 @@ namespace Uniamazonia_Juego.Models
         public DataTable consulta_combox_nombre()
         {
             DataTable consulta = new DataTable();
-            String Query = "select id_modulo, nombre_modulo from modulo where estado_modulo = 'A';";
+            String Query = "select id_modulo, nombre_modulo, estado_modulo from modulo where estado_modulo = 'A';";
             consulta = conexion.consulta_comboBox(Query);
 
             return consulta;

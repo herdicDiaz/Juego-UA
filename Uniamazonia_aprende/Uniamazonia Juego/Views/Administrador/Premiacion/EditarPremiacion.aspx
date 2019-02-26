@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="EditarPremiacion.aspx.cs" Inherits="Uniamazonia_Juego.Views.Administrador.Premiacion.EditarPremiacion" %>
+﻿<%@ Page Title="Editar Premiacion" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="EditarPremiacion.aspx.cs" Inherits="Uniamazonia_Juego.Views.Administrador.Premiacion.EditarPremiacion" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContenidoPagina" runat="server">
     <br />
     <div class="col-12">

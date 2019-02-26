@@ -10,8 +10,9 @@ namespace Uniamazonia_Juego.Controllers
     {
         Rol_Usuario rol_usuario;
 
-        public Rol_UsuarioController(int fk_id_role, int fk_user, String state_role_user) {
-            rol_usuario = new Rol_Usuario(fk_id_role,fk_user,state_role_user);
+        public Rol_UsuarioController(int fk_id_role, int fk_user, String state_role_user, String type_rol_usuario)
+        {
+            rol_usuario = new Rol_Usuario(fk_id_role, fk_user, state_role_user,type_rol_usuario);
 
         }
 
@@ -23,5 +24,14 @@ namespace Uniamazonia_Juego.Controllers
 
         }
 
+        public Boolean crear_rol_usuario()
+        {
+            if (rol_usuario.crear_rol_usuario())
+            {
+                return true;
+            }
+            return false;
         }
+
+    }
 }

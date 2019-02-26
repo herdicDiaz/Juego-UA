@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MapaPagina" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContenidoPagina" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <div style="color: black !important;">
         <div id="fondo_busqueda" style="border: 1px #84B59F dotted; background-color: white;">
             <div class="card bg-success text-white">
@@ -26,6 +27,13 @@
 
                 <hr />
                 <div class="col-md-12">
+
+
+
+                    <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                        <ContentTemplate>
+
+
                     <asp:GridView ID="Tabla_programas" AutoGenerateColumns="False" runat="server"
                         OnPageIndexChanging="Metodo_Paginacion" DataKeyNames="id_programa"
                         PageSize="10" AllowPaging="true"
@@ -53,15 +61,15 @@
                             <asp:CommandField  ButtonType="Button"   ShowEditButton="true"  ShowDeleteButton="true" ControlStyle-CssClass="edit-sprite">
                              
                             </asp:CommandField>
-
-      
-                            
-                      
-
                         </Columns>
                         <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
                         <HeaderStyle CssClass="bg-light" />
                     </asp:GridView>
+
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+
+
                 </div>
 
 

@@ -28,29 +28,7 @@ namespace Uniamazonia_Juego.Views.Administrador
 
         }
 
-        protected void eliminar_prueba_Click(object sender, EventArgs e)
-        {
-            controlador_prueba = new PruebaController(0,this.lista_pruebas.SelectedValue,0,"",0);
-            if (controlador_prueba.eliminar_pruebas())
-            {
 
-                ClientScript.RegisterStartupScript(this.GetType(), "mensaje", "<script> swal({position: 'center',type: 'success',title: 'Eliminacion Exitosa',showConfirmButton: false,timer: 2500}) </script>");
-            }
-            else {
-
-                ClientScript.RegisterStartupScript(this.GetType(), "mensaje", "<script> swal({type: 'error',title: 'Prueba No Eliminada',text: 'Algo salió mal!',timer: 3200}) </script>");
-
-            }
-
-            // actualziando los campos de  la prueba
-
-            //if (!Page.IsPostBack) return;
-
-           
-
-
-
-        }
         public void actualizar_lista_contenido() {
             this.lista_contenido.Items.Clear();
             this.lista_contenido.Items.Insert(0, new ListItem("-- Seleccione un Contenido -- "));
@@ -105,6 +83,7 @@ namespace Uniamazonia_Juego.Views.Administrador
             {
                 if (fila_modulo["nombre_modulo"].Equals(this.lista_modulos.SelectedValue))
                 {
+                    // guardo el id del modulo seleccionado
                     ViewState["id_aux_modulo"] = fila_modulo["id_modulo"];
                 }
             }
@@ -123,7 +102,7 @@ namespace Uniamazonia_Juego.Views.Administrador
             ViewState["id_aux_contenido"] = 0;
             foreach (DataRow fila_contenido in consulta_lista_contenido.Rows)
             {
-                if (fila_contenido["nombre_contenido"].Equals(this.lista_modulos.SelectedValue))
+                if (fila_contenido["nombre_contenido"].Equals(this.lista_contenido.SelectedValue))
                 {
                     ViewState["id_aux_contenido"] = fila_contenido["id_contenido"];
                 }
@@ -163,6 +142,22 @@ namespace Uniamazonia_Juego.Views.Administrador
 
             }
 
+        }
+
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            controlador_prueba = new PruebaController(0, this.lista_pruebas.SelectedValue, 0, "", 0);
+            if (controlador_prueba.eliminar_pruebas())
+            {
+
+                ClientScript.RegisterStartupScript(this.GetType(), "mensaje", "<script> swal({position: 'center',type: 'success',title: 'Eliminacion Exitosa',showConfirmButton: false,timer: 2500}) </script>");
+            }
+            else
+            {
+
+                ClientScript.RegisterStartupScript(this.GetType(), "mensaje", "<script> swal({type: 'error',title: 'Prueba No Eliminada',text: 'Algo salió mal!',timer: 3200}) </script>");
+
+            }
         }
     }
 }

@@ -25,6 +25,7 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContenidoPagina" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
     <div style="color: black !important;">
         <div id="fondo_busqueda" style="border: 1px #84B59F dotted; background-color: white;">
@@ -36,27 +37,36 @@
 
             <div class="container" id="busquedas" style="width: 90%; margin: 0 auto;">
                 <hr />
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="lista_pruebas">Modulo Disponibles</label>
-                        <asp:DropDownList ID="lista_modulos" runat="server" class="form-control" AutoPostBack="true" OnSelectedIndexChanged="lista_modulos_SelectedIndexChanged" AppendDataBoundItems="true">
-                            <asp:ListItem Value=""> -- Seleccione un Modulo -- </asp:ListItem>
-                        </asp:DropDownList>
-                    </div>
 
-                    <div class="form-group col-md-6">
-                        <label for="lista_pruebas">Contenido Disponibles</label>
-                        <asp:DropDownList ID="lista_contenidoss" runat="server" class="form-control" AppendDataBoundItems="true">
-                            <asp:ListItem Value=""> -- Seleccione un Contenido -- </asp:ListItem>
-                        </asp:DropDownList>
+                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                    <ContentTemplate>
 
-                    </div>
-                </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="lista_pruebas">Modulo Disponibles</label>
+                                <asp:DropDownList ID="lista_modulos" runat="server" class="form-control" AutoPostBack="true" OnSelectedIndexChanged="lista_modulos_SelectedIndexChanged" AppendDataBoundItems="true">
+                                    <asp:ListItem Value=""> -- Seleccione un Modulo -- </asp:ListItem>
+                                </asp:DropDownList>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="lista_pruebas">Contenido Disponibles</label>
+                                <asp:DropDownList ID="lista_contenidoss" runat="server" class="form-control" AppendDataBoundItems="true">
+                                    <asp:ListItem Value=""> -- Seleccione un Contenido -- </asp:ListItem>
+                                </asp:DropDownList>
+
+                            </div>
+                        </div>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+
+
                 <div class="form-row">
                     <div class="form-group col-md-6">
                     </div>
                     <div class="form-group col-md-4">
-                        <asp:Button ID="eliminar_contenido" runat="server" CssClass="btn btn-danger" Text="Eliminar" OnClick="eliminar_contenido_Click" />
+
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Eliminar</button>
 
                     </div>
                 </div>
@@ -67,7 +77,31 @@
 
             </div>
         </div>
-
     </div>
+
+
+
+   <!-- Delete Record Modal Starts here-->
+    <div id="deleteModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Eliminar Pregunta</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    ¿Está seguro que desea eliminar el Contenido?
+                              <asp:HiddenField ID="hfCode" runat="server" />
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <asp:LinkButton ID="btnEliminar" runat="server" class="btn btn-danger" Text='Eliminar' OnClick="btnEliminar_Click" runat="server">Eliminar</asp:LinkButton>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Delete Record Modal Ends here -->
+
 
 </asp:Content>

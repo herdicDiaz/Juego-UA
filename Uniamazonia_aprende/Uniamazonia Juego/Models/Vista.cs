@@ -17,7 +17,7 @@ namespace Uniamazonia_Juego.Models
         private int fk_master { set; get; }
         private Connection conexion { set; get; }
 
-        // constructor 
+        // constructor
         public Vista(int id_view, String url_in, String state, String description, String icon, int fk_master_in)
         {
             this.id_vista = id_view;
@@ -36,12 +36,12 @@ namespace Uniamazonia_Juego.Models
 
 
             String Query = @"select DISTINCT vista.id_vista, vista.url,vista.estado, vista.descripcion, vista.icono, vista.fk_master from vista
-                            inner join vista_rol on  vista.id_vista = vista_rol.fk_id_vista inner join rol on vista_rol.fk_id_rol = rol.id_rol 
+                            inner join vista_rol on  vista.id_vista = vista_rol.fk_id_vista inner join rol on vista_rol.fk_id_rol = rol.id_rol
                             inner join rol_usuario on rol.id_rol= rol_usuario.fk_id_rol inner join usuario on rol_usuario.fk_usuario = usuario.id_usuario
                             where rol.id_rol = '" + id_rol + "' and vista.estado = 'Activo';";
 
             //String Query = @"select vista.id_vista, vista.url,vista.estado, vista.descripcion, vista.icono, vista.fk_master from vista
-            //                inner join vista_rol on  vista.id_vista = vista_rol.fk_id_vista inner join rol on vista_rol.fk_id_rol = rol.id_rol 
+            //                inner join vista_rol on  vista.id_vista = vista_rol.fk_id_vista inner join rol on vista_rol.fk_id_rol = rol.id_rol
             //                inner join rol_usuario on rol.id_rol= rol_usuario.fk_id_rol inner join usuario on rol_usuario.fk_usuario = usuario.id_usuario
             //                where usuario.id_usuario = '" + id_rol + "' and vista.estado = 'Activo';";
 
