@@ -29,10 +29,10 @@ namespace Uniamazonia_Juego.Models
 
 
         // metodos
-        public Boolean InsertarRegistro(int fk_prueba, int fk_usuario, String fecha, int puntos_prueba, int P_NoContestadas, int P_Contestadas, int P_Incorrectas, int P_Correctas)
+        public Boolean InsertarRegistro(int fk_prueba, int fk_jugador, String fecha, int puntos_prueba, int P_NoContestadas, int P_Contestadas, int P_Incorrectas, int P_Correctas)
         {
             Boolean insert = new Boolean();
-            String Query = "INSERT INTO `aprender`.`usuario_prueba` (`fk_prueba`, `fk_usuario`, `fecha_prueba`, `puntos_prueba`, `P_NoContestadas`, `P_Contestadas`, `P_Incorrectas`, `P_Correctas`) VALUES ('" + fk_prueba + "', '" + fk_usuario + "', '2018/02/07', '" + puntos_prueba + "', '" + P_NoContestadas + "', '" + P_Contestadas + "', '" + P_Incorrectas + "', '" + P_Correctas + "');";
+            String Query = "INSERT INTO `aprender`.`usuario_prueba` (`fk_prueba`, `fk_jugador`, `fecha_prueba`, `puntos_prueba`, `P_NoContestadas`, `P_Contestadas`, `P_Incorrectas`, `P_Correctas`) VALUES ('" + fk_prueba + "', '" + fk_jugador+ "', '2018/02/07', '" + puntos_prueba + "', '" + P_NoContestadas + "', '" + P_Contestadas + "', '" + P_Incorrectas + "', '" + P_Correctas + "');";
             insert = conexion.insert_BD(Query);
             return insert;
         }

@@ -7,36 +7,27 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Uniamazonia_Juego.Views.Administrador {
+namespace Uniamazonia_Juego.Web_forms_reports {
     
     
-    public partial class CrearPrueba {
+    public partial class ReporteListaSancion {
         
         /// <summary>
-        /// Control name_prueba.
+        /// Control form1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox name_prueba;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Control lista_contenidoss.
+        /// Control CrystalReportViewerSancion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList lista_contenidoss;
-        
-        /// <summary>
-        /// Control crear_prueba.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button crear_prueba;
+        protected global::CrystalDecisions.Web.CrystalReportViewer CrystalReportViewerSancion;
     }
 }

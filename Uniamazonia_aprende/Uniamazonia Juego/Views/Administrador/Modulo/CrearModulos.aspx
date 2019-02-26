@@ -73,7 +73,7 @@
                     <div class="form-group col-md-5">
                     </div>
                     <div class="form-group col-md-4">
-                        <asp:Button ID="crear_modulo" runat="server" CssClass="btn btn-primary" Text="Crear Modulo" OnClick="crear_modulo_Click1" />
+                        <asp:Button ID="crear_modulo" runat="server" CssClass="btn btn-success" Text="Crear Modulo" OnClick="crear_modulo_Click1" />
                     </div>
                 </div>
 

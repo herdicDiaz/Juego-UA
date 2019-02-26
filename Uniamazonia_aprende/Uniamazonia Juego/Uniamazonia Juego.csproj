@@ -1266,7 +1266,9 @@
     <Content Include="Datos\Preguntas.xsc">
       <DependentUpon>Preguntas.xsd</DependentUpon>
     </Content>
+    <Content Include="Views\VistasJugador\Ranking\Ranking.aspx" />
     <Content Include="Web_forms_reports\ReporteListaPruebas.aspx" />
+    <Content Include="Web_forms_reports\ReporteListaSancion.aspx" />
     <Content Include="Web_forms_reports\ReportePreguntas.aspx" />
     <None Include="Datos\Preguntas.xsd">
       <SubType>Designer</SubType>
@@ -1286,6 +1288,17 @@
     </None>
     <Content Include="Datos\prueba.xss">
       <DependentUpon>prueba.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datos\Sancion.xsc">
+      <DependentUpon>Sancion.xsd</DependentUpon>
+    </Content>
+    <None Include="Datos\Sancion.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Sancion.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Datos\Sancion.xss">
+      <DependentUpon>Sancion.xsd</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -1493,6 +1506,7 @@
     <Compile Include="Controllers\CalificacionController.cs" />
     <Compile Include="Controllers\ContenidoController.cs" />
     <Compile Include="Controllers\CotrollersJugador\IconoController.cs" />
+    <Compile Include="Controllers\RankingController.cs" />
     <Compile Include="Controllers\EmpresaController.cs" />
     <Compile Include="Controllers\InicioController.cs" />
     <Compile Include="Controllers\JugadorController.cs" />
@@ -1523,6 +1537,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>prueba.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Datos\Sancion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sancion.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1534,7 +1553,7 @@
     <Compile Include="Models\Empresa.cs" />
     <Compile Include="Models\Icono.cs" />
     <Compile Include="Models\Inicio.cs" />
-    <Compile Include="Models\Jugador111.cs" />
+    <Compile Include="Models\Jugador.cs" />
     <Compile Include="Models\Modulo.cs" />
     <Compile Include="Models\Posicion.cs" />
     <Compile Include="Models\Pregunta.cs" />
@@ -1542,6 +1561,7 @@
     <Compile Include="Models\Programa.cs" />
     <Compile Include="Models\Prueba.cs" />
     <Compile Include="Models\prueba_sancion.cs" />
+    <Compile Include="Models\Ranking.cs" />
     <Compile Include="Models\Respuesta.cs" />
     <Compile Include="Models\Rol.cs" />
     <Compile Include="Models\Rol_Usuario.cs" />
@@ -1569,6 +1589,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CrystalReportPreguntas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\CrystalReportSancion.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportSancion.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
@@ -1873,6 +1899,13 @@
     <Compile Include="Views\VistasJugador\Pruebas\ListaPruebas.aspx.designer.cs">
       <DependentUpon>ListaPruebas.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\VistasJugador\Ranking\Ranking.aspx.cs">
+      <DependentUpon>Ranking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\VistasJugador\Ranking\Ranking.aspx.designer.cs">
+      <DependentUpon>Ranking.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\VistasJugador\Test\Test.aspx.cs">
       <DependentUpon>Test.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1886,6 +1919,13 @@
     </Compile>
     <Compile Include="Web_forms_reports\ReporteListaPruebas.aspx.designer.cs">
       <DependentUpon>ReporteListaPruebas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web_forms_reports\ReporteListaSancion.aspx.cs">
+      <DependentUpon>ReporteListaSancion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web_forms_reports\ReporteListaSancion.aspx.designer.cs">
+      <DependentUpon>ReporteListaSancion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Web_forms_reports\ReportePreguntas.aspx.cs">
       <DependentUpon>ReportePreguntas.aspx</DependentUpon>
@@ -1942,6 +1982,10 @@
     <EmbeddedResource Include="Reportes\CrystalReportPreguntas.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReportPreguntas.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\CrystalReportSancion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportSancion.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

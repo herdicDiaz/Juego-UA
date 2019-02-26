@@ -55,6 +55,8 @@ namespace Uniamazonia_Juego.Controllers
             return consulta;
         }
 
+
+
         public Boolean DeletePreguntaDePrueba(String id_pregunta)
         {
             Boolean consulta = preguntaM.DeletePreguntaDePrueba(id_pregunta);
@@ -94,6 +96,12 @@ namespace Uniamazonia_Juego.Controllers
         public DataTable consultaParametroFk_Prueba(String fk_prueba)
         {
             DataTable consulta = preguntaM.consultaParametroFk_Prueba(fk_prueba);
+            return consulta;
+        }
+
+        public DataTable Consulta_parametro_Id_pregunta(String id_pregunta)
+        {
+            DataTable consulta = preguntaM.Consulta_parametro_Id_pregunta(id_pregunta);
             return consulta;
         }
 

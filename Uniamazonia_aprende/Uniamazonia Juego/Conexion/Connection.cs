@@ -20,6 +20,7 @@ namespace Uniamazonia_Juego.Conexion
         public String answer;
         public DataTable data;
         public MySqlDataAdapter mysqlAdap;
+
         public Connection()
         {
             strConn = ConfigurationManager.ConnectionStrings["connectionMysql"].ConnectionString;
@@ -33,7 +34,6 @@ namespace Uniamazonia_Juego.Conexion
             try
             {
                 connect.Open();
-
                 Console.WriteLine("Conexion Establecidad");
                 return true;
             }

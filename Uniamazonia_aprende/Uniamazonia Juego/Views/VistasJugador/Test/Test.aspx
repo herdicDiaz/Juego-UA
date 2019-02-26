@@ -4,6 +4,35 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContenidoPagina" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
+    <%--VENTANAS MODALES--%>
+    <asp:UpdatePanel ID="UpdatePanel3" runat="server">
+        <ContentTemplate>
+            <div id="xx" runat="server">
+                <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="editModalLabel">Sanción </h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <iframe width="760" id="cargaVideo" runat="server" height="480" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ContentTemplate>
+    </asp:UpdatePanel>
+
+
+
     <div class="card">
         <div class="card-header bg-success">
             <h3 runat="server" class="text-center">Test</h3>
@@ -45,11 +74,11 @@
                                 <asp:Button ID="BtnTerminar_intento" runat="server" Text="Terminar intento" CssClass="btn btn-danger" OnClick="TerminarIntento" />
                             </div>
                         </div>
-
                         <br />
                     </ContentTemplate>
                 </asp:UpdatePanel>
             </div>
+
             <br />
             <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                 <ContentTemplate>

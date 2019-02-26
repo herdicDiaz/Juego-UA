@@ -6,6 +6,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Uniamazonia_Juego.Controllers;
+using Uniamazonia_Juego.Controllers.Cotrollers;
+using Uniamazonia_Juego.Controllers.CotrollersJugador;
 
 namespace Uniamazonia_Juego.Views.VistasJugador.Test
 {
@@ -14,13 +16,18 @@ namespace Uniamazonia_Juego.Views.VistasJugador.Test
         PreguntaController PreguntaC = new PreguntaController();
         RespuestaController RespuestaC = new RespuestaController();
         Usuario_PruebaController Usuario_PruebaC = new Usuario_PruebaController();
+        prueba_sancionController Prueba_SancionC = new prueba_sancionController();
+        SancionController SancioC = new SancionController();
+        RankingController RankingC = new RankingController();
+        JugadorController JugadorC = new JugadorController();
+
         public static PruebaController PruebaC { get; set; }
         public static List<int> listaNumeroOutp { get; set; }
         public static DataTable resultadoRespuestas { get; set; }
         String id_prueba;
         Random aletorio = new Random();
         DataTable consulta,pregunta;
-        public static int numeroPreguntas_Prueba=0, numeroAleatorio=0, PreguntasCorrectas, PreguntasIncorrectas, preguntasNocontestadas,PreguntasContestadas;
+        public static int numeroPreguntas_Prueba=0, Puntos_prueba=0, numeroAleatorio=0, PreguntasCorrectas, PreguntasIncorrectas, preguntasNocontestadas,PreguntasContestadas;
 
 
         Boolean Guardian=true;
@@ -44,18 +51,62 @@ namespace Uniamazonia_Juego.Views.VistasJugador.Test
             verificarRespuesta(repuestaCorrecta);
             EcrituraPreguntaRespuesta();
         }
+
         public void TerminarIntento(object sender, EventArgs e)
         {
             PreguntasContestadas = PreguntasCorrectas + PreguntasIncorrectas;
-            int id_usuario =Convert.ToInt32( Session["id_usuario"].ToString());
-            int Session_id_prueba =Convert.ToInt32( Session["id_prueba"].ToString());
+            int id_usuario = Convert.ToInt32(Session["id_usuario"].ToString());
+            int Session_id_prueba = Convert.ToInt32(Session["id_prueba"].ToString());
             preguntasNocontestadas = numeroPreguntas_Prueba - PreguntasContestadas;
-            Boolean insert = Usuario_PruebaC.InsertarRegistro(Session_id_prueba, id_usuario,"2018/02/07",12,preguntasNocontestadas,PreguntasContestadas,PreguntasIncorrectas,PreguntasCorrectas);
-           
 
+            DataTable consultaJugador = JugadorC.ConsultaFkUsuario(id_usuario);
+            int id_jugador =Convert.ToInt32(consultaJugador.Rows[0]["id_jugador"].ToString());
+
+            Boolean insert = Usuario_PruebaC.InsertarRegistro(Session_id_prueba, id_jugador, "2018/02/07", Puntos_prueba, preguntasNocontestadas, PreguntasContestadas, PreguntasIncorrectas, PreguntasCorrectas);
+
+            //Se hace una consulta para saber si el usuario ya tiene un registro en la tabla ranking.
+            DataTable consultaRanking = RankingC.ConsultaParametroFk_Jugador(id_jugador);
+            if (consultaRanking.Rows.Count != 0)
+            {
+                //Update
+                DataTable ConsultaRanking = RankingC.ConsultaParametroFk_Jugador(id_jugador);
+                int PuntosGuardados =Convert.ToInt32( ConsultaRanking.Rows[0]["puntaje_acomulado"].ToString());
+                int suma = PuntosGuardados + Puntos_prueba;
+                Boolean up = RankingC.Update(suma,id_jugador);
+            }
+            else
+            {
+                //Insert
+                Boolean inser = new Boolean();
+                inser = RankingC.Insert(Puntos_prueba, id_jugador);
+
+            }
+
+            if (PreguntasIncorrectas>0)
+            {
+                DataTable Consulta_Prueba_Sancion = Prueba_SancionC.ConsultaParametroFK_prueba(Convert.ToString(Session_id_prueba));
+                if (Consulta_Prueba_Sancion.Rows.Count!=0)
+                {
+                    int numero_sanciones = Consulta_Prueba_Sancion.Rows.Count;
+                    Random rnd = new Random();
+                    int numero_aleatorio = rnd.Next(0, numero_sanciones);
+
+                    String id_sancion = Consulta_Prueba_Sancion.Rows[numero_aleatorio]["fk_sancion"].ToString();
+                    DataTable Consulta_sancion = SancioC.ConsultaParametroIdsancion(id_sancion);
+                    String url_video = Consulta_sancion.Rows[0]["url_video"].ToString();
+                    cargaVideo.Attributes["Src"] = url_video;
+
+                    System.Text.StringBuilder sb = new System.Text.StringBuilder();
+                    sb.Append(@"<script type='text/javascript'>");
+                    sb.Append("$('#editModal').modal('show');");
+                    sb.Append(@"</script>");
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "editModal", sb.ToString(), false);
+                }
+            }
+            Puntos_prueba = 0;
         }
 
-            public void EcrituraPreguntaRespuesta()
+        public void EcrituraPreguntaRespuesta()
         {
             if (Guardian)
             {
@@ -112,6 +163,7 @@ namespace Uniamazonia_Juego.Views.VistasJugador.Test
                     if (Radio1.Text==respuestaCorrecta)
                     {
                     PreguntasCorrectas++;
+                    Puntos_prueba++;
                 }
                 else
                 {
@@ -126,6 +178,7 @@ namespace Uniamazonia_Juego.Views.VistasJugador.Test
                     if (Radio2.Text == respuestaCorrecta)
                     {
                         PreguntasCorrectas++;
+                        Puntos_prueba++;
                     }
                     else
                     {
@@ -140,20 +193,22 @@ namespace Uniamazonia_Juego.Views.VistasJugador.Test
                         if (Radio3.Text == respuestaCorrecta)
                         {
                             PreguntasCorrectas++;
-
+                            Puntos_prueba++;
                         }
                         else
                         {
                             PreguntasIncorrectas++;
                         }
+                        Radio3.Checked = false;
                     }
                     else
                     {
                         if (Radio4.Checked)
                         {
-                            if (Radio1.Text == respuestaCorrecta)
+                            if (Radio4.Text == respuestaCorrecta)
                             {
                                 PreguntasCorrectas++;
+                                Puntos_prueba++;
                             }
                             else
                             {
@@ -211,7 +266,6 @@ namespace Uniamazonia_Juego.Views.VistasJugador.Test
                 {
                     numeroAleatorio = recursivoAletorio(numeroAleatorio, numeroPreguntas);
                 }
-            
             return numeroAleatorio;
         }
 
@@ -220,7 +274,5 @@ namespace Uniamazonia_Juego.Views.VistasJugador.Test
             DataTable consultaRespuestas = RespuestaC.ConsultaParametroFk_pregunta(fk_pregunta);
             return consultaRespuestas;
         }
-
-        
     }
 }

@@ -66,9 +66,15 @@ namespace Uniamazonia_Juego.Models
             return insert;
         }
 
+        public DataTable ConsultaParametroFK_prueba(String fk_prueba)
+        {
+            DataTable insert = new DataTable();
+            String Query = "SELECT fk_prueba, fk_sancion, descripcion from prueba_sancion WHERE fk_prueba='"+fk_prueba+"';";
+            insert = conexion.consultar_BD(Query);
+            return insert;
+        }
 
-
-        public DataTable buscarEnGrid(String palabra)
+            public DataTable buscarEnGrid(String palabra)
         {
             DataTable insert = new DataTable();
             String Query = "select sancion.idsancion, sancion.descripcion from prueba  join prueba_sancion on prueba.id_prueba=prueba_sancion.fk_prueba join sancion on sancion.idsancion=prueba_sancion.fk_sancion where sancion.descripcion like '%"+palabra+"%';";

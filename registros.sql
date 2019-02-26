@@ -13,12 +13,7 @@ insert into vista values("8","#","activo","Gestionar Premiacion","mdi mdi-apple"
 
 -- MENU PARA EL JUGADOR.
 insert into vista values("9","#","activo","Modulos","mdi mdi-view-list","9");
-
-
--- SUBMENU ROL JUGADOR
-insert into vista values("54","/Views/VistasJugador/ConsultaModulo/ListaModulo.aspx","activo","Iniciar Juego","mdi mdi-check-all","3");
-
-
+insert into vista VALUES("10","#","activo","Ranking","fas fa-angle-double-up","10");
 
 -- --------------------------------------------------
 -- GESTIONAR MODULOS 50 - 70                               |
@@ -34,7 +29,7 @@ insert into vista values("53","/Views/Administrador/Modulo/EliminarModulo.aspx",
 
 
 -- ROL JUGADOR
-insert into vista values("54","/Views/VistasJugador/ConsultaModulo/ListaModulo","activo","Ver Modulos","mdi mdi-check-all","9");
+
 
 
 -- --------------------------------------------------
@@ -109,9 +104,22 @@ insert into vista values("191","/Views/Administrador/Sancion/ListarSancion.aspx"
 insert into vista values("210","/Views/Administrador/Premiacion/CrearPremiacion.aspx","activo","Crear premiacion","mdi mdi-check-all","8");
 insert into vista values("211","'/Views/Administrador/Premiacion/ListarPremiacion.aspx","activo","Listar premiacion","mdi mdi-check-all","8");
 
--- ------------------------------------------------------------------------------------------------------
--- ---------------------------------------------------------------------------------------------
 
+-- --------------------------------------------------
+-- MODULOS USUARIOS 231 - 250                       |
+-- --------------------------------------------------
+
+insert into vista VALUES("231","/Views/VistasJugador/ConsultaModulo/ListaModulo","activo","Ver Modulos","mdi mdi-check-all","9");
+
+
+-- --------------------------------------------------
+-- RANKING USUARIOS 251 - 270                       |
+-- --------------------------------------------------
+
+insert into vista VALUES("251","/Views/VistasJugador/Ranking/Ranking.aspx","activo","Ver Ranking","mdi mdi-check-all","10");
+
+-- ------------------------------------------------------------------------------------------------------------------------
+-- ------------------------------------------------------------------------------------------------------------------------
 insert into rol values("1","admin ","administrador");
 insert into rol values("2","jugador","administrador");
 
@@ -133,12 +141,18 @@ insert into vista_rol values("3","51","3","1");
 insert into vista_rol values("4","52","3","1");
 insert into vista_rol values("5","53","3","1");
 
--- --------------------------------------------------
--- GESTIONAR MODULO 1 - 19      Jugaddor                 |
--- --------------------------------------------------
 
+-- --------------------------------------------------
+-- GESTIONAR MODULO  MENU    Jugaddor                 |
+-- --------------------------------------------------
 insert into vista_rol values("8","9","9","2");
-insert into vista_rol values("8","54","9","2");
+
+
+-- --------------------------------------------------
+-- GESTIONAR RANKING  MENU    Jugaddor                 |
+-- --------------------------------------------------
+insert into vista_rol VALUES("9","10","10","2");
+
 
 -- --------------------------------------------------
 -- GESTIONAR CONTENIDO 20 - 39                       |
@@ -205,6 +219,20 @@ insert into vista_rol values("160","8","8","1");
 insert into vista_rol values("161","210","8","1");
 insert into vista_rol values("162","211","8","1");
 
+
+
+-- --------------------------------------------------
+-- GESTIONAR MODULO  SUBMENU    Jugaddor                 |
+-- --------------------------------------------------
+insert into vista_rol VALUES("180","231","9","2");
+
+-- --------------------------------------------------
+-- RANKING SUBMENU    Jugaddor                 |
+-- --------------------------------------------------
+insert into vista_rol VALUES("200","251","10","2");
+
+
+
 -- ------------------------------------------------------------------------------------------------------------
 -- -------------------------------------------------------------------------------------------------------------
 insert into usuario values("1","aticristian@hotmail.com","1234","A");
@@ -244,93 +272,69 @@ insert into empresa values('1','Aprender.+','Empresa de juegos Uniamazonia','121
 -- ----------------------------------------------------------------------
 -- ---------------------------------------------------------------------------
 
-insert into premiacion values('1','120','1','0','1');
-insert into premiacion values('2','240','2','0','2');
-insert into premiacion values('3','370','3','0','3');
 
 -- ----------------------------------------------------------------------
 -- ---------------------------------------------------------------------------
 
-insert into modulo values('1','La Universidad','../../../FotosBD/moduloFotos/la%20universidad.jpg','A');
-insert into modulo values('2','Normatividad','../../../FotosBD/moduloFotos/normativa.jpg','A');
-insert into modulo values('3','Gestion Institucional','../../../FotosBD/moduloFotos/gestion%20institucional.jpg','A');
-insert into modulo values('4','Servicio de informacion','../../../FotosBD/moduloFotos/servicios.jpg','A');
-insert into modulo values('5','Acreditacion','../../../FotosBD/moduloFotos/acreditacion.png','A');
-insert into modulo values('6','Editorial Uniamazonia','../../../FotosBD/moduloFotos/editorial.jpg','A');
-insert into modulo values('7','Salas y vehiculos','../../../FotosBD/moduloFotos/vehiculos.png','A');
-insert into modulo values('8','Estatutos','../../../FotosBD/moduloFotos/estatuto.jpg','A');
-insert into modulo values('9','Medio Ambiente','../../../FotosBD/moduloFotos/aprender.jpg','A');
+insert into modulo values('1',"Bienestar universitario",'../../../FotosBD/moduloFotos/la%20universidad.jpg','A');
+insert into modulo values('2',"Academia",'../../../FotosBD/moduloFotos/normativa.jpg','A');
+insert into modulo values('3',"Deportes",'../../../FotosBD/moduloFotos/gestion%20institucional.jpg','A');
+insert into modulo values('4',"Servicios",'../../../FotosBD/moduloFotos/servicios.jpg','A');
+
 -- -------------------------------------------------------------------------
 -- -----------------------------------------------------------------------------------------
-insert into inicio values('1','Vision','Los proyectos de formación virtual deben entenderse en el marco de una estrategia integral
-                        de desarrollo del talento, orientada al logro de los objetivos de las empresas y organizaciones, y la mejora de sus niveles de competitividad.','../../Images/paisaje%202%20carrusel.jpg','A','active','J');
+insert into inicio values('1','Vision','Los proyectos de formación virtual deben entenderse en el marco de una estrategia integral de desarrollo del talento, orientada al logro de los objetivos de las empresas y organizaciones, y la mejora de sus niveles de competitividad.','../../Images/paisaje%202%20carrusel.jpg','A','active','J');
 insert into inicio values('2','Mision','Descargue en formato pdf nuestro mapa conceptual del e-learning','../../Images/paisaje%201%20carrusel.jpg','A','','J');
 insert into inicio values('3','Objetivo','Mientras que a las instituciones educativas les proporciona','../../Images/paisaje%203%20carrusel.jpg','A','','J');
 
 
 -- -------------------------------------------------------------------------
 -- -----------------------------------------------------------------------------------------
-insert into contenido values('1',' la universidad 1','Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.','/images/univer.jpg','A','1');
-insert into contenido values('2',' la universidad 2','Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.','/images/univer.jpg','A','1');
-insert into contenido values('3',' la universidad 3','Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.','/images/univer.jpg','A','1');
-insert into contenido values('4',' la universidad 4','Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.','/images/univer.jpg','A','1');
+insert into contenido values('1',"Enfermeria","Este es un serivicio que brinda bienestar universotario para toda la comunidad universitaria","/images/univer.jpg","A",'1');
+insert into contenido values('2',"Danzas","Programa cultural que se brinda para que los estudiantes aprendan danzas nacionales","/images/univer.jpg","A",'1');
+insert into contenido values('3',"Deportes","Espacio de recreación para toda la comunidad universitaria","/images/univer.jpg","A",'1');
 
-insert into contenido values('5',' Normatividad 1','Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.','/images/univer.jpg','A','2');
-insert into contenido values('6',' Normatividad 2','Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.','/images/univer.jpg','A','2');
-insert into contenido values('7',' Normatividad 3','Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.','/images/univer.jpg','A','2');
-insert into contenido values('8',' Normatividad 4','Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.','/images/univer.jpg','A','2');
+insert into contenido values('4',"Programas acedemicos","Organismo de la institución representativo de una profesión","/images/univer.jpg","A",'2');
+insert into contenido values('5',"Facultades","Organismo representativo de varias carreras","/images/univer.jpg","A",'2');
+insert into contenido values('6',"Docentes","Cuerpo de docentes de la institución","/images/univer.jpg","A",'2');
 
-insert into contenido values('9',' Gestion Institucional 1','Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.','/images/univer.jpg','A','3');
-insert into contenido values('10',' Gestion Institucional 2','Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.','/images/univer.jpg','A','3');
-insert into contenido values('11',' Gestion Institucional 3','Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.','/images/univer.jpg','A','3');
-insert into contenido values('12',' Gestion Institucional 4','Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.','/images/univer.jpg','A','3');
+insert into contenido values('7',"Futbol","Deporte que aplica para equipo de planta","/images/univer.jpg","A",'3');
+insert into contenido values('8',"Rugby","Deporte no consilidado para equipo de planta","/images/univer.jpg","A",'3');
+insert into contenido values('9',"Baloncesto","Deporte integral","/images/univer.jpg","A",'3');
 
-insert into contenido values('13',' Servicio de informacion 1','Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.','/images/univer.jpg','A','4');
-insert into contenido values('14',' Servicio de informacion 2','Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.','/images/univer.jpg','A','4');
-insert into contenido values('15',' Servicio de informacion 3','Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.','/images/univer.jpg','A','4');
-insert into contenido values('16',' Servicio de informacion 4','Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.','/images/univer.jpg','A','4');
+insert into contenido values('10',"Cafeterias","Servicio de alimentación para la comunidad universitaria","/images/univer.jpg","A",'4');
+insert into contenido values('11',"Educación","Servicio de educación para toda la comunidad caqueteña","/images/univer.jpg","A",'4');
+insert into contenido values('12',"Parqueaderos","Servicio de aparcamiento para toda la comunidad universitaria","/images/univer.jpg","A",'4');
 
-insert into contenido values('17',' Acreditacion 1','Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.','/images/univer.jpg','A','5');
-insert into contenido values('18',' Acreditacion 2','Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.','/images/univer.jpg','A','5');
-insert into contenido values('19',' Acreditacion 3','Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.','/images/univer.jpg','A','5');
-insert into contenido values('20',' Acreditacion 4','Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.','/images/univer.jpg','A','5');
 
 -- ---------------------------------------------------------------------------------------------------------------------------------------------
 -- -----------------------------------------------------------------------------------------------------------------------------------------------
 
-insert into prueba values('1','prueba universidad 1','A','1');
-insert into prueba values('2','prueba universidad 2','A','1');
-insert into prueba values('3','prueba universidad 3','A','1');
-insert into prueba values('4','prueba universidad 4','A','1');
-
-insert into prueba values('5','prueba normatividad 1','A','2');
-insert into prueba values('6','prueba normatividad 2','A','2');
-insert into prueba values('7','prueba noramtividad 3','A','2');
-insert into prueba values('8','prueba normatividad 4','A','2');
-
-insert into prueba values('9','prueba getion institucional 1','A','3');
-insert into prueba values('10','prueba getion institucional 2','A','3');
-insert into prueba values('11','prueba getion institucional 3','A','3');
-insert into prueba values('12','prueba getion institucional 4','A','3');
-
-insert into prueba values('13','prueba servicio de informacio 1','A','4');
-insert into prueba values('14','prueba servicio de informacio 2','A','4');
-insert into prueba values('15','prueba servicio de informacio 3','A','4');
-insert into prueba values('16','prueba servicio de informacio 4','A','4');
+insert into prueba values('1',"Prueba de enfermeria",'A','1');
+insert into prueba values('2',"Prueba programas académicos",'A','4');
+insert into prueba values('3',"Prueba de futbol",'A','7');
+insert into prueba values('4',"Prueba de cafeterias",'A','10');
 
 
 -- ------------------------------------------------------------------------------------------------------------------------------
 -- --------------------------------------------------------------------------------------------------------------------------------------
-insert INTO pregunta values ("1","¿Quien es la representate de los estudiantes?","0","0",NULL,"0");
-insert INTO pregunta values ("2","¿Cuantos programa academicos tiene la UA?","0","0",NULL,"0");
-insert INTO pregunta values ("3","¿Cuantas facultades tien la UA?","0","0",NULL,"0");
-insert INTO pregunta values ("4","¿En que año fue creada la UA?","0","0",NULL,"0");
-insert INTO pregunta values ("5","¿Cuantos programa acreditados tiene la AU?","0","0",NULL,"0");
-insert INTO pregunta values ("6","¿Cuantos docentes tiene la AU?","0","0",NULL,"0");
-insert INTO pregunta values ("7","¿Quien es el vicerrector academico?","0","0",NULL,"0");
-insert INTO pregunta values ("8","¿Cuantas disciplinas deportivas hay en la UA?","0","0",NULL,"0");
-insert INTO pregunta values ("9","¿Con que universidades tiene convenio la UA?","0","0",NULL,"0");
-insert INTO pregunta values ("10","¿Cuantos estusiantes hay en la UA?","0","0",NULL,"0");
+
+INSERT INTO pregunta VALUES ("1","¿En que año fue fundada la enfermeria de la universidad?","0","1",1,"1");
+INSERT INTO pregunta VALUES ("2","¿Cuantos servicios se ofrecen en enfermeria?","0","1",1,"1");
+INSERT INTO pregunta VALUES ("3","¿En donde se encuentra ubicada el servcios de enfermeria en la sede principal?","0","1",1,"1");
+INSERT INTO pregunta VALUES ("4","¿Enfermeria es una dependencia de?","0","0",1,"1");
+INSERT INTO pregunta VALUES ("5","¿El serivicio de enfermeria es exclusivo para?","0","1",1,"1");
+
+insert INTO pregunta VALUES ("6","¿Quien es la representate de los estudiantes?","1","0",NULL,"0");
+insert INTO pregunta VALUES ("7","¿Cuantos programa academicos tiene la UA?","1","0",NULL,"0");
+insert INTO pregunta VALUES ("8","¿Cuantas facultades tien la UA?","1","0",NULL,"0");
+insert INTO pregunta VALUES ("9","¿En que año fue creada la UA?","1","0",NULL,"0");
+insert INTO pregunta VALUES ("10","¿Cuantos programa acreditados tiene la AU?","1","0",NULL,"0");
+insert INTO pregunta VALUES ("11","¿Cuantos docentes tiene la AU?","1","0",NULL,"0");
+insert INTO pregunta VALUES ("12","¿Quien es el vicerrector academico?","1","0",NULL,"0");
+insert INTO pregunta VALUES ("13","¿Cuantas disciplinas deportivas hay en la UA?","1","0",NULL,"0");
+insert INTO pregunta VALUES ("14","¿Con que universidades tiene convenio la UA?","1","0",NULL,"0");
+insert INTO pregunta VALUES ("15","¿Cuantos estusiantes hay en la UA?","1","0",NULL,"0");
 
 
 -- ------------------------------------------------------------------------------------------------------------------------------
@@ -344,16 +348,22 @@ insert into sancion values ("5","Sancion programas academicos","https://www.yout
 -- ------------------------------------------------------------------------------------------------------------------------------
 -- --------------------------------------------------------------------------------------------------------------------------------------
 
-insert into respuesta VALUES ("1","Karina","Carolina","Julio","Marcos","Karina","A","1"); 
-insert into respuesta VALUES ("2","26","23","12","37","23","A","2");
-insert into respuesta VALUES ("3","5","6","3","7","5","A","3");
-insert into respuesta VALUES ("4","1890","1960","1971","1950","1971","A","4");
-insert into respuesta VALUES ("5","4","10","7","9","5","A","5");
-insert into respuesta VALUES ("6","115","200","150","220","115","A","6");
-insert into respuesta VALUES ("7","Andres Villamizar","Antonio Pastrana","Julio Oyola","Martin Restrepo","Andres Villamizar","A","7");
-insert into respuesta VALUES ("8","4","12","20","8","8","A","8");
-insert into respuesta VALUES ("9","U Antioquia","U Nacional","U Tolima","U del Atlantico","U Tolima","A","9");
-insert into respuesta VALUES ("10","9500","10000","500","890","10000","A","10");
+INSERT INTO respuesta VALUES ("1","2016","2018","2017","2015","2017","A","1");
+INSERT INTO respuesta VALUES ("2","5","2","6","4","6","A","2");
+INSERT INTO respuesta VALUES ("3","Bloque 7","Bloque 3","Bloque 1","Bloque auditorio","Bloque auditorio","A","3");
+INSERT INTO respuesta VALUES ("4","Bienestar universitario","Facultad","Sistemas","Vigilancia","Bienestar universitario","A","4");
+INSERT INTO respuesta VALUES ("5","Docentes","Todos","Funcionarios","Estdudiantes","Todos","A","5");
+
+insert into respuesta VALUES ("6","Karina","Carolina","Julio","Marcos","Karina","A","6"); 
+insert into respuesta VALUES ("7","26","23","12","37","23","A","7");
+insert into respuesta VALUES ("8","5","6","3","7","5","A","8");
+insert into respuesta VALUES ("9","1890","1960","1971","1950","1971","A","9");
+insert into respuesta VALUES ("10","4","10","7","9","5","A","10");
+insert into respuesta VALUES ("11","115","200","150","220","115","A","11");
+insert into respuesta VALUES ("12","Andres Villamizar","Antonio Pastrana","Julio Oyola","Martin Restrepo","Andres Villamizar","A","12");
+insert into respuesta VALUES ("13","4","12","20","8","8","A","13");
+insert into respuesta VALUES ("14","U Antioquia","U Nacional","U Tolima","U del Atlantico","U Tolima","A","14");
+insert into respuesta VALUES ("15","9500","10000","500","890","10000","A","15");
 -- ------------------------------------------------------------------------------------------------------------------------------
 -- --------------------------------------------------------------------------------------------------------------------------------------
 insert into icono values('1','mdi mdi-account-convert','A');

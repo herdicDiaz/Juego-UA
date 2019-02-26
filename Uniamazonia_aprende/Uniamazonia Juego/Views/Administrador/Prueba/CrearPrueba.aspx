@@ -79,7 +79,7 @@
                     <div class="form-group col-md-5">
                     </div>
                     <div class="form-group col-md-4">
-                        <asp:Button ID="crear_prueba" runat="server" CssClass="btn btn-primary" Text="Crear Prueba" OnClick="crear_prueba_Click" />
+                        <asp:Button ID="crear_prueba" runat="server" CssClass="btn btn-success" Text="Crear Prueba" OnClick="crear_prueba_Click" />
                     </div>
 
 

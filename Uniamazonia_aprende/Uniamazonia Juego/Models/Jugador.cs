@@ -8,7 +8,7 @@ using Uniamazonia_Juego.Conexion;
 
 namespace Uniamazonia_Juego.Models
 {
-    public class Jugador111
+    public class Jugador
     {
         private int id_jugador { set; get; }
         private int identificacion_jugador { set; get; }
@@ -24,12 +24,18 @@ namespace Uniamazonia_Juego.Models
 
 
         private Connection conexion { set; get; }
+        Connection Conexion = new Connection();
+
+
+        public Jugador()
+        {
+        }
 
 
 
 
         // constructor
-        public Jugador111(int id_player, int identificacion_player, String name_one, String name_two, String last_name_one, String last_name_two, String 
+        public Jugador(int id_player, int identificacion_player, String name_one, String name_two, String last_name_one, String last_name_two, String 
             programa_academic, int semester, String email, String state_player, int fk_user) {
 
             this.id_jugador = id_player;
@@ -114,7 +120,14 @@ namespace Uniamazonia_Juego.Models
 
             return false;
         }
-        
 
-    }
+        public DataTable ConsultaFkUsuario(int fk_usuario)
+        {
+            String Query = "select id_jugador from jugador where fk_usuario='"+fk_usuario+"';";
+            DataTable consulta = Conexion.consultar_BD(Query);
+            return consulta;
+        }
+
+
+        }
 }

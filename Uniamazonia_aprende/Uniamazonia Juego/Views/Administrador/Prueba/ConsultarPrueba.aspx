@@ -1,4 +1,4 @@
-﻿    <%@ Page Title="Consultar Pruebas" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="ConsultarPrueba.aspx.cs" Inherits="Uniamazonia_Juego.Views.Administrador.ConsultarPrueba" %>
+﻿<%@ Page Title="Consultar Pruebas" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="ConsultarPrueba.aspx.cs" Inherits="Uniamazonia_Juego.Views.Administrador.ConsultarPrueba" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MapaPagina" runat="server">
 </asp:Content>
@@ -16,30 +16,31 @@
 
             <div id="busquedas" style="width: 90%; margin: 0 auto;">
                 <hr />
-                  <div class="form-row">
-                       <div class="form-group col-md-6">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
                         <label for="lista_menu_padre">Lista Modulos</label>
                         <asp:DropDownList ID="lista_modulo" runat="server" class="form-control" OnSelectedIndexChanged="lista_modulo_SelectedIndexChanged" AutoPostBack="true" AppendDataBoundItems="true">
                             <asp:ListItem Value=""> -- Seleccione Modulo -- </asp:ListItem>
                         </asp:DropDownList>
-                  </div>
-                  <div class="form-group col-md-6">
-                           <label for="lista_menu_padre">Lista Contenidos <asp:Label ID="contenido_actual" runat="server" Text=""></asp:Label></label>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="lista_menu_padre">Lista Contenidos
+                            <asp:Label ID="contenido_actual" runat="server" Text=""></asp:Label></label>
                         <asp:DropDownList ID="lista_contenido" runat="server" class="form-control" OnSelectedIndexChanged="lista_contenido_SelectedIndexChanged" AutoPostBack="true" AppendDataBoundItems="true">
                             <asp:ListItem Value=""> -- Seleccione Contenido -- </asp:ListItem>
                         </asp:DropDownList>
 
-                  </div>
-                  </div>
-                <div class="form-row">
-                                      <div class="form-group col-md-6">
-                <div class="input-group">
-                    <asp:TextBox ID="filtro_prueba" runat="server" class="form-control is-invalid" type="text" placeholder="&#128270; Buscar.." required></asp:TextBox>
-                    <asp:Button ID="buscar_pruebas" runat="server" class="btn btn-success" OnClick="buscar_pruebas_Click" Text="Filtrar" />
-                    <br>
+                    </div>
                 </div>
-                  </div>
-                     </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <div class="input-group">
+                            <asp:TextBox ID="filtro_prueba" runat="server" class="form-control is-invalid" type="text" placeholder="&#128270; Buscar.." required></asp:TextBox>
+                            <asp:Button ID="buscar_pruebas" runat="server" class="btn btn-success" OnClick="buscar_pruebas_Click" Text="Filtrar" />
+                            <br>
+                        </div>
+                    </div>
+                </div>
 
                 <hr />
                 <div id="tabla_unica" class="table-responsive">
@@ -60,9 +61,11 @@
                     </asp:GridView>
                 </div>
                 <hr />
-
+                <div class="row justify-content-end">
+                    <asp:ImageButton runat="server" ID="imgenButton" ImageUrl="~/Images/icon-pdf.png" OnClick="imgenButton_Click" Width="50px" Height="50px" />
+                </div>
             </div>
-                <asp:ImageButton runat="server" ID="imgenButton" ImageUrl="~/Images/icon-pdf.png"  OnClick="imgenButton_Click" Width="50px" Height="50px"/>
+
             <hr />
         </div>
     </div>

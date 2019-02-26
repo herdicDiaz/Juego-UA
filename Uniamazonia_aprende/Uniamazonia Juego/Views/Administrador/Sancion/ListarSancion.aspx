@@ -2,26 +2,31 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContenidoPagina" runat="server">
     <asp:ScriptManager runat="server" ID="ScriptManager1" />
-    <div id="xx" runat="server">
-        <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="editModalLabel">Sanción </h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <iframe width="460" id="cargaVideo" runat="server" height="480" src="https://www.youtube.com/embed/wnJ6LuUFpMo?list=RDxpVfcZ0ZcFM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+        <ContentTemplate>
+            <div id="xx" runat="server">
+                <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="editModalLabel">Sanción </h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <iframe width="760" id="cargaVideo" runat="server" height="480" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerar</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </ContentTemplate>
+    </asp:UpdatePanel>
+
     <br />
     <div class="col-md-12">
         <div class="card">
@@ -58,13 +63,13 @@
 
                             <Columns>
                                 <asp:BoundField DataField="idsancion" HeaderText="#" ReadOnly="True" SortExpression="idsancion" />
-                                <asp:TemplateField HeaderText="Descripción"  ItemStyle-HorizontalAlign="Center" ControlStyle-Width="200px">
+                                <asp:TemplateField HeaderText="Descripción" ItemStyle-HorizontalAlign="Center" ControlStyle-Width="200px">
                                     <ItemTemplate>
                                         <asp:Label ID="Label1" runat="server" Text='<%# Bind("descripcion") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
 
-                                <asp:TemplateField HeaderText="Url"  ItemStyle-HorizontalAlign="Center" ControlStyle-Width="300px">
+                                <asp:TemplateField HeaderText="Url" ItemStyle-HorizontalAlign="Center" ControlStyle-Width="300px">
                                     <ItemTemplate>
                                         <asp:Label ID="labelUrl" runat="server" Text='<%# Bind("url_video") %>'></asp:Label>
                                     </ItemTemplate>
@@ -86,11 +91,13 @@
                                     <ControlStyle CssClass="btn btn-success"></ControlStyle>
                                 </asp:ButtonField>
                             </Columns>
-
                         </asp:GridView>
                     </div>
                 </ContentTemplate>
             </asp:UpdatePanel>
+        </div>
+        <div class="row justify-content-end">
+            <asp:ImageButton runat="server" ID="imageButton" ImageUrl="~/Images/icon-pdf.png" Width="50px" Height="50px" OnClick="imageButton_Click" />
         </div>
     </div>
     <script type="text/javascript">

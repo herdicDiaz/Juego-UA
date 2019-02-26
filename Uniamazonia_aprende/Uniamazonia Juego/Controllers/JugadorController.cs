@@ -9,17 +9,18 @@ namespace Uniamazonia_Juego.Controllers
 {
     public class JugadorController
     {
+        public Models.Jugador jugador;
+        Uniamazonia_Juego.Models.Jugador JugadorM = new Uniamazonia_Juego.Models.Jugador();
 
-
-
-        private Jugador111 jugador;
-
+        public JugadorController()
+        {
+        }
 
         public JugadorController(int id_player, int identificacion_player, String name_one, String name_two, String last_name_one, String last_name_two, String
             programa_academic, int semester, String email, String state_player, int fk_user)
         {
 
-            jugador = new Jugador111(id_player,identificacion_player, name_one, name_two, last_name_one, last_name_two, programa_academic, semester, email, state_player, fk_user);
+            jugador = new Models.Jugador(id_player, identificacion_player, name_one, name_two, last_name_one, last_name_two, programa_academic, semester, email, state_player, fk_user);
 
 
 
@@ -75,6 +76,13 @@ namespace Uniamazonia_Juego.Controllers
             }
             return false;
 
+        }
+
+        public DataTable ConsultaFkUsuario(int fk_usuario)
+        {
+
+            DataTable consulta = JugadorM.ConsultaFkUsuario(fk_usuario);
+            return consulta;
         }
 
 

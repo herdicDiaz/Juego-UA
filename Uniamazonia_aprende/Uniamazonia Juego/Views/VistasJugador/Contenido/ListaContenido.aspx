@@ -14,11 +14,11 @@
                         <div class="col-md-4">
                             <div class="card">
                                 <div class="card-header bg-info text-center">
-                                    <h5 style="color:white">'<%#Eval("nombre_contenido")%>'</h5>
+                                    <h5 style="color:white"><%#Eval("nombre_contenido")%></h5>
                                 </div>
                                 <div class="card-body">
                                     <h4 class="card-title">Descripción</h4>
-                                    <p class="card-text">'<%#Eval("descripcion_contenido")%>'</p>
+                                    <p class="card-text"><%#Eval("descripcion_contenido")%></p>
                                     <center>
                             <asp:Button runat="server" Text="Ver pruebas" ID="btnPrueba" CssClass="btn btn-info" CommandArgument='<%#Eval("id_contenido")%>' OnClick="btnPrueba" />
                             </center>

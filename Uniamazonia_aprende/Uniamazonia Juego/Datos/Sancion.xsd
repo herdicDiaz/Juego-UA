@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Sancion" targetNamespace="http://tempuri.org/Sancion.xsd" xmlns:mstns="http://tempuri.org/Sancion.xsd" xmlns="http://tempuri.org/Sancion.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Sancion" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Sancion" msprop:Generator_UserDSName="Sancion">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Sancion" msprop:Generator_TableClassName="SancionDataTable" msprop:Generator_TableVarName="tableSancion" msprop:Generator_TablePropName="_Sancion" msprop:Generator_RowDeletingName="SancionRowDeleting" msprop:Generator_RowChangingName="SancionRowChanging" msprop:Generator_RowEvHandlerName="SancionRowChangeEventHandler" msprop:Generator_RowDeletedName="SancionRowDeleted" msprop:Generator_UserTableName="Sancion" msprop:Generator_RowChangedName="SancionRowChanged" msprop:Generator_RowEvArgName="SancionRowChangeEvent" msprop:Generator_RowClassName="SancionRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idsancion" msprop:Generator_ColumnVarNameInTable="columnidsancion" msprop:Generator_ColumnPropNameInRow="idsancion" msprop:Generator_ColumnPropNameInTable="idsancionColumn" msprop:Generator_UserColumnName="idsancion" type="xs:string" minOccurs="0" />
+              <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" type="xs:string" minOccurs="0" />
+              <xs:element name="url_video" msprop:Generator_ColumnVarNameInTable="columnurl_video" msprop:Generator_ColumnPropNameInRow="url_video" msprop:Generator_ColumnPropNameInTable="url_videoColumn" msprop:Generator_UserColumnName="url_video" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

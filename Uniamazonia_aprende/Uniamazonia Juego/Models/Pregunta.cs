@@ -33,7 +33,7 @@ namespace Uniamazonia_Juego.Models
         public  Boolean Insertar_registro_pregunta(String nombre_pregunta,int calificacion)
         {
             Boolean consulta = new Boolean();
-            String Query = "INSERT INTO `aprender`.`pregunta` (`nombre_pregunta`, `calificacion`, `estado_pregunta`) VALUES ('"+nombre_pregunta+"', '"+calificacion+"', '0');";
+            String Query = "INSERT INTO `aprender`.`pregunta` (`nombre_pregunta`, `calificacion`, `estado_pregunta`,`Estado_asignacion`) VALUES ('" + nombre_pregunta+"', "+calificacion+", '0','0');";
             consulta = conexion.insert_BD(Query);
             return consulta;
         }
@@ -109,8 +109,15 @@ namespace Uniamazonia_Juego.Models
             consulta = conexion.consultar_BD(Query);
             return consulta;
         }
+        public DataTable Consulta_parametro_Id_pregunta(String id_pregunta)
+        {
+            DataTable consulta = new DataTable();
+            String Query = "select  pregunta.id_pregunta,pregunta.nombre_pregunta,pregunta.estado_pregunta from pregunta where id_pregunta='"+id_pregunta+"';";
+            consulta = conexion.consultar_BD(Query);
+            return consulta;
+        }
 
-        public DataTable consultaParametroFk_Prueba(String fk_prueba)
+            public DataTable consultaParametroFk_Prueba(String fk_prueba)
         {
             DataTable consulta = new DataTable();
             String Query = "select *from pregunta where pregunta.fk_prueba='"+fk_prueba+"';";

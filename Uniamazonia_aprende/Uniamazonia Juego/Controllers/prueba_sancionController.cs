@@ -34,6 +34,12 @@ namespace Uniamazonia_Juego.Controllers
             return consulta;
         }
 
+        public DataTable ConsultaParametroFK_prueba(String fk_prueba)
+        {
+            DataTable consulta = prueba_sancionM.consultaParametroFk_prueba(fk_prueba);
+            return consulta;
+        }
+
         public DataTable buscarEnGridParametroPruebaPalabra(String palabra, String fk_prueba)
         {
             DataTable consulta = prueba_sancionM.buscarEnGridParametroPruebaPalabra(palabra,fk_prueba);

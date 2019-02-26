@@ -77,10 +77,8 @@ namespace Uniamazonia_Juego.Views.Administrador.Sancion
                 {
                     DataTable consulta = sancionC.ConsultaUrl(idsancion);
                     String url = consulta.Rows[0]["url_video"].ToString();
-                    cargaVideo.Src = url;
-                    //cargaVideo.Attributes.Add("src",url);
-                    //this.cargaVideo.Attributes("src") = url;
-                    //((HtmlControl)(xx.FindControl("cargaVideo"))).Attributes["src"] =url;
+                    cargaVideo.Attributes["src"]=url;
+
                     System.Text.StringBuilder sb = new System.Text.StringBuilder();
                     sb.Append(@"<script type='text/javascript'>");
                     sb.Append("$('#editModal').modal('show');");
@@ -88,6 +86,11 @@ namespace Uniamazonia_Juego.Views.Administrador.Sancion
                     ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "editModal", sb.ToString(), false);
                 }
             }
+        }
+
+        public void imageButton_Click(object sender, EventArgs e)
+        {
+            ClientScript.RegisterClientScriptBlock(this.GetType(), "Pruebas", "window.open('/Web_forms_reports/ReporteListaSancion.aspx', '_blank');", true);
         }
 
         protected void buscarSancion(object sender, EventArgs e)

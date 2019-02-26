@@ -7,11 +7,6 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 -- -----------------------------------------------------
 -- Schema mydb
 -- -----------------------------------------------------
-
--- -----------------------------------------------------
--- Schema mydb
--- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
 -- -----------------------------------------------------
 -- Schema aprender
 -- -----------------------------------------------------
@@ -20,22 +15,6 @@ CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
 -- Schema aprender
 -- -----------------------------------------------------
 CREATE SCHEMA IF NOT EXISTS `aprender` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
-
--- -----------------------------------------------------
--- Table `mydb`.`tblcountry`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`tblcountry` (
-  `Code` INT(11) NOT NULL,
-  `Name` VARCHAR(45) NULL DEFAULT NULL,
-  `Continent` VARCHAR(45) NULL DEFAULT NULL,
-  `Region` VARCHAR(45) NULL DEFAULT NULL,
-  `Population` VARCHAR(45) NULL DEFAULT NULL,
-  `IndepYear` VARCHAR(45) NULL DEFAULT NULL,
-  PRIMARY KEY (`Code`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
-
 USE `aprender` ;
 
 -- -----------------------------------------------------
@@ -118,66 +97,6 @@ CREATE TABLE IF NOT EXISTS `aprender`.`contenido` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
 AUTO_INCREMENT = 21
-DEFAULT CHARACTER SET = utf8;
-
-
--- -----------------------------------------------------
--- Table `aprender`.`prueba`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `aprender`.`prueba` (
-  `id_prueba` INT(11) NOT NULL AUTO_INCREMENT,
-  `nombre_prueba` VARCHAR(100) NULL DEFAULT NULL,
-  `estado_prueba` VARCHAR(5) NULL DEFAULT NULL,
-  `fk_contenido` INT(11) NULL DEFAULT NULL,
-  PRIMARY KEY (`id_prueba`),
-  INDEX `fk_Prueba_Contenido1_idx` (`fk_contenido` ASC),
-  CONSTRAINT `fk_Prueba_Contenido1`
-    FOREIGN KEY (`fk_contenido`)
-    REFERENCES `aprender`.`contenido` (`id_contenido`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-AUTO_INCREMENT = 17
-DEFAULT CHARACTER SET = utf8;
-
-
--- -----------------------------------------------------
--- Table `aprender`.`pregunta`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `aprender`.`pregunta` (
-  `id_pregunta` INT(11) NOT NULL AUTO_INCREMENT,
-  `nombre_pregunta` VARCHAR(100) NULL DEFAULT NULL,
-  `calificacion` DOUBLE NULL DEFAULT NULL,
-  `estado_pregunta` VARCHAR(20) NULL DEFAULT NULL,
-  `fk_prueba` INT(11) NULL DEFAULT NULL,
-   `Estado_asignacion` VARCHAR(20) NULL DEFAULT NULL,
-  PRIMARY KEY (`id_pregunta`),
-  INDEX `fk_Pregunta_Prueba1_idx` (`fk_prueba` ASC),
-  CONSTRAINT `fk_Pregunta_Prueba1`
-    FOREIGN KEY (`fk_prueba`)
-    REFERENCES `aprender`.`prueba` (`id_prueba`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-AUTO_INCREMENT = 11
-DEFAULT CHARACTER SET = utf8;
-
-
--- -----------------------------------------------------
--- Table `aprender`.`calificacion`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `aprender`.`calificacion` (
-  `id_calificacion` INT(11) NOT NULL AUTO_INCREMENT,
-  `valor_calificacion` INT(11) NULL DEFAULT NULL,
-  `fk_pregunta_calific` INT(11) NULL DEFAULT NULL,
-  PRIMARY KEY (`id_calificacion`),
-  INDEX `fk_Calificacion_Pregunta1_idx` (`fk_pregunta_calific` ASC),
-  CONSTRAINT `fk_Calificacion_Pregunta1`
-    FOREIGN KEY (`fk_pregunta_calific`)
-    REFERENCES `aprender`.`pregunta` (`id_pregunta`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -271,83 +190,62 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `aprender`.`usuario_prueba`
+-- Table `aprender`.`Ranking`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `aprender`.`usuario_prueba` (
-  `fk_prueba` INT(11) NOT NULL,
-  `fk_usuario` INT(11) NOT NULL,
-  `fecha_prueba` VARCHAR(45) NULL DEFAULT NULL,
-  `puntos_prueba` INT(11) NULL DEFAULT NULL,
-  `P_NoContestadas` INT  (45) NULL DEFAULT NULL,
-  `P_Contestadas`   INT  (45) NULL DEFAULT NULL,
-  `P_Incorrectas`   INT  (45) NULL DEFAULT NULL,
-  `P_Correctas`      INT  (45) NULL DEFAULT NULL,
-  PRIMARY KEY (`fk_prueba`, `fk_usuario`),
-  INDEX `fk_Jugador_has_Prueba_Prueba1_idx` (`fk_prueba` ASC),
-  INDEX `fk_usuario_prueba_usuario1_idx` (`fk_usuario` ASC),
-  CONSTRAINT `fk_Jugador_has_Prueba_Prueba1`
-    FOREIGN KEY (`fk_prueba`)
-    REFERENCES `aprender`.`prueba` (`id_prueba`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_usuario_prueba_usuario1`
-    FOREIGN KEY (`fk_usuario`)
-    REFERENCES `aprender`.`usuario` (`id_usuario`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
-
-
--- -----------------------------------------------------
--- Table `aprender`.`numero_preguntas`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `aprender`.`numero_preguntas` (
-  `id_numero_preguntas` INT(11) NOT NULL AUTO_INCREMENT,
-  `numero_pregunta` INT(11) NULL DEFAULT NULL,
-  `estado_pregunta` VARCHAR(45) NULL DEFAULT NULL,
-  PRIMARY KEY (`id_numero_preguntas`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
-
-
--- -----------------------------------------------------
--- Table `aprender`.`posicion`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `aprender`.`posicion` (
-  `id_posicion` INT(11) NOT NULL AUTO_INCREMENT,
-  `puntaje` INT(11) NULL DEFAULT NULL,
-  `numero_pruebas` INT(11) NULL DEFAULT NULL,
-  `fk_id_jugador` INT(11) NULL DEFAULT NULL,
-  PRIMARY KEY (`id_posicion`),
-  INDEX `fk_Posicion_Jugador1_idx` (`fk_id_jugador` ASC),
-  CONSTRAINT `fk_Posicion_Jugador1`
-    FOREIGN KEY (`fk_id_jugador`)
-    REFERENCES `aprender`.`jugador` (`id_jugador`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
-
-
--- -----------------------------------------------------
--- Table `aprender`.`premiacion`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `aprender`.`premiacion` (
-  `id_premiacion` INT(11) NOT NULL AUTO_INCREMENT,
-  `puntos_acomulados` INT(11) NULL DEFAULT NULL,
-  `estrellas_obtenidas` INT(11) NULL DEFAULT NULL,
-  `diamantes_obtenidos` INT(11) NULL DEFAULT NULL,
-  `fk_jugador` INT(11) NULL DEFAULT NULL,
-  PRIMARY KEY (`id_premiacion`),
-  INDEX `fk_Premiacion_Jugador1_idx` (`fk_jugador` ASC),
-  CONSTRAINT `fk_Premiacion_Jugador1`
+CREATE TABLE IF NOT EXISTS `aprender`.`Ranking` (
+  `id_ranking` INT(11) NOT NULL AUTO_INCREMENT,
+  `puntaje_acomulado` INT(11) NULL DEFAULT NULL,
+  `fk_jugador` INT(11) NOT NULL,
+  PRIMARY KEY (`id_ranking`),
+  INDEX `fk_Ranking_jugador1_idx` (`fk_jugador` ASC),
+  CONSTRAINT `fk_Ranking_jugador1`
     FOREIGN KEY (`fk_jugador`)
     REFERENCES `aprender`.`jugador` (`id_jugador`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-AUTO_INCREMENT = 4
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `aprender`.`prueba`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `aprender`.`prueba` (
+  `id_prueba` INT(11) NOT NULL AUTO_INCREMENT,
+  `nombre_prueba` VARCHAR(100) NULL DEFAULT NULL,
+  `estado_prueba` VARCHAR(5) NULL DEFAULT NULL,
+  `fk_contenido` INT(11) NULL DEFAULT NULL,
+  PRIMARY KEY (`id_prueba`),
+  INDEX `fk_Prueba_Contenido1_idx` (`fk_contenido` ASC),
+  CONSTRAINT `fk_Prueba_Contenido1`
+    FOREIGN KEY (`fk_contenido`)
+    REFERENCES `aprender`.`contenido` (`id_contenido`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+AUTO_INCREMENT = 17
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `aprender`.`pregunta`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `aprender`.`pregunta` (
+  `id_pregunta` INT(11) NOT NULL AUTO_INCREMENT,
+  `nombre_pregunta` VARCHAR(100) NULL DEFAULT NULL,
+  `calificacion` INT(11) NULL DEFAULT NULL,
+  `estado_pregunta` VARCHAR(20) NULL DEFAULT NULL,
+  `fk_prueba` INT(11) NULL DEFAULT NULL,
+  `Estado_asignacion` VARCHAR(20) NULL DEFAULT NULL,
+  PRIMARY KEY (`id_pregunta`),
+  INDEX `fk_Pregunta_Prueba1_idx` (`fk_prueba` ASC),
+  CONSTRAINT `fk_Pregunta_Prueba1`
+    FOREIGN KEY (`fk_prueba`)
+    REFERENCES `aprender`.`prueba` (`id_prueba`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+AUTO_INCREMENT = 19
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -421,7 +319,7 @@ CREATE TABLE IF NOT EXISTS `aprender`.`respuesta` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-AUTO_INCREMENT = 11
+AUTO_INCREMENT = 17
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -464,18 +362,28 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `aprender`.`tiempo`
+-- Table `aprender`.`usuario_prueba`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `aprender`.`tiempo` (
-  `id_tiempo` INT(11) NOT NULL AUTO_INCREMENT,
-  `tiempo_inicio` VARCHAR(45) NULL DEFAULT NULL,
-  `tiempo_final` VARCHAR(45) NULL DEFAULT NULL,
-  `fk_prueba` INT(11) NULL DEFAULT NULL,
-  PRIMARY KEY (`id_tiempo`),
-  INDEX `fk_Tiempo_Prueba1_idx` (`fk_prueba` ASC),
-  CONSTRAINT `fk_Tiempo_Prueba1`
+CREATE TABLE IF NOT EXISTS `aprender`.`usuario_prueba` (
+  `fk_prueba` INT(11) NOT NULL,
+  `fk_jugador` INT(11) NOT NULL,
+  `fecha_prueba` VARCHAR(45) NULL DEFAULT NULL,
+  `puntos_prueba` INT(11) NULL DEFAULT NULL,
+  `P_NoContestadas` INT(45) NULL DEFAULT NULL,
+  `P_Contestadas` INT(45) NULL DEFAULT NULL,
+  `P_Incorrectas` INT(45) NULL DEFAULT NULL,
+  `P_Correctas` INT(45) NULL DEFAULT NULL,
+  PRIMARY KEY (`fk_prueba`, `fk_jugador`),
+  INDEX `fk_Jugador_has_Prueba_Prueba1_idx` (`fk_prueba` ASC),
+  INDEX `fk_usuario_prueba_jugador1_idx` (`fk_jugador` ASC),
+  CONSTRAINT `fk_Jugador_has_Prueba_Prueba1`
     FOREIGN KEY (`fk_prueba`)
     REFERENCES `aprender`.`prueba` (`id_prueba`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_usuario_prueba_jugador1`
+    FOREIGN KEY (`fk_jugador`)
+    REFERENCES `aprender`.`jugador` (`id_jugador`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB

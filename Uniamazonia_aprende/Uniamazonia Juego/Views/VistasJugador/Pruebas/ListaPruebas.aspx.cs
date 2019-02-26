@@ -15,6 +15,8 @@ namespace Uniamazonia_Juego.Views.VistasJugador.Pruebas
         Usuario_PruebaController usuario_pruebaC = new Usuario_PruebaController();
         PreguntaController preguntaC = new PreguntaController();
         DataTable Consulta = new DataTable();
+        JugadorController JugadorC = new JugadorController();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (IsPostBack==false)
@@ -35,7 +37,10 @@ namespace Uniamazonia_Juego.Views.VistasJugador.Pruebas
             Button boton_iniciar=(Button)sender;
             String id_prueba = boton_iniciar.CommandArgument.ToString();
             int id_usuario =Convert.ToInt32(Session["id_usuario"].ToString());
-            Consulta = usuario_pruebaC.Consulta_parametro_fk_prueba_fk_usuario(Convert.ToInt32(id_prueba),id_usuario);
+            DataTable consultaJugador = JugadorC.ConsultaFkUsuario(id_usuario);
+            int id_jugador =Convert.ToInt32(consultaJugador.Rows[0]["id_jugador"].ToString());
+
+            Consulta = usuario_pruebaC.Consulta_parametro_fk_prueba_fk_usuario(Convert.ToInt32(id_prueba),id_jugador);
             DataTable Consulta_pregunta = preguntaC.consultaParametroFk_Prueba(id_prueba);
             if (Consulta_pregunta.Rows.Count==0)
             {

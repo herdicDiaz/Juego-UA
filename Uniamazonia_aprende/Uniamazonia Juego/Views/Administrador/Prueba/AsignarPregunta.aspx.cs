@@ -13,10 +13,12 @@ namespace Uniamazonia_Juego.Views.Administrador.Prueba
     {
         PreguntaController PreguntaC = new PreguntaController();
         PruebaController PruebaC = new PruebaController();
+        public static List<DataTable> listaPreguntasAsignadas;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (IsPostBack==false)
+            if (IsPostBack == false)
             {
+                listaPreguntasAsignadas = new List<DataTable>();
                 DataTable pruebas = PruebaC.consulta_combox_nombre();
                 DropListPrueba.DataTextField = "nombre_prueba";
                 DropListPrueba.DataSource = pruebas;
@@ -46,7 +48,7 @@ namespace Uniamazonia_Juego.Views.Administrador.Prueba
         public void BinGrid()
         {
             DataTable ConsultarContenido = PreguntaC.pregunta();
-            if (ConsultarContenido.Rows.Count==0)
+            if (ConsultarContenido.Rows.Count == 0)
             {
                 Nohaypreguntas.InnerHtml = "No hay preguntas para mostrar!";
                 Nohaypreguntas.Attributes.Add("Style", "display:Block");
@@ -68,9 +70,17 @@ namespace Uniamazonia_Juego.Views.Administrador.Prueba
             return id_prueba;
         }
 
+        public DataTable VerPreguntasAsignadas(String id_prueba)
+        {
+            //DataTable consulta = PreguntaC.Consulta_parametro_Id_pregunta(id_prueba);
+            DataTable consulta = PreguntaC.consultaParametroFk_Prueba(id_prueba);
+            return consulta;
+
+        }
+
         public void agregarPregunta(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName=="Agregar")
+            if (e.CommandName == "Agregar")
             {
                 if (DropListPrueba.SelectedIndex == 0)
                 {
@@ -86,12 +96,21 @@ namespace Uniamazonia_Juego.Views.Administrador.Prueba
                     {
                         Boolean update = PreguntaC.updateAggFkPrueba(id_pregunta, id_prueba);
                     }
+                    DataTable preguntas = VerPreguntasAsignadas(id_prueba);
+                    DivPreguntasAsignadas.InnerHtml = "Preguntas asignadas para la prueba selecionada.";
+                    DivPreguntasAsignadas.Attributes.Add("style", "display: block");
+                    BorderPreguntasAsignadas.Attributes.Add("Style","display:Block");
+                    //listaPreguntasAsignadas.Add(preguntas);
+                    //foreach (DataTable fpregunta in listaPreguntasAsignadas)
+                    //{
+                    //}
+                    GridViewPreguntasAsignadas.DataSource = preguntas;
+                    GridViewPreguntasAsignadas.DataBind();
                     BinGrid();
+
                 }
             }
-           
-       
-
         }
     }
 }
+   

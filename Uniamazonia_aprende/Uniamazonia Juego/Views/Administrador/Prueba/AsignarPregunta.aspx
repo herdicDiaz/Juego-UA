@@ -48,7 +48,37 @@
                     </asp:GridView>
                 </ContentTemplate>
             </asp:UpdatePanel>
+            <br />
 
+            <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                <ContentTemplate>
+                    <div id="BorderPreguntasAsignadas" runat="server" style="display:none" class="border border-success ">
+                        <div>
+                            <center>
+                            <div class="alert alert-success form-control" id="DivPreguntasAsignadas" runat="server" style="display: none" role="alert">
+                            </div>
+                            </center>
+                  
+                        </div>
+                        <asp:GridView ID="GridViewPreguntasAsignadas" runat="server" AutoGenerateColumns="false"
+                            CssClass="table table-striped table-bordered table-condensed">
+                            <Columns>
+                                <asp:TemplateField HeaderText="Pregunta" SortExpression="nombre_pregunta" ItemStyle-HorizontalAlign="Center">
+                                    <ItemTemplate>
+                                        <asp:Label ID="Label1" runat="server" Text='<%# Bind("nombre_pregunta") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
+
+                        </asp:GridView>
+                        </div>
+
+
+                    </div>
+
+                </ContentTemplate>
+
+            </asp:UpdatePanel>
 
         </div>
     </div>

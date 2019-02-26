@@ -73,7 +73,7 @@ namespace Uniamazonia_Juego.Views.Administrador.Pregunta
             }
 
             //inserta una nueva pregunta en el sistema.
-            Boolean insert= preguntaC.Insertar_registro_pregunta(pregunta,calificacion);
+            Boolean insert= preguntaC.Insertar_registro_pregunta(pregunta,1);
 
             DataTable consulta2 = preguntaC.Consultas_generales("select max(id_pregunta) from pregunta");
             int fk_pregunta = Int32.Parse(consulta2.Rows[0]["max(id_pregunta)"].ToString());

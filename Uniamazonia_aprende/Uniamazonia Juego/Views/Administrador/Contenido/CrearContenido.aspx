@@ -88,7 +88,7 @@
                         <div class="form-group col-md-5">
                         </div>
                         <div class="form-group col-md-4">
-                            <asp:Button ID="crear_contenido" runat="server" CssClass="btn btn-primary" Text="Crear Contenido" OnClick="crear_contenido_Click"  />
+                            <asp:Button ID="crear_contenido" runat="server" CssClass="btn btn-success" Text="Crear Contenido" OnClick="crear_contenido_Click"  />
                         </div>
                     </div>
                     <hr />
