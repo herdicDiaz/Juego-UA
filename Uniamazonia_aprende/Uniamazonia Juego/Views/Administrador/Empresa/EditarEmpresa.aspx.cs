@@ -27,24 +27,18 @@ namespace Uniamazonia_Juego.Views.Administrador.Empresa
             this.nit_actual.Text = controlador_empresa.consulta_nit_BD();
 
 
-            //if (Page.IsPostBack) return;
-            //if (controlador_empresa.estado_conexion_BD())
-            //{
-            //    ClientScript.RegisterStartupScript(this.GetType(), "mensaje", "<script> swal({position: 'center',type: 'success',title: 'Conexion Establecida BD',showConfirmButton: false,timer: 1500}) </script>");
-            //}
-            //else {
-            //    ClientScript.RegisterStartupScript(this.GetType(), "mensaje", "<script> swal({type: 'error',title: 'Conexion BD NO establecidad!',text: 'Algo salió mal!',timer: 2200}) </script>");
 
-            //}
 
 
 
         }
         // metodos
 
-        protected void editar_empresa_Click(object sender, EventArgs e)
+
+
+        protected void Guadar_empresa_Click(object sender, EventArgs e)
         {
-            controlador_empresa = new EmpresaController(0,this.nuevo_nombre.Text,this.nueva_descripcion.InnerText, Convert.ToInt32(this.nuevo_nit_empresa.Text));
+            controlador_empresa = new EmpresaController(0, this.nuevo_nombre.Text, this.nueva_descripcion.InnerText, Convert.ToInt32(this.nuevo_nit_empresa.Text));
             if (controlador_empresa.actualizar_empresa())
             {
 
@@ -54,21 +48,16 @@ namespace Uniamazonia_Juego.Views.Administrador.Empresa
                 this.nueva_descripcion.InnerText = "";
                 this.nuevo_nit_empresa.Text = "";
 
-              
-                
+
+
                 Response.Redirect("~/Views/Administrador/Welcome.aspx");
 
             }
-            else {
+            else
+            {
 
                 ClientScript.RegisterStartupScript(this.GetType(), "mensaje", "<script> swal({type: 'error',title: 'No Actualizado!',text: 'Algo salió mal!',timer: 3200}) </script>");
             }
-
-
-
         }
-
-      
-
     }
 }

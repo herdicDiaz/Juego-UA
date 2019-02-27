@@ -94,6 +94,15 @@ namespace Uniamazonia_Juego {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl menu;
         
         /// <summary>
+        /// migajaDePan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder migajaDePan;
+        
+        /// <summary>
         /// ContenidoPagina control.
         /// </summary>
         /// <remarks>
