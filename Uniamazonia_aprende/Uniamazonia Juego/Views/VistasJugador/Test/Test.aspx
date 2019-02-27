@@ -1,6 +1,20 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="Test.aspx.cs" Inherits="Uniamazonia_Juego.Views.VistasJugador.Test.Test" %>
+﻿<%@ Page Title="Test" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="Test.aspx.cs" Inherits="Uniamazonia_Juego.Views.VistasJugador.Test.Test" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MapaPagina" runat="server">
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="migajaDePan" runat="server">
+    <div style="margin-left: 4px; height: 28px;">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/Views/Administrador/Welcome.aspx"><span class="mdi mdi-home"></span>&nbsp;Inicio</a></li>
+                                 <li class="breadcrumb-item"><a href="#">Modulos</a></li>
+                <li class="breadcrumb-item"><a href="/Views/VistasJugador/ConsultaModulo/ListaModulo.aspx">Ver Modulos</a></li>
+                <li class="breadcrumb-item"><a href="/Views/VistasJugador/Contenido/ListaContenido.aspx">Lista Contenido</a></li>
+                <li class="breadcrumb-item"><a href="/Views/VistasJugador/Pruebas/ListaPruebas.aspx">Lista Prueba</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Test</li>
+            </ol>
+        </nav>
+    </div>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContenidoPagina" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>

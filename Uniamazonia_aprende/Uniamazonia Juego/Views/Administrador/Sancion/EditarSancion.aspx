@@ -3,7 +3,7 @@
     <div style="margin-left: 4px; height: 28px;">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/Views/Administrador/Welcome.aspx">Inicio</a></li>
+                <li class="breadcrumb-item"><a href="/Views/Administrador/Welcome.aspx"><span class="mdi mdi-home"></span>&nbsp;Inicio</a></li>
                 <li class="breadcrumb-item"><a href="#">Gestionar Sancion</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Editar Sancion<li>
             </ol>
