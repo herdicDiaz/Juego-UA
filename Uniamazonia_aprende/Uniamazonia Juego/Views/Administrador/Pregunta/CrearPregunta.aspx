@@ -27,13 +27,14 @@
                 <div class="row">
                     <br />
                     <br />
-                    <div class="col-md-6">
+                   
+                    <div class="col-md-6 col-xs-12">
                         <label>
                             Pregunta
                         <label style="color: red">(*)</label></label>
                         <asp:TextBox ID="txtNombrePregunta" CssClass="form-control" runat="server"></asp:TextBox>
                     </div>
-                    <div class="col-6">
+                    <div class="col-md-6 col-xs-12">
                         <label>
                             Repuesta A
                            
@@ -43,16 +44,14 @@
                 </div>
                 <%--respuesta de la pregunta--%>
                 <div class="row">
-
-                    <div class="col-6">
+                    <div class="col-md-6">
                         <label>
                             Repuesta B
-                           
                         <label style="color: red">(*)</label></label>
                         <asp:TextBox ID="txtRespuesta2" type="text" class="form-control" runat="server"></asp:TextBox>
                         <br />
                     </div>
-                    <div class="col-6">
+                    <div class="col-md-6">
                         <label>
                             Repuesta C
                            
@@ -62,7 +61,7 @@
                 </div>
                 <%--sanciones y calificacion de la pregunta.--%>
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-md-6">
                         <label>
                             Repuesta D
                         <label style="color: red">(*)</label></label>

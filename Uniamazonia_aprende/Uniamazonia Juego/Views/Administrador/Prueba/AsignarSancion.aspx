@@ -57,14 +57,14 @@
                             </ItemTemplate>
                         </asp:TemplateField>
 
-                        <asp:TemplateField HeaderText="Estado" SortExpression="estado_sancion">
+         <%--               <asp:TemplateField HeaderText="Estado" SortExpression="estado_sancion">
                             <EditItemTemplate>
                                 <asp:TextBox ID="TxtEstado" runat="server" Text='<%# Bind("estado_sancion") %>'></asp:TextBox>
                             </EditItemTemplate>
                             <ItemTemplate>
                                 <asp:Label ID="LabelEstado" runat="server" Text='<%# Bind("estado_sancion") %>'></asp:Label>
                             </ItemTemplate>
-                        </asp:TemplateField>
+                        </asp:TemplateField>--%>
 
                         <asp:ButtonField CommandName="Agregar" ControlStyle-CssClass="btn btn-info"
                             ButtonType="Button" Text="Agregar">

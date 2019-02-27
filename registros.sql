@@ -352,10 +352,10 @@ insert INTO pregunta VALUES ("15","¿Cuantos estusiantes hay en la UA?","1","0",
 
 -- ------------------------------------------------------------------------------------------------------------------------------
 -- --------------------------------------------------------------------------------------------------------------------------------------
-insert into sancion values ("1","Sancion de deportes","https://www.youtube.com/watch?v=_NNGB-jQhtU&t=52s","0");
-insert into sancion values ("2","Sancion de Cultura general","https://www.youtube.com/watch?v=_NNGB-jQhtU&t=52s","0");
-insert into sancion values ("3","Sancion de informativa","https://www.youtube.com/watch?v=_NNGB-jQhtU&t=52s","0");
-insert into sancion values ("4","Sancion Conociendo la UA","https://www.youtube.com/watch?v=_NNGB-jQhtU&t=52s","0");
+insert into sancion values ("1","Sancion de deportes","https://www.youtube.com/embed/zZjXKjhQaoY","0");
+insert into sancion values ("2","Sancion de Cultura general","https://www.youtube.com/embed/9O8dtizHFiU","0");
+insert into sancion values ("3","Sancion de informativa","https://www.youtube.com/embed/S6AdH8dGm7E","0");
+insert into sancion values ("4","Sancion Conociendo la UA","https://www.youtube.com/embed/kNbr01d5ePU","0");
 insert into sancion values ("5","Sancion programas academicos","https://www.youtube.com/watch?v=_NNGB-jQhtU&t=52s","0");
 
 -- ------------------------------------------------------------------------------------------------------------------------------
