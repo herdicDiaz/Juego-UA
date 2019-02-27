@@ -1,6 +1,19 @@
 ﻿<%@ Page Title="Programa" Language="C#" MasterPageFile="~/Principal.Master"   AutoEventWireup="true" CodeBehind="Programa.aspx.cs" Inherits="Uniamazonia_Juego.Views.Administrador.Programa.Programa" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MapaPagina" runat="server">
 </asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="migajaDePan" runat="server">
+    <div style="margin-left: 4px; height: 28px;">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/Views/Administrador/Welcome.aspx">Inicio</a></li>
+                <li class="breadcrumb-item"><a href="#">Gestionar Tablas Basicas</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Gestionar Programas<li>
+            </ol>
+        </nav>
+    </div>
+</asp:Content>
+
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContenidoPagina" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <div style="color: black !important;">

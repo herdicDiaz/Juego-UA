@@ -1,5 +1,18 @@
 ﻿<%@ Page Title="Lista Sanciones" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="ListarSancion.aspx.cs" Inherits="Uniamazonia_Juego.Views.Administrador.Sancion.ListarSancion" %>
 
+<asp:Content ID="Content3" ContentPlaceHolderID="migajaDePan" runat="server">
+    <div style="margin-left: 4px; height: 28px;">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/Views/Administrador/Welcome.aspx">Inicio</a></li>
+                <li class="breadcrumb-item"><a href="#">Gestionar Sancion</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Listar Sancion<li>
+            </ol>
+        </nav>
+    </div>
+</asp:Content>
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="ContenidoPagina" runat="server">
 
     <%--Modal para eliminar sancion--%>

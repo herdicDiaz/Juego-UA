@@ -1,5 +1,18 @@
 ﻿<%@ Page Title="Crear Premiacion" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="CrearPremiacion.aspx.cs" Inherits="Uniamazonia_Juego.Views.Administrador.Premiacion.CrearPremiacion" %>
 
+<asp:Content ID="Content3" ContentPlaceHolderID="migajaDePan" runat="server">
+    <div style="margin-left: 4px; height: 28px;">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/Views/Administrador/Welcome.aspx">Inicio</a></li>
+                <li class="breadcrumb-item"><a href="#">Gestionar Premiacion</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Crear Premiacion<li>
+            </ol>
+        </nav>
+    </div>
+</asp:Content>
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="ContenidoPagina" runat="server">
     <br />
     <div class="col-12">

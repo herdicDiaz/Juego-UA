@@ -3,6 +3,17 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MapaPagina" runat="server">
 </asp:Content>
 
+
+<asp:Content ID="Content3" ContentPlaceHolderID="migajaDePan" runat="server">
+    <div style="margin-left: 4px; height: 28px;">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item active" aria-current="page">Inicio</li>
+            </ol>
+        </nav>
+    </div>
+</asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContenidoPagina" runat="server">
 
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">

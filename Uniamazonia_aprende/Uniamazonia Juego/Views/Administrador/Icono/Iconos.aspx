@@ -2,6 +2,17 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MapaPagina" runat="server">
 </asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="migajaDePan" runat="server">
+    <div style="margin-left: 4px; height: 28px;">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/Views/Administrador/Welcome.aspx">Inicio</a></li>
+                <li class="breadcrumb-item"><a href="#">Gestionar Tablas Basicas</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Gestionar Iconos<li>
+            </ol>
+        </nav>
+    </div>
+</asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContenidoPagina" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
@@ -14,23 +25,12 @@
             </div>
             <div class="container" id="busquedas" style="width: 90%; margin: 0 auto;">
                 <hr />
-
-
-
-
                 <div class="form-row">
-
-
-
-
                             <div class="form-group col-md-6">
                                 <label for="nombre_content">Nombre Icono</label>
                                 <asp:TextBox ID="nombre_icono" runat="server" type="text" class="form-control" placeholder="ingrese el nombre aqui..."></asp:TextBox>
 
                             </div>
-
-
-
                     <div class="form-group col-md-4">
                         <asp:Button ID="crear_icono" data-target="#recuperar" Style="margin-top: 29px;" runat="server" CssClass="btn btn-primary" Text="Crear Icono" OnClick="crear_icono_Click" />
                     </div>
@@ -42,8 +42,6 @@
 
                     <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                         <ContentTemplate>
-
-
                             <asp:GridView ID="Tabla_Iconos" AutoGenerateColumns="False" runat="server"
                                 OnPageIndexChanging="Metodo_Paginacion" DataKeyNames="id_icono"
                                 PageSize="10" AllowPaging="true"
@@ -85,7 +83,7 @@
 
 
 
-    <!--        <asp:ButtonField CommandName="editar" ControlStyle-CssClass="btn btn-info"
+<%--            <asp:ButtonField CommandName="editar" ControlStyle-CssClass="btn btn-info"
                                 ButtonType="Button" Text="Editar" >
                                 <ControlStyle CssClass="btn btn-success"></ControlStyle>
                             </asp:ButtonField>
@@ -93,7 +91,7 @@
                             <asp:ButtonField CommandName="eliminar" ControlStyle-CssClass="btn btn-info"
                                 ButtonType="Button" Text="Eliminar">
                                 <ControlStyle CssClass="btn btn-danger"></ControlStyle>
-                            </asp:ButtonField> -->
+                            </asp:ButtonField> --%>
 
 
 

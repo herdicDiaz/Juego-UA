@@ -25,6 +25,22 @@
     </script>
 
 </asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="migajaDePan" runat="server">
+    <div style="margin-left: 4px; height: 28px;">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/Views/Administrador/Welcome.aspx">Inicio</a></li>
+                <li class="breadcrumb-item"><a href="#">Gestionar Tablas Basicas</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Gestionar Empresa<li>
+            </ol>
+        </nav>
+    </div>
+</asp:Content>
+
+
+
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContenidoPagina" runat="server">
   
         <div style="color: black !important;">
@@ -81,7 +97,7 @@
                     <div class="form-group col-md-5">
                     </div>
                     <div class="form-group col-md-4">
-                        <asp:Button ID="Guadar_empresa" runat="server" CssClass="btn btn-primary" Text="Guardar Cambios" />
+                        <asp:Button ID="Guadar_empresa" runat="server" CssClass="btn btn-primary" OnClick="Guadar_empresa_Click" Text="Guardar Cambios" />
                     </div>
                 </div>
                 <hr />

@@ -18,6 +18,8 @@
 
             <div id="busquedas" style="width: 90%; margin: 0 auto;">
                 <hr />
+                                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                        <ContentTemplate>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="lista_menu_padre">Lista Modulos</label>
