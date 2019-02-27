@@ -94,13 +94,28 @@ namespace Uniamazonia_Juego.Views.Administrador.Prueba
             {
                 int index = Convert.ToInt32(e.CommandArgument);
                 int idsancion =Convert.ToInt32( TblPrueba_sanciones.DataKeys[index].Value.ToString());
+                Session["id_sancion"]= idsancion;
+                
                 String nombrePrueba = DropPruebas.SelectedValue.ToString();
                 DataTable consulta = pruebaC.consultar_pruebas(nombrePrueba);
                 int idprueba =Convert.ToInt32( consulta.Rows[0]["id_prueba"].ToString());
-                Boolean delete = prueba_sancionC.EliminarRegistros(idprueba,idsancion);
-                DropConsultaGrid(sender,e);
-                //Response.Redirect("~/Views/Administrador/Prueba/VerSancionesAsignadas.aspx");
+                Session["id_prueba"] =idprueba;
+                System.Text.StringBuilder sb = new System.Text.StringBuilder();
+                sb.Append(@"<script type='text/javascript'>");
+                sb.Append("$('#deleteModal').modal('show');");
+                sb.Append(@"</script>");
+                TextoModal.InnerHtml = "¿Está seguro que desea quitar la sanción "+idsancion+"?";
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "deleteModal", sb.ToString(), false);
+
             }
+        }
+
+        public void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int id_sancion = Convert.ToInt32(Session["id_sancion"].ToString());
+            int id_prueba = Convert.ToInt32(Session["id_prueba"].ToString());
+            Boolean delete = prueba_sancionC.EliminarRegistros(id_prueba, id_sancion);
+            DropConsultaGrid(sender, e);
         }
 
         protected void Buscar(object sender, EventArgs e)

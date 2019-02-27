@@ -16,6 +16,7 @@ namespace Uniamazonia_Juego.Views.Administrador.Pregunta
         PreguntaController preguntaC = new PreguntaController();
         RespuestaController respuestaC = new RespuestaController();
         int id_pregunta;
+    
         protected void Page_Load(object sender, EventArgs e)
         {
             id_pregunta = Convert.ToInt32(Request.QueryString["id_pregunta"]);
@@ -70,10 +71,32 @@ namespace Uniamazonia_Juego.Views.Administrador.Pregunta
             String rb1 = txtRespuestaB.Value;
             String rc1 = txtRespuestaC.Value;
             String rd1 = txtRespuestaD.Value;
-            //String rcorrecta1 = TxtCorrecta.Value;
-            //String calificacion1 = Txtcalificacion.Value;
-            Boolean consulta = preguntaC.update_pregunta(nombre1, "0",id_pregunta);
-            Boolean consulta1 = respuestaC.updateRespuesta(ra1, rb1, rc1, rd1, "dd", id_pregunta);
+            String respuestaCorrecta;
+
+            if (DropRespuestaCorrec.Text=="A")
+            {
+                 respuestaCorrecta = ra1;
+            }
+            else
+            {
+                if (DropRespuestaCorrec.Text == "B")
+                {
+                     respuestaCorrecta = rb1;
+                }
+                else
+                {
+                    if (DropRespuestaCorrec.Text == "C")
+                    {
+                         respuestaCorrecta = rc1;
+                    }
+                    else
+                    {
+                         respuestaCorrecta = rd1;
+                    }
+                }
+            }
+            Boolean consulta = preguntaC.update_pregunta(nombre1,id_pregunta);
+            Boolean consulta1 = respuestaC.updateRespuesta(ra1, rb1, rc1, rd1, respuestaCorrecta, id_pregunta);
             Response.Redirect("~/Views/Administrador/Pregunta/ListarPreguntas.aspx");
 
         }

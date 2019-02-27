@@ -62,14 +62,19 @@ namespace Uniamazonia_Juego.Views.Administrador.Sancion
             {
                 int index = Convert.ToInt32(e.CommandArgument);
                 string idsancion = ListarSanciones.DataKeys[index].Value.ToString();
+                Session["id_sancion"]= idsancion;
                 if (e.CommandName == "editar")
                 {
                     Response.Redirect("~/Views/Administrador/Sancion/EditarSancion.aspx?idsancion=" + idsancion);
                 }
                 if (e.CommandName == "eliminar")
                 {
-                    Boolean delete = sancionC.eliminarSancion(idsancion);
-                    BindGridView();
+                    System.Text.StringBuilder sb = new System.Text.StringBuilder();
+                    sb.Append(@"<script type='text/javascript'>");
+                    sb.Append("$('#deleteModal').modal('show');");
+                    sb.Append(@"</script>");
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "deleteModal", sb.ToString(), false);
+                 
                     //ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "denegadoAlert('Esta seguro de eliminar la sancion " + idsancion + "');", true);
 
                 }
@@ -81,11 +86,18 @@ namespace Uniamazonia_Juego.Views.Administrador.Sancion
 
                     System.Text.StringBuilder sb = new System.Text.StringBuilder();
                     sb.Append(@"<script type='text/javascript'>");
-                    sb.Append("$('#editModal').modal('show');");
+                    sb.Append("$('#Modalvideo').modal('show');");
                     sb.Append(@"</script>");
-                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "editModal", sb.ToString(), false);
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Modalvideo", sb.ToString(), false);
                 }
             }
+        }
+
+        public void btnEliminar_Click(object sender, EventArgs e)
+        {
+            String id_sancion = Session["id_sancion"].ToString();
+            Boolean delete = sancionC.eliminarSancion(id_sancion);
+            BindGridView();
         }
 
         public void imageButton_Click(object sender, EventArgs e)

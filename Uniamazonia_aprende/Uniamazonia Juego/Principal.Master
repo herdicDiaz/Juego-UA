@@ -22,7 +22,7 @@
 
     <title><%: Page.Title %> |  <%: Page.Header.Description %></title>
 
-        <link href="Content/Js/magnific-popup/dist/magnific-popup.css" rel="stylesheet" />
+    <link href="Content/Js/magnific-popup/dist/magnific-popup.css" rel="stylesheet" />
 
     <link href="/Content/Bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
     <link href="/Content/Bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -119,52 +119,31 @@
                                     </div>
                                 </a>
 
-
-
-
-
-
-
-
-
-
                                 <!-- FIN de premios estrellas -->
-
-
                                 <li class="nav-item dropdown">
                                     <asp:Label ID="nombre_jugador_actual" runat="server" Style="color: white" Text="Sin Nombre">
                                     </asp:Label>
-
                                     &nbsp
-                                                <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     <span style="margin-left: 10px; color: orangered; font-size: 13px !important;">
                                                         <strong>
                                                             <asp:Label ID="puntos_jugador" runat="server" Text="SCORE : 0"></asp:Label>
                                                         </strong>
                                                     </span>
-                                                </a>
+                                    &nbsp
+                                    &nbsp
                                     <asp:Label ID="rol_usuario" runat="server" Text="">
                                     </asp:Label>
                                     <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: inline-block !important; font-size: 16px !important;">
-                                        <%--<img src="/Images/user.jpg" alt="user" class="rounded-circle" width="31">--%>
-                                        <i style="color: green" class="fa fa-user fa-2x"></i>
+                                        <i style="color: white" class="fa fa-user fa-2x"></i>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right user-dd animated">
-                                        <%--<a class="dropdown-item" href="javascript:void(0)"><i class="ti-wallet m-r-5 m-l-5"></i>Mi Balance</a>--%>
-
-                                        <%--<a class="dropdown-item" onclick="CerrarSesion" runat="server"><i class="fa fa-power-off m-r-5 m-l-5" runat="server"></i>Cerrar Sesion</a>--%>
                                         <div class="text-center">
-                                              <div class="p-l-30 p-10"><a href="/Views/VistasJugador/PerfilJugador/VerPerfil.aspx" class="btn btn-info btn-rounded">Ver Perfil</a></div>
+                                            <div class="p-l-30 p-10"><a href="/Views/VistasJugador/PerfilJugador/VerPerfil.aspx" class="btn btn-info btn-rounded">Ver Perfil</a></div>
 
                                             <asp:Button ID="BtnCerrarSession" Text="Cerrar session" OnClick="CerrarSesion" runat="server" CssClass="btn btn-danger btn-rounded" />
-
-                                          
                                         </div>
-
                                     </div>
-
                                 </li>
-
                         </ul>
                     </div>
                 </nav>
@@ -181,13 +160,7 @@
                     <!-- Sidebar navigation-->
                     <nav class="sidebar-nav">
                         <ul id="sidebarnav" class="p-t-30">
-
-
-
                             <li id="menu" runat="server"></li>
-
-
-
                         </ul>
                         <!-- Fin MENU-->
                     </nav>
@@ -226,7 +199,7 @@
                     </div>
                 </div>
                 <footer class="footer text-center">
-                    All Rights Reserved by Aprender.+ Designed and Developed by <a href="https://www.uniamazonia.edu.co/Inicio/"> Herdic Diaz & Cristian Tisoy </a>.
+                    All Rights Reserved by Aprender.+ Designed and Developed by <a href="https://www.uniamazonia.edu.co/Inicio/">Herdic Diaz & Cristian Tisoy </a>.
                 </footer>
             </div>
         </div>

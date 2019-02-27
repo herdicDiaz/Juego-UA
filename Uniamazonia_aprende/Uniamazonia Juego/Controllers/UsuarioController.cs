@@ -12,6 +12,10 @@ namespace Uniamazonia_Juego.Controllers
     {
         Usuario usuario;
 
+        public UsuarioController()
+        {
+        }
+
 
         // constructor
         public UsuarioController(int id_user, String name_user, String password_user, String privilege_user)

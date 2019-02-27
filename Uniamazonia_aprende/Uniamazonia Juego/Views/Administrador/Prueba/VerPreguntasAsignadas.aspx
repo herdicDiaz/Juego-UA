@@ -6,7 +6,7 @@
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <div class="card">
         <div class="card-header text-center bg-success">
-            <h3>Pruebas y preguntas</h3>
+            <h3>Pruebas asignadas</h3>
         </div>
         <div class="card-body">
             <div class="row">
@@ -30,36 +30,40 @@
             <div>
                 <div id="DivNohaypreguntas" runat="server" class="alert alert-info" style="display: block"></div>
             </div>
-            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                <ContentTemplate>
-                    <div class="col-md-12">
-                        <asp:GridView ID="Tabla_Preguntas" AutoGenerateColumns="False" runat="server"
-                            OnPageIndexChanging="Metodo_Paginacion"
-                            OnRowCommand="EventosGrid"
-                            DataKeyNames="id_pregunta"
-                            CssClass="table table-striped table-bordered table-condensed">
 
-                            <%--Estilos--%>
-                            <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
-                            <HeaderStyle CssClass="bg-light" ForeColor="Black" />
+            <div class="table-responsive">
+                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                    <ContentTemplate>
+                        <div class="col-md-12">
+                            <asp:GridView ID="Tabla_Preguntas" AutoGenerateColumns="False" runat="server"
+                                OnPageIndexChanging="Metodo_Paginacion"
+                                OnRowCommand="EventosGrid"
+                                DataKeyNames="id_pregunta"
+                                CssClass="table table-striped table-bordered table-condensed">
 
-                            <Columns>
-                                <asp:BoundField DataField="id_pregunta" ItemStyle-HorizontalAlign="Center" HeaderText="#" ReadOnly="True" />
-                                <asp:TemplateField ItemStyle-HorizontalAlign="Center" HeaderStyle-BorderColor="White" HeaderText="Nombre" ControlStyle-Width="800px">
-                                    <ItemTemplate>
-                                        <asp:Label ID="Label1" runat="server" Text='<%# Bind("nombre_pregunta") %>'></asp:Label>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
+                                <%--Estilos--%>
+                                <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
+                                <HeaderStyle CssClass="bg-light" ForeColor="Black" />
 
-                                <asp:ButtonField ButtonType="Button" Text="Quitar" CommandName="Quitar">
-                                    <ControlStyle CssClass="btn btn-danger"></ControlStyle>
-                                </asp:ButtonField>
+                                <Columns>
+                                    <asp:BoundField DataField="id_pregunta" ItemStyle-HorizontalAlign="Center" HeaderText="#" ReadOnly="True" />
+                                    <asp:TemplateField ItemStyle-HorizontalAlign="Center" HeaderStyle-BorderColor="White" HeaderText="Nombre" ControlStyle-Width="800px">
+                                        <ItemTemplate>
+                                            <asp:Label ID="Label1" runat="server" Text='<%# Bind("nombre_pregunta") %>'></asp:Label>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
 
-                            </Columns>
-                        </asp:GridView>
-                    </div>
-                </ContentTemplate>
-            </asp:UpdatePanel>
+                                    <asp:ButtonField ButtonType="Button" Text="Quitar" CommandName="Quitar">
+                                        <ControlStyle CssClass="btn btn-danger"></ControlStyle>
+                                    </asp:ButtonField>
+
+                                </Columns>
+                            </asp:GridView>
+                        </div>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+            </div>
+
 
         </div>
     </div>

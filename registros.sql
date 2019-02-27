@@ -3,20 +3,20 @@ use aprender;
 -- MENU PARA EL ADMINISTRADOR.
 insert into vista values("1","#","activo","Gestionar Menu","mdi mdi-view-list","1");
 insert into vista values("2","#","activo","Gestionar Sub Menu","mdi mdi-tag-multiple","2");
-insert into vista values("3","#","activo","Gestionar Modulos","mdi mdi-houzz","3");
-insert into vista values("4","#","activo","Gestionar Contenido","mdi mdi-vlc","4");
-insert into vista values("5","#","activo","Gestionar Prueba","mdi mdi-book-open","5");
+insert into vista values("3","#","activo","Gestionar Modulos","far fa-folder","3");
+insert into vista values("4","#","activo","Gestionar Contenido","fas fa-paperclip","4");
+insert into vista values("5","#","activo","Gestionar Prueba","fas fa-eye","5");
 
-insert into vista values("6","#","activo","Preguntas y respuestas","mdi mdi-barcode-scan","6");
-insert into vista values("7","#","activo","Gestionar Sancion","mdi mdi-whatsapp","7");
+insert into vista values("6","#","activo","Preguntas y respuestas","fas fa-eye-dropper","6");
+insert into vista values("7","#","activo","Gestionar Sancion","fas fa-thumbs-down","7");
 insert into vista values("8","#","activo","Gestionar Premiacion","mdi mdi-apple","8");
 
 insert into vista values("9","#","activo","Gestionar Tablas Basicas","mdi mdi-security","9");
 
 
 -- MENU PARA EL JUGADOR.
-insert into vista values("9","#","activo","Modulos","mdi mdi-view-list","9");
-insert into vista VALUES("10","#","activo","Ranking","fas fa-angle-double-up","10");
+insert into vista VALUES("10","#","activo","Modulos","mdi mdi-view-list","10");
+insert into vista VALUES("11","#","activo","Ranking","fas fa-angle-double-up","11");
 
 -- --------------------------------------------------
 -- GESTIONAR MODULOS 50 - 70                               |
@@ -113,14 +113,14 @@ insert into vista values("211","/Views/Administrador/Premiacion/ListarPremiacion
 -- MODULOS USUARIOS 231 - 250                       |
 -- --------------------------------------------------
 
-insert into vista VALUES("231","/Views/VistasJugador/ConsultaModulo/ListaModulo","activo","Ver Modulos","mdi mdi-check-all","9");
+insert into vista VALUES("231","/Views/VistasJugador/ConsultaModulo/ListaModulo","activo","Ver Modulos","mdi mdi-check-all","10");
 
 
 -- --------------------------------------------------
 -- RANKING USUARIOS 251 - 270                       |
 -- --------------------------------------------------
 
-insert into vista VALUES("251","/Views/VistasJugador/Ranking/Ranking.aspx","activo","Ver Ranking","mdi mdi-check-all","10");
+insert into vista VALUES("251","/Views/VistasJugador/Ranking/Ranking.aspx","activo","Ver Ranking","mdi mdi-check-all","11");
 
 -- ------------------------------------------------------------------------------------------------------------------------
 -- ------------------------------------------------------------------------------------------------------------------------
@@ -147,16 +147,24 @@ insert into vista_rol values("5","53","3","1");
 
 
 -- --------------------------------------------------
+-- GESTIONAR TABLAS  MENU    Jugaddor                 |
+-- --------------------------------------------------
+insert into vista_rol values("8","9","9","1");
+
+
+
+-- --------------------------------------------------
 -- GESTIONAR MODULO  MENU    Jugaddor                 |
 -- --------------------------------------------------
-insert into vista_rol values("8","9","9","2");
+insert into vista_rol VALUES("9","10","10","2");
+
+
 
 
 -- --------------------------------------------------
 -- GESTIONAR RANKING  MENU    Jugaddor                 |
 -- --------------------------------------------------
-insert into vista_rol VALUES("9","10","10","2");
-
+insert into vista_rol VALUES("10","11","11","2");
 
 -- --------------------------------------------------
 -- GESTIONAR CONTENIDO 20 - 39                       |
@@ -228,12 +236,12 @@ insert into vista_rol values("162","211","8","1");
 -- --------------------------------------------------
 -- GESTIONAR MODULO  SUBMENU    Jugaddor                 |
 -- --------------------------------------------------
-insert into vista_rol VALUES("180","231","9","2");
+insert into vista_rol VALUES("180","231","10","2");
 
 -- --------------------------------------------------
 -- RANKING SUBMENU    Jugaddor                 |
 -- --------------------------------------------------
-insert into vista_rol VALUES("200","251","10","2");
+insert into vista_rol VALUES("200","251","11","2");
 
 
 
@@ -272,7 +280,7 @@ insert into rol_usuario values("2","3","A","J");
 
 -- ----------------------------------------------------------------------
 -- ---------------------------------------------------------------------------
-insert into empresa values('1','Aprender.+','Empresa de juegos Uniamazonia','1210111');
+insert into empresa values('1','Uniamazonia','Empresa de juegos Uniamazonia','1210111');
 
 -- ----------------------------------------------------------------------
 -- ---------------------------------------------------------------------------
@@ -324,11 +332,11 @@ insert into prueba values('4',"Prueba de cafeterias",'A','10');
 -- ------------------------------------------------------------------------------------------------------------------------------
 -- --------------------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO pregunta VALUES ("1","¿En que año fue fundada la enfermeria de la universidad?","0","1",1,"1");
-INSERT INTO pregunta VALUES ("2","¿Cuantos servicios se ofrecen en enfermeria?","0","1",1,"1");
-INSERT INTO pregunta VALUES ("3","¿En donde se encuentra ubicada el servcios de enfermeria en la sede principal?","0","1",1,"1");
-INSERT INTO pregunta VALUES ("4","¿Enfermeria es una dependencia de?","0","0",1,"1");
-INSERT INTO pregunta VALUES ("5","¿El serivicio de enfermeria es exclusivo para?","0","1",1,"1");
+INSERT INTO pregunta VALUES ("1","¿En que año fue fundada la enfermeria de la universidad?","1","0",1,"1");
+INSERT INTO pregunta VALUES ("2","¿Cuantos servicios se ofrecen en enfermeria?","1","0",1,"1");
+INSERT INTO pregunta VALUES ("3","¿En donde se encuentra ubicada el servcios de enfermeria en la sede principal?","1","0",1,"1");
+INSERT INTO pregunta VALUES ("4","¿Enfermeria es una dependencia de?","1","0",1,"1");
+INSERT INTO pregunta VALUES ("5","¿El serivicio de enfermeria es exclusivo para?","1","0",1,"1");
 
 insert INTO pregunta VALUES ("6","¿Quien es la representate de los estudiantes?","1","0",NULL,"0");
 insert INTO pregunta VALUES ("7","¿Cuantos programa academicos tiene la UA?","1","0",NULL,"0");

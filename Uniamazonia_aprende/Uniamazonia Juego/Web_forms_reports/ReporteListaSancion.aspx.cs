@@ -27,7 +27,7 @@ namespace Uniamazonia_Juego.Web_forms_reports
             DataSet ds = new DataSet();
             CrystalReportSancion cr = new CrystalReportSancion();
 
-            dt = con.consultar_BD("Select *from sancion;");
+            dt = con.consultar_BD("Select *from sancion where estado_sancion=0;");
             ds.Tables.Add(dt);
             cr.SetDataSource(ds.Tables[0]);
             CrystalReportViewerSancion.ReportSource = cr;

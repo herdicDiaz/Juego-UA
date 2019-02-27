@@ -17,17 +17,8 @@
                         <input id="TxtUrl" type="text" class="form-control" runat="server" />
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-6">
-                    <label>Estado de la pregunta</label>
-                        <asp:DropDownList ID="DropDownList" AppendDataBoundItems="true" CssClass="form-control" runat="server">
-                            <%--<asp:ListItem Value="0">A</asp:ListItem>--%>
-                            <asp:ListItem Value="0">--Seleccione estado--</asp:ListItem>
-                        </asp:DropDownList><br />
-                        <p>"A" Habilitar, "D" Desabilitar</p>
-              
-                    </div>
-                </div>
+
+                <br />
                 <center>
                     <button id="BtnGuardar" onserverclick="guardarSancion" type="submit" class="btn btn-success text-center" runat="server">Guardar cambios</button>
                 </center>

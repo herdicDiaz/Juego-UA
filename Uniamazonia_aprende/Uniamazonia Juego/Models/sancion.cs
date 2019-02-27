@@ -74,10 +74,10 @@ namespace Uniamazonia_Juego.Models
             return consulta;
         }
 
-        public Boolean updateSancion(String descripcion,String url, String estado, String id_sancion)
+        public Boolean updateSancion(String descripcion,String url,  String id_sancion)
         {
             Boolean consulta = new Boolean();
-            String Query = "UPDATE `aprender`.`sancion` SET `descripcion`='"+descripcion+"', `url_video`='"+url+"', `estado_sancion`='"+estado+"' WHERE  `idsancion`='"+id_sancion+"';";
+            String Query = "UPDATE `aprender`.`sancion` SET `descripcion`='"+descripcion+"', `url_video`='"+url+"' WHERE  `idsancion`='"+id_sancion+"';";
             consulta = conexion.update_BD(Query);
             return consulta;
         }
@@ -102,7 +102,7 @@ namespace Uniamazonia_Juego.Models
         public DataTable buscarEnGrid(String palabra)
         {
             DataTable consulta = new DataTable();
-            String Query="select *from sancion where sancion.descripcion like '%"+palabra+"%'";
+            String Query="select *from sancion where sancion.descripcion like '%"+palabra+"%' and estado_sancion=0";
             consulta = conexion.consultar_BD(Query);
             return consulta;
         }

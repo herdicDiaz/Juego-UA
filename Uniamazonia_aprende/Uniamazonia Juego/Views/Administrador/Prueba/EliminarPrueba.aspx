@@ -73,7 +73,6 @@
 
                         </div>
 
-
                     </ContentTemplate>
                 </asp:UpdatePanel>
 
@@ -81,10 +80,7 @@
                     <div class="form-group col-md-6">
                     </div>
                     <div class="form-group col-md-6">
-
-
                          <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Eliminar</button>
-
                     </div>
                 </div>
                 <hr />

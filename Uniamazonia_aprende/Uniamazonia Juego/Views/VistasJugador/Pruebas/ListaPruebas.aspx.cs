@@ -40,7 +40,7 @@ namespace Uniamazonia_Juego.Views.VistasJugador.Pruebas
             DataTable consultaJugador = JugadorC.ConsultaFkUsuario(id_usuario);
             int id_jugador =Convert.ToInt32(consultaJugador.Rows[0]["id_jugador"].ToString());
 
-            Consulta = usuario_pruebaC.Consulta_parametro_fk_prueba_fk_usuario(Convert.ToInt32(id_prueba),id_jugador);
+            Consulta = usuario_pruebaC.Consulta_parametro_fk_prueba_fk_jugador(Convert.ToInt32(id_prueba),id_jugador);
             DataTable Consulta_pregunta = preguntaC.consultaParametroFk_Prueba(id_prueba);
             if (Consulta_pregunta.Rows.Count==0)
             {
@@ -48,13 +48,14 @@ namespace Uniamazonia_Juego.Views.VistasJugador.Pruebas
             }
             else
             {
-                if (Consulta.Rows.Count == 0)
+                if (Consulta.Rows.Count != 0)
                 {
-                    Response.Redirect("~/Views/VistasJugador/Test/Test.aspx?id_prueba=" + id_prueba);
+                    ClientScript.RegisterStartupScript(this.GetType(), "mensaje", "<script> swal({position: 'center',type: 'error',title: 'Vaya!',text:'Ya realizaste esta prueba.',timer:3000}) </script>");
                 }
                 else
                 {
-                    ClientScript.RegisterStartupScript(this.GetType(), "mensaje", "<script> swal({position: 'center',type: 'error',title: 'Vaya!',text:'Ya realizaste esta prueba.',timer:3000}) </script>");
+                    Response.Redirect("~/Views/VistasJugador/Test/Test.aspx?id_prueba=" + id_prueba);
+
                 }
             }
        

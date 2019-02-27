@@ -15,12 +15,6 @@
                         <asp:TextBox ID="txtNombre" type="text" class="form-control" runat="server"></asp:TextBox>
                         <br />
                     </div>
-                    <%--                    <div class="col-md-6">
-                        <label>Estado</label>
-                        <asp:DropDownList ID="Estado_select" CssClass="form-control" runat="server" AppendDataBoundItems="true">
-                            <asp:ListItem>--Seleccione un estado--</asp:ListItem>
-                        </asp:DropDownList>
-                    </div>--%>
                     <div class="col-md-6">
                         <label>
                             Repuesta A
@@ -30,8 +24,6 @@
                 </div>
 
                 <div class="row">
-
-
                     <div class="col-md-6">
                         <label>Repuesta B </label>
                         <input id="txtRespuestaB" type="text" class="form-control" runat="server" required />
@@ -43,8 +35,8 @@
                     </div>
                 </div>
                 <br />
-                <div class="row">
 
+                <div class="row">
                     <div class="col-md-6">
                         <label>Repuesta D </label>
                         <input id="txtRespuestaD" type="text" class="form-control" runat="server" required />
@@ -59,13 +51,6 @@
                 </div>
                 <br />
 
-  <%--              <div class="row">
-
-                    <div class="col-md-6">
-                        <label>Calificación</label>
-                        <input id="Txtcalificacion" type="text" class="form-control" runat="server" required />
-                    </div>
-                </div>--%>
                 <br />
                 <center>
                 <button class="btn btn-success" type="submit" onserverclick="guardarCambios" runat="server">Guardar pregunta</button>
@@ -73,6 +58,9 @@
                 <br />
             </div>
         </div>
+
+
+
         <script type="text/javascript">
             function successalert() {
                 swal({

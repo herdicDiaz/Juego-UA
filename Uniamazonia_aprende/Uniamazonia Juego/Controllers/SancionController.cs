@@ -67,9 +67,9 @@ namespace Uniamazonia_Juego.Controllers
             return consulta;
         }
 
-        public Boolean updateSancion(String descripcion, String url, String estado, String id_sancion)
+        public Boolean updateSancion(String descripcion, String url, String id_sancion)
         {
-            Boolean consulta = sancionM.updateSancion(descripcion, url, estado, id_sancion);
+            Boolean consulta = sancionM.updateSancion(descripcion, url, id_sancion);
             return consulta;
         }
 

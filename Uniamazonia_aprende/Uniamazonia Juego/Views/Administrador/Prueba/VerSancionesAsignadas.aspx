@@ -4,6 +4,35 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContenidoPagina" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
+    <%--Modal para eliminar sancion--%>
+    <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+        <ContentTemplate>
+            <div id="deleteModal" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Eliminar sanción</h5>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body" id="TextoModal" runat="server">
+                            <asp:HiddenField ID="hfCode" runat="server" />
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                            <asp:LinkButton ID="btnEliminar" runat="server" class="btn btn-danger" Text='Eliminar' OnClick="btnEliminar_Click" runat="server">Eliminar</asp:LinkButton>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ContentTemplate>
+    </asp:UpdatePanel>
+
+
+
+
+
     <div class="card">
         <div class="card-header text-center bg-success">
             <h3>Pruebas y sanciones</h3>
@@ -28,32 +57,36 @@
             <div>
                 <div id="DivNohaysancionAsignadas" style="display: none" class="alert alert-info" runat="server"></div>
             </div>
-            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                <ContentTemplate>
 
-                    <asp:GridView ID="TblPrueba_sanciones" runat="server" AutoGenerateColumns="false"
-                        CssClass="table table-striped table-bordered table-condensed"
-                        OnPageIndexChanging="Metodo_Paginacion"
-                        OnRowCommand="ComandosGrid"
-                        DataKeyNames="idsancion">
+            <div class="table-responsive">
+                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                    <ContentTemplate>
 
-                        <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
-                        <HeaderStyle ForeColor="Black" />
-                        <Columns>
-                            <asp:BoundField DataField="idsancion" SortExpression="idsancion" ReadOnly="True" HeaderText="#" ItemStyle-HorizontalAlign="Center" />
-                            <asp:TemplateField HeaderText="Sancion asignada" ItemStyle-HorizontalAlign="Center" ControlStyle-Width="800px">
-                                <ItemTemplate>
-                                    <asp:Label ID="LabelDescripcion" runat="server" Text='<%# Bind("descripcion") %>'></asp:Label>
-                                </ItemTemplate>
-                            </asp:TemplateField>
+                        <asp:GridView ID="TblPrueba_sanciones" runat="server" AutoGenerateColumns="false"
+                            CssClass="table table-striped table-bordered table-condensed"
+                            OnPageIndexChanging="Metodo_Paginacion"
+                            OnRowCommand="ComandosGrid"
+                            DataKeyNames="idsancion">
 
-                            <asp:ButtonField Text="Quitar" ButtonType="Button" CommandName="Quitar">
-                                <ControlStyle CssClass="btn btn-danger"></ControlStyle>
-                            </asp:ButtonField>
-                        </Columns>
-                    </asp:GridView>
-                </ContentTemplate>
-            </asp:UpdatePanel>
+                            <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
+                            <HeaderStyle ForeColor="Black" />
+                            <Columns>
+                                <asp:BoundField DataField="idsancion" SortExpression="idsancion" ReadOnly="True" HeaderText="#" ItemStyle-HorizontalAlign="Center" />
+                                <asp:TemplateField HeaderText="Sancion asignada" ItemStyle-HorizontalAlign="Center" ControlStyle-Width="800px">
+                                    <ItemTemplate>
+                                        <asp:Label ID="LabelDescripcion" runat="server" Text='<%# Bind("descripcion") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+
+                                <asp:ButtonField Text="Quitar" ButtonType="Button" CommandName="Quitar">
+                                    <ControlStyle CssClass="btn btn-danger"></ControlStyle>
+                                </asp:ButtonField>
+                            </Columns>
+                        </asp:GridView>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+            </div>
+
 
         </div>
     </div>

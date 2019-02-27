@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Web;
@@ -7,12 +8,17 @@ using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using Uniamazonia_Juego.Controllers;
+using Uniamazonia_Juego.Controllers.Cotrollers;
 
 namespace Uniamazonia_Juego
 {
     public partial class Principal : System.Web.UI.MasterPage
     {
         int id_aux_usuario;
+        UsuarioController UsuarioC = new UsuarioController();
+        JugadorController JugadorC = new JugadorController();
+        RankingController RankingC = new RankingController();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -74,12 +80,24 @@ namespace Uniamazonia_Juego
                 if (rol_usuario.Text.Equals("<Strong style='color: green'> Rol: Jugador </Strong>"))
                 {
                     // *nombre *tipo de rol *putos *estrellas
-                    controlador_rol_usuario = new Rol_UsuarioController(0, id_jugador_bd, "","");
+                    controlador_rol_usuario = new Rol_UsuarioController(0, id_jugador_bd, "", "");
                     rol_usuario_actual = controlador_rol_usuario.rol_usuario_menu("J");
                     this.nombre_jugador_actual.Text = controlador_jugador.consultar_nombre_BD();
                     //puntos_actuales = Convert.ToInt32(controlador_premiacion.obtener_puntos_acomulados());
-                    pintar_premiacion(0);
-                    this.puntos_jugador.Text ="SCORE : "+ controlador_premiacion.obtener_puntos_acomulados();
+                    //pintar_premiacion(0);
+                    DataTable ConsultaJugador = JugadorC.ConsultaFkUsuario(Convert.ToInt32(Session["id_usuario"]));
+                    int id_jugador = Convert.ToInt32(ConsultaJugador.Rows[0]["id_jugador"].ToString());
+                    DataTable ConsultaRanking = RankingC.ConsultaParametroFk_Jugador(id_jugador);
+                    if (ConsultaRanking.Rows.Count!=0)
+                    {
+                        String Puntaje = ConsultaRanking.Rows[0]["puntaje_acomulado"].ToString();
+                        this.puntos_jugador.Text = "SCORE : " + Puntaje;
+                    }
+                    else
+                    {
+                        this.puntos_jugador.Text = "SCORE : " + 0;
+                    }
+  
 
                 }
 

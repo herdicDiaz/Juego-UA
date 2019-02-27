@@ -29,9 +29,9 @@ namespace Uniamazonia_Juego.Controllers
             return Insert;
         }
 
-        public DataTable Consulta_parametro_fk_prueba_fk_usuario(int fk_prueba, int fk_usuario)
+        public DataTable Consulta_parametro_fk_prueba_fk_jugador(int fk_prueba, int fk_usuario)
         {
-            consulta = usuario_prueba.Consulta_parametro_fk_prueba_fk_usuario(fk_prueba,fk_usuario);
+            consulta = usuario_prueba.Consulta_parametro_fk_prueba_fk_jugador(fk_prueba,fk_usuario);
             return consulta;
         }
         }

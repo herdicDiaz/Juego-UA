@@ -37,10 +37,11 @@ namespace Uniamazonia_Juego.Models
             return insert;
         }
 
-        public DataTable Consulta_parametro_fk_prueba_fk_usuario(int fk_prueba, int fk_usuario)
+        public DataTable Consulta_parametro_fk_prueba_fk_jugador(int fk_prueba, int fk_jugador)
         {
+            this.conexion = new Connection();
             DataTable consulta = new DataTable();
-            String Query = "SELECT fk_prueba, fk_usuario, fecha_prueba, puntos_prueba, P_NoContestadas, P_Contestadas, P_Incorrectas, P_Correctas from usuario_prueba WHERE usuario_prueba.fk_prueba='" + fk_prueba + "' AND usuario_prueba.fk_usuario='" + fk_usuario + "';";
+            String Query = "SELECT fk_prueba, fk_jugador, fecha_prueba, puntos_prueba, P_NoContestadas, P_Contestadas, P_Incorrectas, P_Correctas from usuario_prueba WHERE usuario_prueba.fk_prueba='" + fk_prueba + "' AND usuario_prueba.fk_jugador='" + fk_jugador + "';";
             consulta = conexion.consultar_BD(Query);
             return consulta;
         }

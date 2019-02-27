@@ -44,9 +44,9 @@ namespace Uniamazonia_Juego.Controllers
 
         }
 
-        public Boolean update_pregunta(String nombre, String calificacion,int id_pregunta)
+        public Boolean update_pregunta(String nombre,int id_pregunta)
         {
-            Boolean update = preguntaM.update_pregunta(nombre, calificacion, id_pregunta);
+            Boolean update = preguntaM.update_pregunta(nombre,id_pregunta);
             return update;
         }
         public Boolean updateAggFkPrueba(String id_pregunta, String fk_prueba)

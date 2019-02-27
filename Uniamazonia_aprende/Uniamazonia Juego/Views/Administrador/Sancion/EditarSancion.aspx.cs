@@ -23,24 +23,24 @@ namespace Uniamazonia_Juego.Views.Administrador.Sancion
             {
                 TxtDescripcion.Value = consulta.Rows[0]["descripcion"].ToString();
                 TxtUrl.Value = consulta.Rows[0]["url_video"].ToString();
-                if (estado_consulta == "D")
-                {
-                    var item = new List<String>
-                    {
-                    "A"
-                    };
-                    DropDownList.DataSource =item;
-                    DropDownList.DataBind();
-                }
-                else
-                {
-                    var item = new List<String>
-                    {
-                    "D"
-                    };
-                    DropDownList.DataSource =item;
-                    DropDownList.DataBind();
-                }
+                //if (estado_consulta == "D")
+                //{
+                //    var item = new List<String>
+                //    {
+                //    "A"
+                //    };
+                //    DropDownList.DataSource =item;
+                //    DropDownList.DataBind();
+                //}
+                //else
+                //{
+                //    var item = new List<String>
+                //    {
+                //    "D"
+                //    };
+                //    DropDownList.DataSource =item;
+                //    DropDownList.DataBind();
+                //}
                
             }
         }
@@ -49,12 +49,12 @@ namespace Uniamazonia_Juego.Views.Administrador.Sancion
         {
             String descripcion = TxtDescripcion.Value;
             String url = TxtUrl.Value;
-            String estado = DropDownList.SelectedValue;
-            if (estado=="0")
-            {
-                estado = estado_consulta;
-            }
-            Boolean consulta = SancionC.updateSancion(descripcion,url,estado,idsancion);
+            //String estado = DropDownList.SelectedValue;
+            //if (estado=="0")
+            //{
+            //    estado = estado_consulta;
+            //}
+            Boolean consulta = SancionC.updateSancion(descripcion,url,idsancion);
             Response.Redirect("~/Views/Administrador/Sancion/ListarSancion.aspx");
         }
 

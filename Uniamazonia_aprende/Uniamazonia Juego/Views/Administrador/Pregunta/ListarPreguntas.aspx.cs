@@ -25,10 +25,6 @@ namespace Uniamazonia_Juego.Views.Administrador.Pregunta
         {
             if (Page.IsPostBack == false)
             {
-                //consulta_pruebas = pruebaC.consulta_combox_nombre();
-                //this.Lista_pruebas.DataTextField = "nombre_prueba";
-                //this.Lista_pruebas.DataSource = consulta_pruebas;
-                //this.Lista_pruebas.DataBind();
                 BindGridView();
             }
 
@@ -79,21 +75,34 @@ namespace Uniamazonia_Juego.Views.Administrador.Pregunta
             {
                 int index = Convert.ToInt32(e.CommandArgument);
                 id_pregunta = Tabla_Preguntas.DataKeys[index].Value.ToString();
+                Session["id_pregunta"]= id_pregunta;
                 if (e.CommandName == "editar")
                 {
                     Response.Redirect("~/Views/Administrador/Pregunta/EditarPregunta.aspx?id_pregunta=" + id_pregunta);
                 }
                 if (e.CommandName == "eliminar")
                 {
-                    Boolean Delete = preguntaC.Delete_pregunta(id_pregunta);
-                    BindGridView();
-                    //ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "denegadoAlert('Esta seguro de eliminar la pregunta " + id_pregunta + "');", true);
+
+                    System.Text.StringBuilder sb = new System.Text.StringBuilder();
+                    sb.Append(@"<script type='text/javascript'>");
+                    sb.Append("$('#deleteModal').modal('show');");
+                    sb.Append(@"</script>");
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "deleteModal", sb.ToString(), false);
+               
                 }
             }
    
         }
 
-        
+
+        public void btnEliminar_Click(object sender, EventArgs e)
+        {
+            String pk_pregunta = Session["id_pregunta"].ToString();
+            Boolean Delete = preguntaC.Delete_pregunta(pk_pregunta);
+            BindGridView();
+        }
+
+
 
         protected void BuscarEnGrid(object sender, EventArgs e)
         {

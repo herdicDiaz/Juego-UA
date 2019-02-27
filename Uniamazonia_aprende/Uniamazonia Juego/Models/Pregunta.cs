@@ -61,10 +61,10 @@ namespace Uniamazonia_Juego.Models
             return consulta;
         }
 
-        public Boolean update_pregunta(String nombre,String calificacion,int id_pregunta)
+        public Boolean update_pregunta(String nombre, int id_pregunta)
         {
             Boolean consulta = new Boolean();
-            String Query = "UPDATE `aprender`.`pregunta` SET `nombre_pregunta`='"+nombre+"', `calificacion`='"+calificacion+"', WHERE  `id_pregunta`='"+id_pregunta+"';";
+            String Query = "UPDATE `aprender`.`pregunta` SET `nombre_pregunta`='"+nombre+"' WHERE  `id_pregunta`='"+id_pregunta+"';";
             consulta = conexion.update_BD(Query);
             return consulta;
         }
