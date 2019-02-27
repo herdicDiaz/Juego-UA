@@ -296,9 +296,9 @@ insert into modulo values('4',"Servicios",'../../../FotosBD/moduloFotos/servicio
 
 -- -------------------------------------------------------------------------
 -- -----------------------------------------------------------------------------------------
-insert into inicio values('1','Vision','Los proyectos de formación virtual deben entenderse en el marco de una estrategia integral de desarrollo del talento, orientada al logro de los objetivos de las empresas y organizaciones, y la mejora de sus niveles de competitividad.','../../Images/paisaje%202%20carrusel.jpg','A','active','J');
-insert into inicio values('2','Mision','Descargue en formato pdf nuestro mapa conceptual del e-learning','../../Images/paisaje%201%20carrusel.jpg','A','','J');
-insert into inicio values('3','Objetivo','Mientras que a las instituciones educativas les proporciona','../../Images/paisaje%203%20carrusel.jpg','A','','J');
+insert into inicio values('1','Vision','Los proyectos de formación virtual deben entenderse en el marco de una estrategia integral de desarrollo del talento, orientada al logro de los objetivos de las empresas y organizaciones, y la mejora de sus niveles de competitividad.','../../Images/uniamazonia.jpg','A','active','J');
+insert into inicio values('2','Mision','Descargue en formato pdf nuestro mapa conceptual del e-learning','../../Images/biblioteca.jpg','A','','J');
+insert into inicio values('3','Objetivo','Mientras que a las instituciones educativas les proporciona','../../Images/auditorio.jpg','A','','J');
 
 
 -- -------------------------------------------------------------------------

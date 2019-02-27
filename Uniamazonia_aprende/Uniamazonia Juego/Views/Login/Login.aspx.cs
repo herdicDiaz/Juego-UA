@@ -44,6 +44,7 @@ namespace Uniamazonia_Juego.Views.Login
             controlador_usuario = new UsuarioController(0,this.usuario_actual.Text,"","");
             datos_usuario = controlador_usuario.datos_usuario_BD();
             int id_usuario=0, filas_bd=0,columnas_bd=0;
+
             String usuario_bd="", password_bd="", privilegio_bd="";
 
             try

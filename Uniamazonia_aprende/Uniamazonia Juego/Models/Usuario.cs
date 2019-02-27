@@ -15,7 +15,7 @@ namespace Uniamazonia_Juego.Models
         private String privilegio_usuario { set; get; }
 
         //private Connection conexion;
-        Connection conexion = new Connection();
+        Connection conexion;
 
         // constructor
         public Usuario(int id_user, String name_user, String password_user, String privilege_user)
@@ -24,12 +24,15 @@ namespace Uniamazonia_Juego.Models
             this.nombre_usuario = name_user;
             this.password_usuario = password_user;
             this.privilegio_usuario = privilege_user;
+            this.conexion = new Connection();
+
         }
 
 
 
         //metodos
         public DataTable datos_usuario_BD() {
+            this.conexion = new Connection();
             String Query = "select * from usuario where nombre_usuario='"+nombre_usuario+"';";
             DataTable consulta = conexion.consultar_BD(Query);
             return consulta;
