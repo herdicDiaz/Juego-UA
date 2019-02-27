@@ -116,11 +116,23 @@ insert into vista values("211","/Views/Administrador/Premiacion/ListarPremiacion
 insert into vista VALUES("231","/Views/VistasJugador/ConsultaModulo/ListaModulo","activo","Ver Modulos","mdi mdi-check-all","10");
 
 
+
+
 -- --------------------------------------------------
 -- RANKING USUARIOS 251 - 270                       |
 -- --------------------------------------------------
 
 insert into vista VALUES("251","/Views/VistasJugador/Ranking/Ranking.aspx","activo","Ver Ranking","mdi mdi-check-all","11");
+
+-- --------------------------------------------------
+-- RANKING USUARIOS 270 - 290                       |
+-- --------------------------------------------------
+
+insert into vista VALUES("271","/Views/Administrador/Empresa/EditarEmpresa.aspx","activo","Gestionar Empresa","mdi mdi-check-all","9");
+insert into vista VALUES("272","/Views/Administrador/Icono/Iconos.aspx","activo","Gestionar Iconos","mdi mdi-check-all","9");
+insert into vista VALUES("273","/Views/Administrador/Programa/Programa.aspx","activo","Gestionar Programa","mdi mdi-check-all","9");
+
+
 
 -- ------------------------------------------------------------------------------------------------------------------------
 -- ------------------------------------------------------------------------------------------------------------------------
@@ -242,6 +254,15 @@ insert into vista_rol VALUES("180","231","10","2");
 -- RANKING SUBMENU    Jugaddor                 |
 -- --------------------------------------------------
 insert into vista_rol VALUES("200","251","11","2");
+
+
+-- --------------------------------------------------
+-- tablas basicas   administrasdor     220-220             |
+-- --------------------------------------------------
+insert into vista_rol VALUES("220","9","9","1");
+insert into vista_rol VALUES("221","271","9","1");
+insert into vista_rol VALUES("222","272","9","1");
+insert into vista_rol VALUES("223","273","9","1");
 
 
 
