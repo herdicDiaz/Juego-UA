@@ -27,13 +27,13 @@
                 <hr />
 
                 <div class="form-row">
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-10">
                         <label for="nombre_content">Nombre Programa</label>
                         <asp:TextBox ID="nombre_programa" runat="server" type="text" class="form-control" placeholder="ingrese el nombre aqui..."></asp:TextBox>
 
                     </div>
-                    <div class="form-group col-md-4">
-                        <asp:Button ID="crear_programa" data-target="#recuperar" Style="margin-top: 29px;" runat="server" CssClass="btn btn-primary" Text="Crear Programa" OnClick="crear_programa_Click" />
+                    <div class="form-group col-md-2">
+                        <asp:Button ID="crear_programa" data-target="#recuperar" Style="margin-top: 29px;" runat="server" CssClass="btn btn-success" Text="Crear Programa" OnClick="crear_programa_Click" />
                     </div>
                 </div>
 
@@ -62,7 +62,7 @@
                         <Columns>
                             <asp:BoundField DataField="id_programa" HeaderText="#" ReadOnly="True" SortExpression="id_programa" />
 
-                            <asp:TemplateField HeaderText="Nombre" SortExpression="nombre_programa">
+                            <asp:TemplateField HeaderText="Nombre" SortExpression="nombre_programa" ItemStyle-HorizontalAlign="Center">
                                 <EditItemTemplate>
                                     <asp:TextBox ID="nombre_programa" runat="server" Text='<%# Bind("nombre_programa") %>'></asp:TextBox>
                                 </EditItemTemplate>

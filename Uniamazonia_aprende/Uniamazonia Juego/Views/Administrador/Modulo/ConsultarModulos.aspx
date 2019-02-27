@@ -41,11 +41,16 @@
                 <hr />
                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                     <ContentTemplate>
+                        <div class="row">
+                            <div class="col-md-11">
+                                <asp:TextBox ID="filtro_prueba" runat="server" class="form-control is-invalid" type="text" placeholder="&#128270; Buscar.." required></asp:TextBox>
+                            </div>
+                            <div class="col-md-1">
+                                <asp:Button ID="buscar_modulo" runat="server" class="btn btn-success" OnClick="buscar_modulo_Click" Text="Filtrar" />
+                            </div>
 
-                        <div class="input-group" style="width: 55% !important;">
-                            <asp:TextBox ID="filtro_prueba" runat="server" class="form-control is-invalid" type="text" placeholder="&#128270; Buscar.." required></asp:TextBox>
-                            <asp:Button ID="buscar_modulo" runat="server" class="btn btn-success" OnClick="buscar_modulo_Click" Text="Filtrar" />
                             <br>
+                            <%--</div>--%>
                         </div>
                         <hr />
                         <div id="tabla_unica" class="table-responsive">
@@ -53,11 +58,10 @@
                                 AllowPaging="true" AutoGenerateColumns="false"
                                 OnPageIndexChanging="OnPageIndexChanging" CssClass="table table-striped" border="0" PageSize="7">
                                 <PagerStyle CssClass="current-page" />
-
                                 <Columns>
                                     <asp:BoundField ItemStyle-Width="7%" ItemStyle-CssClass="unico_position" DataField="id_modulo" HeaderText="Codigo" ReadOnly="true" SortExpression="id_modulo" />
-                                    <asp:BoundField ItemStyle-Width="150px" ItemStyle-CssClass="unico_design" DataField="nombre_modulo" HeaderText="Nombre Modulo" ReadOnly="true" SortExpression="nombre_modulo" />
-                                    <asp:BoundField ItemStyle-Width="8%" ItemStyle-CssClass="unico_position" DataField="estado_modulo" HeaderText="Estado" ReadOnly="true" SortExpression="estado_modulo" />
+                                    <asp:BoundField ItemStyle-Width="150px" ItemStyle-HorizontalAlign="center" DataField="nombre_modulo" HeaderText="Nombre Modulo" ReadOnly="true" SortExpression="nombre_modulo" />
+                                    <asp:BoundField ItemStyle-Width="8%" DataField="estado_modulo" HeaderText="Estado" ReadOnly="true" SortExpression="estado_modulo" />
                                 </Columns>
                                 <PagerSettings Mode="NumericFirstLast" PageButtonCount="4" FirstPageText="Primero" LastPageText="Ultimo" />
                                 <PagerStyle CssClass="pagination-lg" HorizontalAlign="Center" />

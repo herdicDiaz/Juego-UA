@@ -71,7 +71,7 @@
 
                                 <Columns>
                                     <asp:BoundField ItemStyle-Width="7%" ItemStyle-CssClass="unico_position" DataField="id_contenido" HeaderText="Codigo" ReadOnly="true" SortExpression="id_contenido" />
-                                    <asp:BoundField ItemStyle-Width="150px" ItemStyle-CssClass="unico_design" DataField="nombre_contenido" HeaderText="Nombre Contenido" ReadOnly="true" SortExpression="nombre_contenido" />
+                                    <asp:BoundField ItemStyle-Width="150px" ItemStyle-HorizontalAlign="Center" DataField="nombre_contenido" HeaderText="Nombre Contenido" ReadOnly="true" SortExpression="nombre_contenido" />
                                     <asp:BoundField ItemStyle-Width="150px" ItemStyle-CssClass="unico_design" DataField="descripcion_contenido" HeaderText="Descipcion" ReadOnly="true" SortExpression="descripcion_contenido" />
                                     <asp:BoundField ItemStyle-Width="8%" ItemStyle-CssClass="unico_position" DataField="estado_contenido" HeaderText="Estado" ReadOnly="true" SortExpression="estado_contenido" />
                                 </Columns>

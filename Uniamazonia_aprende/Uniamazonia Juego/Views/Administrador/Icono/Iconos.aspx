@@ -25,14 +25,14 @@
             </div>
             <div class="container" id="busquedas" style="width: 90%; margin: 0 auto;">
                 <hr />
-                <div class="form-row">
-                            <div class="form-group col-md-6">
+                <div class="row">
+                            <div class="col-md-10">
                                 <label for="nombre_content">Nombre Icono</label>
                                 <asp:TextBox ID="nombre_icono" runat="server" type="text" class="form-control" placeholder="ingrese el nombre aqui..."></asp:TextBox>
 
                             </div>
-                    <div class="form-group col-md-4">
-                        <asp:Button ID="crear_icono" data-target="#recuperar" Style="margin-top: 29px;" runat="server" CssClass="btn btn-primary" Text="Crear Icono" OnClick="crear_icono_Click" />
+                    <div class="form-group col-md-2">
+                        <asp:Button ID="crear_icono" data-target="#recuperar" Style="margin-top: 29px;" runat="server" CssClass="btn btn-success" Text="Crear Icono" OnClick="crear_icono_Click" />
                     </div>
                 </div>
 
@@ -53,7 +53,7 @@
                                 <Columns>
                                     <asp:BoundField DataField="id_icono" HeaderText="#" ReadOnly="True" SortExpression="id_icono" />
 
-                                    <asp:TemplateField HeaderText="Nombre" SortExpression="nombre_icono">
+                                    <asp:TemplateField HeaderText="Nombre" SortExpression="nombre_icono" ItemStyle-HorizontalAlign="Center">
                                         <EditItemTemplate>
                                             <asp:TextBox ID="nombre_icono" runat="server" Text='<%# Bind("nombre_icono") %>'></asp:TextBox>
                                         </EditItemTemplate>
