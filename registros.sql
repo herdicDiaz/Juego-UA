@@ -265,18 +265,26 @@ insert into vista_rol VALUES("222","272","9","1");
 insert into vista_rol VALUES("223","273","9","1");
 
 
-
+select * from usuario;
 -- ------------------------------------------------------------------------------------------------------------
 -- -------------------------------------------------------------------------------------------------------------
-insert into usuario values("1","aticristian@hotmail.com","1234","A");
+insert into usuario values("1","cristian@hotmail.com","1234","A");
+
 
 insert into usuario values("2","rosamaria@hotmail.com","rosa","J");
 insert into usuario values("3","danielcamargo@hotmail.com","daniel","J");
 insert into usuario values("4","jose@hotmail.com","jose","J");
+
+insert into usuario values("5","herdic@hotmail.com","herdic","A");
+
 -- -----------------------------------------------------------------------------------------------------------------
 -- -----------------------------------------------------------------------------------------------------------------
 
-insert into administrador values("1","Cristian Alberto"," Tisoy Hurtado","A","1");
+insert into administrador values("1","Cristian"," Tisoy Hurtado","A","1");
+
+insert into administrador values("2","Herdic"," Munevar Diaz","A","5");
+
+
 -- -------------------------------------------------------------------------------------------------------------
 -- --------------------------------------------------------------------------------------------------------------
 insert into programa values("1","Ingenieria de Sistemas","A");
@@ -294,6 +302,9 @@ insert into jugador values("3","567","Jose","Milton","Suarez","Pino",7,"jose@hot
 -- ----------------------------------------------------------------------------------------------------------------------
 -- ---------------------------------------------------------------------------------------------------------------------
 insert into rol_usuario values("1","1","A","A");
+describe rol_usuario;
+insert into rol_usuario values("1","2","A","A");
+
 insert into rol_usuario values("2","1","A","J");
 insert into rol_usuario values("2","2","A","J");
 insert into rol_usuario values("2","3","A","J");

@@ -137,8 +137,10 @@ call eliminar_modulo(id_modulo_aux);
 end
 //
 -- call eliminar_en_cascada('1');
-
  -- DROP PROCEDURE IF EXISTS eliminar_pregunta;
 -- DROP PROCEDURE IF EXISTS eliminar_prueba;
 -- DROP PROCEDURE IF EXISTS eliminar_contenido;
  -- DROP PROCEDURE IF EXISTS eliminar_modulo;
+ 
+ 
+ 

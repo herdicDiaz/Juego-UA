@@ -56,7 +56,7 @@ namespace Uniamazonia_Juego.Views.Administrador
 
                         int id_modulo = Convert.ToInt32(ViewState["id_modulo_aux"].ToString());
 
-                        controlador_modulos = new ModuloController(id_modulo, this.lista_modulos.SelectedValue, "A", ruta_imagen_actual);
+                        controlador_modulos = new ModuloController(id_modulo, this.nuevo_nombre_txt.Text, "A", ruta_imagen_actual);
 
 
                         if (controlador_modulos.actualizar_nombre_modulo())
