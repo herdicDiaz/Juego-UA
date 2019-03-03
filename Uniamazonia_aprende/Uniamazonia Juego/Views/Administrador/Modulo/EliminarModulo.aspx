@@ -37,6 +37,9 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContenidoPagina" runat="server">
+   <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
+
     <div style="color: black !important;">
         <div id="fondo_busqueda" style="border: 1px #84B59F dotted; background-color: white;">
             <div class="card bg-success text-white">
@@ -50,9 +53,18 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="lista_pruebas">Modulos Disponibles</label>
+                         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                    <ContentTemplate>
+
+
                         <asp:DropDownList ID="lista_modulos" runat="server" class="form-control" AppendDataBoundItems="true">
                             <asp:ListItem Value=""> -- Seleccione un Modulo -- </asp:ListItem>
                         </asp:DropDownList>
+
+                         </ContentTemplate>
+                </asp:UpdatePanel>
+
+
                     </div>
                     <div class="form-group col-md-6" style="margin-top: 29px !important;">
                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Eliminar</button>
@@ -60,6 +72,10 @@
                     
                     </div>
                 </div>
+
+
+
+
                 <hr />
 
             </div>
