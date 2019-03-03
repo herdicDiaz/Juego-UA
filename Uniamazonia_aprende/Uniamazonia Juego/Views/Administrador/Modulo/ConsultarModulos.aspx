@@ -49,8 +49,10 @@
 
             <div id="busquedas" style="width: 90%; margin: 0 auto;">
                 <hr />
-                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                    <ContentTemplate>
+
+               
+
+
                         <div class="row">
                             <div class="col-md-11">
                                 <asp:TextBox ID="filtro_prueba" runat="server" class="form-control is-invalid" type="text" placeholder="&#128270; Buscar.." required></asp:TextBox>
@@ -64,6 +66,9 @@
                         </div>
                         <hr />
                         <div id="tabla_unica" class="table-responsive">
+                             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                    <ContentTemplate>
+
                             <asp:GridView ID="lista_filtro_modulo" runat="server"
                                 AllowPaging="true" AutoGenerateColumns="false"
                                 OnPageIndexChanging="OnPageIndexChanging" CssClass="table table-striped" border="0" PageSize="7">
@@ -76,6 +81,9 @@
                                 <PagerSettings Mode="NumericFirstLast" PageButtonCount="4" FirstPageText="Primero" LastPageText="Ultimo" />
                                 <PagerStyle CssClass="pagination-lg" HorizontalAlign="Center" />
                             </asp:GridView>
+
+
+
                     </ContentTemplate>
                 </asp:UpdatePanel>
 
