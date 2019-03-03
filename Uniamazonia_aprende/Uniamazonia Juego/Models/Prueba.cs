@@ -34,7 +34,7 @@ namespace Uniamazonia_Juego.Models
         public Boolean crear_prueba(String aux_nombre_contenido) {
             // 1). bsucar id del contenido seleccionado
             
-            String Query = "select id_contenido from contenido where nombre_contenido='"+aux_nombre_contenido+"';";
+            String Query = "select id_contenido from contenido where nombre_contenido='"+aux_nombre_contenido+"' and estado_contenido='A';";
             int aux_fk_contenido = conexion.buscar_ID_BD(Query);
             if (aux_fk_contenido!=777)
             {
@@ -153,12 +153,12 @@ namespace Uniamazonia_Juego.Models
         public DataTable consulta_prueba_x_contenido(String nombre_contenido) {
             DataTable consulta = new DataTable();
             int aux_fk_contenido = 0;
-            String query = "select id_contenido from contenido where nombre_contenido='"+nombre_contenido+"';";
+            String query = "select id_contenido from contenido where nombre_contenido='"+nombre_contenido+"' and estado_contenido='A';";
 
             aux_fk_contenido = Convert.ToInt32(conexion.consulta_universal(query));
 
-            String Query = "select id_prueba, nombre_prueba,numero_preguntas,estado_prueba,fk_contenido " +
-                "from prueba where fk_contenido='"+aux_fk_contenido+"';";
+            String Query = "select id_prueba, nombre_prueba,estado_prueba,fk_contenido " +
+                "from prueba where fk_contenido='"+aux_fk_contenido+"' and estado_prueba='A';";
             consulta = conexion.consultar_BD(Query);
             
             return consulta;
