@@ -72,17 +72,11 @@ namespace Uniamazonia_Juego.Views.Administrador
 
                             ClientScript.RegisterStartupScript(this.GetType(), "mensaje", "<script> swal({type: 'error',title: 'Modulo No Guardado!',text: 'Algo salió mal!',timer: 3200}) </script>");
                         }
-
-
-
-
+                        
 
                     }
 
                 }
-
-
-
 
 
 
