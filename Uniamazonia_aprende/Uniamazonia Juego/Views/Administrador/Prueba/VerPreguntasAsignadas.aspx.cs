@@ -104,11 +104,26 @@ namespace Uniamazonia_Juego.Views.Administrador.Prueba
         {
             if (e.CommandName=="Quitar")
             {
+                System.Text.StringBuilder sb = new System.Text.StringBuilder();
+                sb.Append(@"<script type='text/javascript'>");
+                sb.Append("$('#deleteModal').modal('show');");
+                sb.Append(@"</script>");
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "deleteModal", sb.ToString(), false);
+
+
+
                 int index = Convert.ToInt32(e.CommandArgument);
                 String id_preguntas = Tabla_Preguntas.DataKeys[index].Value.ToString();
-                Boolean DeletePregunta = PreguntaC.DeletePreguntaDePrueba(id_preguntas);
-                BindGridView_SeleccionPrueba(sender,e);
+                Session["id_preguntas"]=id_preguntas;
+ 
             }
+        }
+
+        public void btnEliminar_Click(object sender, EventArgs e)
+        {
+            String id =Session["id_preguntas"].ToString();
+            Boolean DeletePregunta = PreguntaC.DeletePreguntaDePrueba(id);
+            BindGridView_SeleccionPrueba(sender, e);
         }
 
         public void BtnLimpiarConsultas(object sender, EventArgs e){

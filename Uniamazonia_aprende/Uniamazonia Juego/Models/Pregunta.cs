@@ -120,7 +120,7 @@ namespace Uniamazonia_Juego.Models
             public DataTable consultaParametroFk_Prueba(String fk_prueba)
         {
             DataTable consulta = new DataTable();
-            String Query = "select *from pregunta where pregunta.fk_prueba='"+fk_prueba+"';";
+            String Query = "select *from pregunta where pregunta.fk_prueba='"+fk_prueba+"' and estado_pregunta=0;";
             consulta = conexion.consultar_BD(Query);
             return consulta;
         }

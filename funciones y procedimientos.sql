@@ -24,10 +24,8 @@ else
 end if;
 end if;
  END LOOP ciclo_act;
-end//
-
+END//
 -- call eliminar_menu_padreHijo('1');
-
 
 
 

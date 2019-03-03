@@ -1,14 +1,37 @@
 ﻿<%@ Page Title="Preguntas Asignadas" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="VerPreguntasAsignadas.aspx.cs" Inherits="Uniamazonia_Juego.Views.Administrador.Prueba.VerPreguntasAsignadas" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MapaPagina" runat="server">
+
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="migajaDePan" runat="server">
+        <div id="deleteModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Eliminar Pregunta</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    ¿Está seguro que desea eliminar la pregunta?
+                              <asp:HiddenField ID="hfCode" runat="server" />
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <asp:LinkButton ID="btnEliminar" runat="server" class="btn btn-danger" Text='Eliminar' OnClick="btnEliminar_Click" runat="server">Eliminar</asp:LinkButton>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <div style="margin-left: 4px; height: 28px;">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/Views/Administrador/Welcome.aspx"><span class="mdi mdi-home"></span>&nbsp;Inicio</a></li>
                 <li class="breadcrumb-item"><a href="#">Gestionar Prueba</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Ver Preguntas Asignadas<li>
+                <li class="breadcrumb-item active" aria-current="page">
+                Ver Preguntas Asignadas<li>
             </ol>
         </nav>
     </div>

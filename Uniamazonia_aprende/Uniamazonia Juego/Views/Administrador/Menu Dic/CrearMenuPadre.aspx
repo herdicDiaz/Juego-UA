@@ -69,13 +69,13 @@
                     <div class="form-group col-md-6">
                         <label for="lista_icono">Roles Disponibles</label>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" runat="server" name="rd1" id="rd_admin" value="option1" required>
+                           <asp:RadioButton ID="rd_admin" runat="server" GroupName="Respuestas" />
                             <label class="form-check-label" for="rd_admin">
                                 Administrador
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" runat="server" name="rd1" id="rd_jugador" value="option1" required>
+                               <asp:RadioButton ID="rd_jugador" runat="server" GroupName="Respuestas" />
                             <label class="form-check-label" for="rd_jugador" >
                                Jugador
                             </label>

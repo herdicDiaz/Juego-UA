@@ -61,7 +61,7 @@ namespace Uniamazonia_Juego.Models
         public DataTable ConsultaGridParametroNombrePrueba(String prueba)
         {
             DataTable insert = new DataTable();
-            String Query = "select sancion.idsancion, sancion.descripcion from prueba  join prueba_sancion on prueba.id_prueba=prueba_sancion.fk_prueba join sancion on sancion.idsancion=prueba_sancion.fk_sancion where prueba.nombre_prueba='"+prueba+"';";
+            String Query = "select sancion.idsancion, sancion.descripcion from prueba  join prueba_sancion on prueba.id_prueba=prueba_sancion.fk_prueba join sancion on sancion.idsancion=prueba_sancion.fk_sancion where prueba.nombre_prueba='"+prueba+"' and sancion.estado_sancion=0;";
             insert = conexion.consultar_BD(Query);
             return insert;
         }

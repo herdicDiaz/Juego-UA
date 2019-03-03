@@ -38,11 +38,12 @@ namespace Uniamazonia_Juego.Views.Administrador.Menu_Dic
                 // selecciono administrador
                 aux_rol = 1;
             }
-            else {
+            else
+            {
                 if (rd_jugador.Checked)
                 {
                     // selecciono jugador
-                    aux_rol = 0;
+                    aux_rol = 2;
                 }
 
             }
