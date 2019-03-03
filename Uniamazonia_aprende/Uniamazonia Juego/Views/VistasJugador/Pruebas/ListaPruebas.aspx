@@ -8,7 +8,7 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/Views/Administrador/Welcome.aspx"><span class="mdi mdi-home"></span>&nbsp;Inicio</a></li>
-                 <li class="breadcrumb-item"><a href="#">Modulos</a></li>
+                <li class="breadcrumb-item"><a href="#">Modulos</a></li>
                 <li class="breadcrumb-item"><a href="/Views/VistasJugador/ConsultaModulo/ListaModulo.aspx">Ver Modulos</a></li>
                 <li class="breadcrumb-item"><a href="/Views/VistasJugador/Contenido/ListaContenido.aspx">Lista Contenido</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Lista Pruebas</li>
@@ -33,10 +33,21 @@
             <div class="row">
                 <asp:ListView ID="ListPruebas" runat="server">
                     <ItemTemplate>
-                        <div class="col-md-4">
+                        <div class="card text-center bg-info mb-3" style="max-width: 18rem;">
+                            <div class="card-header" style="color:white">
+                                <h4>Prueba</h4>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title" style="color:white"><%#Eval("nombre_prueba")%></h5>
+                                <p class="card-text"></p>
+                                <asp:Button ID="Btn_iniciar_prueba" Text="Iniciar prueba" CssClass="btn btn-success" runat="server" OnClick="Metodo_inciar_prueba" CommandArgument='<%#Eval("id_prueba")%>' />
+                            </div>
+                        </div>
+
+                        <%--           <div class="col-md-4">
                             <div class="card">
                                 <div class="card-header text-center bg-info">
-                                    <h6 style="color:white"><strong >Prueba: </strong> <%#Eval("nombre_prueba")%></h6>
+                                    <h6 style="color: white"><strong>Prueba: </strong><%#Eval("nombre_prueba")%></h6>
                                 </div>
                                 <div class="card-body">
                                     <center>
@@ -44,8 +55,7 @@
                                     </center>
                                 </div>
                             </div>
-                        </div>
-
+                        </div>--%>
                     </ItemTemplate>
                 </asp:ListView>
             </div>

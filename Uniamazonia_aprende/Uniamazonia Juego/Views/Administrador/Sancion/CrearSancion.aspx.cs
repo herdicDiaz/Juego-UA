@@ -19,24 +19,16 @@ namespace Uniamazonia_Juego.Views.Administrador.Sancion
             String descripcion = txtDescripcion.Value;
             String Url = TxtUrlVideo.Value;
             Boolean consulta = SancionC.insertarSancion(descripcion,Url ,"0");
-            //using (BinaryReader reader = new BinaryReader(txtCargarVideo.PostedFile.InputStream))
-            //{
-            //    String descripcion = txtDescripcion.Value;
-            //    String nombre = this.txtCargarVideo.PostedFile.FileName;
-            //    byte[] image = reader.ReadBytes(txtCargarVideo.PostedFile.ContentLength);
-            //    if (descripcion=="")
-            //    {
-            //        Response.Write("<script>alert('Aun no has escrito una descripcion de la sanción')</script>");
-            //    }
-            //    if (image.Length==0)
-            //    {
-            //        Response.Write("<script>alert('Aun no has cargado un archivo')</script>");
-            //    }
-            //    if (descripcion!="" && image.Length!=0)
-            //    {
-            //    }
 
-            //}
+            if (consulta==true)
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "mensaje", "<script> swal({position: 'center',type: 'success',title: 'Exitoso!',text:'Sanción creada satisfatoriamente.',timer:3000}) </script>");
+            }
+            else
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "mensaje", "<script> swal({position: 'center',type: 'error',title: 'Vaya!',text:'Algo salio mal.',timer:3000}) </script>");
+            }
+
         }
     }
 }

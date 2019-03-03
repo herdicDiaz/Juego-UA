@@ -128,7 +128,7 @@ namespace Uniamazonia_Juego.Models
         public Boolean DeletePreguntaDePrueba(String id_pregunta)
         {
             Boolean consulta = new Boolean();
-            String Query = "UPDATE `aprender`.`pregunta` SET `estado_pregunta`='A', `fk_prueba`=NULL WHERE  `id_pregunta`='"+id_pregunta+"';";
+            String Query = "UPDATE `aprender`.`pregunta` SET `Estado_asignacion`='0', `fk_prueba`=NULL WHERE  `id_pregunta`='"+id_pregunta+"';";
             consulta = conexion.update_BD(Query);
             return consulta;
         }

@@ -7,27 +7,36 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Uniamazonia_Juego.Views.VistasJugador.Pruebas {
+namespace Uniamazonia_Juego.Views.Administrador.Puntuacion {
     
     
-    public partial class ListaPruebas {
+    public partial class EditarSancion {
         
         /// <summary>
-        /// Control h5Titulo_prueba.
+        /// Control Label.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl h5Titulo_prueba;
+        protected global::System.Web.UI.WebControls.Label Label;
         
         /// <summary>
-        /// Control ListPruebas.
+        /// Control TexboxPuntos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView ListPruebas;
+        protected global::System.Web.UI.WebControls.TextBox TexboxPuntos;
+        
+        /// <summary>
+        /// Control ButtonGuardar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonGuardar;
     }
 }

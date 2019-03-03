@@ -47,7 +47,7 @@ namespace Uniamazonia_Juego
             VistaController controlador_vista = new VistaController(0, "", "", "", "", 0);
             EmpresaController controlador_empresa = new EmpresaController(0, "", "", 0);
             controlador_jugador = new JugadorController(id_jugador_bd, 0, "", "", "", "", "", 0, "", "", 0);
-            PremiacionController controlador_premiacion = new PremiacionController(0, 0, 0, 0, id_jugador_bd);
+            PuntuacionController controlador_premiacion = new PuntuacionController(0, 0, 0, 0, id_jugador_bd);
             controlador_administrador = new AdministradorController(id_administrador_bd, "", "", "", 0);
 
             Rol_UsuarioController controlador_rol_usuario = new Rol_UsuarioController(0, 0, "","");

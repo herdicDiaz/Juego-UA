@@ -24,10 +24,25 @@
             <div class="row">
                 <asp:ListView ID="ListView1" runat="server">
                     <ItemTemplate>
-                        <div class="col-md-4">
+                        <div class="col-md-12">
                             <div class="card">
+                                <div class="card-header bg-info" style="color:white">
+                                    <h4>
+                                    <%# Eval("nombre_contenido") %>
+                                    </h4>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Descripción</h5>
+                                    <p class="card-text"><%#Eval("descripcion_contenido")%></p>
+                                     <asp:Button runat="server" Text="Ver pruebas" ID="btnPrueba" CssClass="btn btn-success" CommandArgument='<%#Eval("id_contenido")%>' OnClick="btnPrueba" />
+                                </div>
+                            </div>
+
+
+                            <%--lklkl--%>
+               <%--             <div class="card">
                                 <div class="card-header bg-info text-center">
-                                    <h5 style="color:white"><%#Eval("nombre_contenido")%></h5>
+                                    <h5 style="color: white"><%#Eval("nombre_contenido")%></h5>
                                 </div>
                                 <div class="card-body">
                                     <h4 class="card-title">Descripción</h4>
@@ -36,7 +51,7 @@
                             <asp:Button runat="server" Text="Ver pruebas" ID="btnPrueba" CssClass="btn btn-info" CommandArgument='<%#Eval("id_contenido")%>' OnClick="btnPrueba" />
                             </center>
                                 </div>
-                            </div>
+                            </div>--%>
                         </div>
 
                     </ItemTemplate>

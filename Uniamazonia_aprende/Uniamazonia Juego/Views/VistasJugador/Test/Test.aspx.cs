@@ -47,17 +47,41 @@ namespace Uniamazonia_Juego.Views.VistasJugador.Test
 
         public void BtnSiguiente(object sender, EventArgs e)
         {
-            String repuestaCorrecta = resultadoRespuestas.Rows[0]["respuesta_correcta"].ToString();
-            verificarRespuesta(repuestaCorrecta);
-            EcrituraPreguntaRespuesta();
+            if (listaNumeroOutp.Count==numeroPreguntas_Prueba)
+            {
+                BtnNext.Enabled = false;
+            }
+            else
+            {
+                String repuestaCorrecta = resultadoRespuestas.Rows[0]["respuesta_correcta"].ToString();
+                verificarRespuesta(repuestaCorrecta);
+                EcrituraPreguntaRespuesta();
+            }
+            
         }
 
         public void TerminarIntento(object sender, EventArgs e)
         {
-            PreguntasContestadas = PreguntasCorrectas + PreguntasIncorrectas;
+            BtnTerminar_intento.Enabled = false;
+            BtnNext.Enabled = false;
+
+            if (preguntasNocontestadas==0)
+            {
+                preguntasNocontestadas = numeroPreguntas_Prueba - PreguntasContestadas;
+
+
+            }
+            else
+            {
+                PreguntasContestadas = PreguntasCorrectas + PreguntasIncorrectas;
+                preguntasNocontestadas = numeroPreguntas_Prueba - PreguntasContestadas;
+            }
+         
+
             int id_usuario = Convert.ToInt32(Session["id_usuario"].ToString());
             int Session_id_prueba = Convert.ToInt32(Session["id_prueba"].ToString());
-            preguntasNocontestadas = numeroPreguntas_Prueba - PreguntasContestadas;
+            ReporteFinal(PreguntasCorrectas, PreguntasIncorrectas, preguntasNocontestadas);
+
 
             DataTable consultaJugador = JugadorC.ConsultaFkUsuario(id_usuario);
             int id_jugador =Convert.ToInt32(consultaJugador.Rows[0]["id_jugador"].ToString());
@@ -82,27 +106,7 @@ namespace Uniamazonia_Juego.Views.VistasJugador.Test
 
             }
 
-            if (PreguntasIncorrectas>0)
-            {
-                DataTable Consulta_Prueba_Sancion = Prueba_SancionC.ConsultaParametroFK_prueba(Convert.ToString(Session_id_prueba));
-                if (Consulta_Prueba_Sancion.Rows.Count!=0)
-                {
-                    int numero_sanciones = Consulta_Prueba_Sancion.Rows.Count;
-                    Random rnd = new Random();
-                    int numero_aleatorio = rnd.Next(0, numero_sanciones);
 
-                    String id_sancion = Consulta_Prueba_Sancion.Rows[numero_aleatorio]["fk_sancion"].ToString();
-                    DataTable Consulta_sancion = SancioC.ConsultaParametroIdsancion(id_sancion);
-                    String url_video = Consulta_sancion.Rows[0]["url_video"].ToString();
-                    cargaVideo.Attributes["Src"] = url_video;
-
-                    System.Text.StringBuilder sb = new System.Text.StringBuilder();
-                    sb.Append(@"<script type='text/javascript'>");
-                    sb.Append("$('#editModal').modal('show');");
-                    sb.Append(@"</script>");
-                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "editModal", sb.ToString(), false);
-                }
-            }
             Puntos_prueba = 0;
         }
 
@@ -152,6 +156,9 @@ namespace Uniamazonia_Juego.Views.VistasJugador.Test
                 String NombrePrueba = ConsultaPrueba.Rows[0]["nombre_prueba"].ToString();
                 TituloPrueba.InnerHtml = "Prueba de conocimiento: <strong>" + NombrePrueba + "</strong>";
                 consulta = PreguntaC.consultaParametroFk_Prueba(id_prueba);
+
+
+
             return consulta;
         }
 
@@ -164,11 +171,12 @@ namespace Uniamazonia_Juego.Views.VistasJugador.Test
                     {
                     PreguntasCorrectas++;
                     Puntos_prueba++;
-                }
-                else
-                {
-                    PreguntasIncorrectas++;
-                }
+                    }
+                    else
+                    {
+                       PreguntasIncorrectas++;
+                    }
+
                 Radio1.Checked = false;
                 }
                 else
@@ -218,6 +226,7 @@ namespace Uniamazonia_Juego.Views.VistasJugador.Test
                         }
                         else
                         {
+                            preguntasNocontestadas++;
                         }
                     }
                 }
@@ -243,10 +252,7 @@ namespace Uniamazonia_Juego.Views.VistasJugador.Test
             }
             else
             {
-                DivFinalizacion.InnerHtml = "Haz finalizado";
-                DivFinalizacion.Attributes.Add("style", "display:block");
-                ResultadosPrueba.InnerHtml = "<strong>Respuestas correctas: </strong>" + PreguntasCorrectas + "<strong> Respuestas incorrectas: </strong>" + PreguntasIncorrectas + "<strong> Preguntas no contestadas </strong>" + preguntasNocontestadas;
-                ResultadosPrueba.Attributes.Add("style", "display:block");
+                ReporteFinal(PreguntasCorrectas, PreguntasIncorrectas, preguntasNocontestadas);
                 BtnNext.Enabled = false;
                 listaNumeroOutp.Clear();
                 numeroPreguntas = 0;
@@ -254,6 +260,39 @@ namespace Uniamazonia_Juego.Views.VistasJugador.Test
             }
             listaNumeroOutp.Add(numeroAleatorio);
             return numeroAleatorio;
+        }
+
+        public void ReporteFinal(int PreguntasCorrectas, int PreguntasIncorrectas, int preguntasNocontestadas)
+        {
+            DivFinalizacion.InnerHtml = "Haz finalizado";
+            DivFinalizacion.Attributes.Add("style", "display:block");
+            ResultadosPrueba.InnerHtml = "<strong>Respuestas correctas: </strong>" + PreguntasCorrectas + "<strong> Respuestas incorrectas: </strong>" + PreguntasIncorrectas + "<strong> Preguntas no contestadas </strong>" + preguntasNocontestadas;
+            ResultadosPrueba.Attributes.Add("style", "display:block");
+
+            String id_prueba = Session["id_prueba"].ToString();
+
+            if (PreguntasIncorrectas > 0)
+            {
+                DataTable Consulta_Prueba_Sancion = Prueba_SancionC.ConsultaParametroFK_prueba(id_prueba);
+                if (Consulta_Prueba_Sancion.Rows.Count != 0)
+                {
+                    int numero_sanciones = Consulta_Prueba_Sancion.Rows.Count;
+                    Random rnd = new Random();
+                    int numero_aleatorio = rnd.Next(0, numero_sanciones);
+
+                    String id_sancion = Consulta_Prueba_Sancion.Rows[numero_aleatorio]["fk_sancion"].ToString();
+                    DataTable Consulta_sancion = SancioC.ConsultaParametroIdsancion(id_sancion);
+                    String url_video = Consulta_sancion.Rows[0]["url_video"].ToString();
+                    cargaVideo.Attributes["Src"] = url_video;
+
+                    System.Text.StringBuilder sb = new System.Text.StringBuilder();
+                    sb.Append(@"<script type='text/javascript'>");
+                    sb.Append("$('#editModal').modal('show');");
+                    sb.Append(@"</script>");
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "editModal", sb.ToString(), false);
+                }
+            }
+
         }
 
         public int guardarPreguntasGeneradas(int numeroPreguntas, int numeroAleatorio)

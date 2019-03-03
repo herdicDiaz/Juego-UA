@@ -7,18 +7,18 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Uniamazonia_Juego.Views.VistasJugador {
+namespace Uniamazonia_Juego.Views.Administrador.Puntuacion {
     
     
-    public partial class ListaModulo {
+    public partial class Puntuación {
         
         /// <summary>
-        /// Control listView1.
+        /// Control GridView.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView listView1;
+        protected global::System.Web.UI.WebControls.GridView GridView;
     }
 }

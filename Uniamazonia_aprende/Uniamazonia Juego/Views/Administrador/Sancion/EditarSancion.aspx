@@ -1,4 +1,8 @@
 ﻿<%@ Page Title="Editar Sancion" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="EditarSancion.aspx.cs" Inherits="Uniamazonia_Juego.Views.Administrador.Sancion.EditarSancion" %>
+
+
+
+
 <asp:Content ID="Content3" ContentPlaceHolderID="migajaDePan" runat="server">
     <div style="margin-left: 4px; height: 28px;">
         <nav aria-label="breadcrumb">
@@ -36,5 +40,6 @@
             </div>
         </div>
     </div>
+
 
 </asp:Content>

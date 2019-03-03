@@ -63,9 +63,9 @@ namespace Uniamazonia_Juego.Views.Administrador.Pregunta
          
         }
 
-        protected void guardarCambios(object sender,EventArgs e)
+        protected void guardarCambios(object sender, EventArgs e)
         {
-            
+
             String nombre1 = txtNombre.Text.ToString();
             String ra1 = txtRespuestaA.Value;
             String rb1 = txtRespuestaB.Value;
@@ -73,31 +73,35 @@ namespace Uniamazonia_Juego.Views.Administrador.Pregunta
             String rd1 = txtRespuestaD.Value;
             String respuestaCorrecta;
 
-            if (DropRespuestaCorrec.Text=="A")
+            if (DropRespuestaCorrec.Text == "A")
             {
-                 respuestaCorrecta = ra1;
+                respuestaCorrecta = ra1;
             }
             else
             {
                 if (DropRespuestaCorrec.Text == "B")
                 {
-                     respuestaCorrecta = rb1;
+                    respuestaCorrecta = rb1;
                 }
                 else
                 {
                     if (DropRespuestaCorrec.Text == "C")
                     {
-                         respuestaCorrecta = rc1;
+                        respuestaCorrecta = rc1;
                     }
                     else
                     {
-                         respuestaCorrecta = rd1;
+                        respuestaCorrecta = rd1;
                     }
                 }
             }
-            Boolean consulta = preguntaC.update_pregunta(nombre1,id_pregunta);
+            Boolean consulta = preguntaC.update_pregunta(nombre1, id_pregunta);
             Boolean consulta1 = respuestaC.updateRespuesta(ra1, rb1, rc1, rd1, respuestaCorrecta, id_pregunta);
-            Response.Redirect("~/Views/Administrador/Pregunta/ListarPreguntas.aspx");
+            if (consulta & consulta1)
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "mensaje", "<script> swal({position: 'center',type: 'success',title: 'Exitoso!',text:'Pregunta actulizada satisfatoriamente.',timer:3000}) </script>");
+            }
+            //Response.Redirect("~/Views/Administrador/Pregunta/ListarPreguntas.aspx");
 
         }
 

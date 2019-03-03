@@ -45,16 +45,16 @@
                         <FooterStyle />
                         <Columns>
                             <asp:BoundField DataField="id_pregunta" HeaderText="#" ReadOnly="True" SortExpression="id_pregunta" />
-                            <asp:TemplateField HeaderText="Nombre" SortExpression="nombre_pregunta" ItemStyle-HorizontalAlign="Center">
+                            <asp:TemplateField HeaderText="Nombre" SortExpression="nombre_pregunta" ItemStyle-HorizontalAlign="Center" HeaderStyle-Width="900px">
                                 <ItemTemplate>
                                     <asp:Label ID="Label1" runat="server" Text='<%# Bind("nombre_pregunta") %>'></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Estado" SortExpression="estado_pregunta" ItemStyle-HorizontalAlign="Center" ControlStyle-Width="400px">
+              <%--              <asp:TemplateField HeaderText="Estado" SortExpression="estado_pregunta" ItemStyle-HorizontalAlign="Center" ControlStyle-Width="400px">
                                 <ItemTemplate>
                                     <asp:Label ID="Label2" runat="server" Text='<%# Bind("estado_pregunta") %>'></asp:Label>
                                 </ItemTemplate>
-                            </asp:TemplateField>
+                            </asp:TemplateField>--%>
                             <asp:ButtonField CommandName="Agregar" ControlStyle-CssClass="btn btn-info" ButtonType="Button" Text="Agregar">
                                 <ControlStyle CssClass="btn btn-info"></ControlStyle>
                             </asp:ButtonField>

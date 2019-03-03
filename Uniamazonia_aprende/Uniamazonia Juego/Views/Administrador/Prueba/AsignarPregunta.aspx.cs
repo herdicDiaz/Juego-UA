@@ -13,12 +13,11 @@ namespace Uniamazonia_Juego.Views.Administrador.Prueba
     {
         PreguntaController PreguntaC = new PreguntaController();
         PruebaController PruebaC = new PruebaController();
-        public static List<DataTable> listaPreguntasAsignadas;
+        Boolean update;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (IsPostBack == false)
             {
-                listaPreguntasAsignadas = new List<DataTable>();
                 DataTable pruebas = PruebaC.consulta_combox_nombre();
                 DropListPrueba.DataTextField = "nombre_prueba";
                 DropListPrueba.DataSource = pruebas;
@@ -94,8 +93,11 @@ namespace Uniamazonia_Juego.Views.Administrador.Prueba
                     String id_pregunta = TblPreguntas.DataKeys[index].Value.ToString();
                     if (e.CommandName == "Agregar")
                     {
-                        Boolean update = PreguntaC.updateAggFkPrueba(id_pregunta, id_prueba);
+                         update = PreguntaC.updateAggFkPrueba(id_pregunta, id_prueba);
+                  
                     }
+
+
                     DataTable preguntas = VerPreguntasAsignadas(id_prueba);
                     DivPreguntasAsignadas.InnerHtml = "Preguntas asignadas para la prueba selecionada.";
                     DivPreguntasAsignadas.Attributes.Add("style", "display: block");
@@ -107,7 +109,11 @@ namespace Uniamazonia_Juego.Views.Administrador.Prueba
                     GridViewPreguntasAsignadas.DataSource = preguntas;
                     GridViewPreguntasAsignadas.DataBind();
                     BinGrid();
-
+                    
+                    if (update)
+                    {
+                        ClientScript.RegisterStartupScript(this.GetType(), "mensaje", "<script> swal({position: 'center',type: 'success',title: 'Exitoso!',text:'Pregunta asignada satisfatoriamente.',timer:3000}) </script>");
+                    }
                 }
             }
         }

@@ -28,6 +28,9 @@ namespace Uniamazonia_Juego.Views.Administrador.Pregunta
         Connection connection=new Connection();
         DataTable consulta_lista_pruebas = new DataTable();
         DataTable consulta_lista_sanciones = new DataTable();
+        PuntuacionController PuntuacionC = new PuntuacionController();
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Page.IsPostBack==false)
@@ -73,7 +76,9 @@ namespace Uniamazonia_Juego.Views.Administrador.Pregunta
             }
 
             //inserta una nueva pregunta en el sistema.
-            Boolean insert= preguntaC.Insertar_registro_pregunta(pregunta,1);
+            DataTable consultaP = PuntuacionC.ConsultarPuntos();
+            int puntos =Int32.Parse(consultaP.Rows[0]["valor_punto"].ToString());
+            Boolean insert= preguntaC.Insertar_registro_pregunta(pregunta,puntos);
 
             DataTable consulta2 = preguntaC.Consultas_generales("select max(id_pregunta) from pregunta");
             int fk_pregunta = Int32.Parse(consulta2.Rows[0]["max(id_pregunta)"].ToString());
@@ -82,9 +87,9 @@ namespace Uniamazonia_Juego.Views.Administrador.Pregunta
             Boolean insert_respuestas = RespuestaController.insert_respuestas(respuestaA, respuestaB, respuestaC, respuestaD, respuesta_correcta, "A", fk_pregunta);
             if (insert && insert_respuestas)
             {
-            ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "successalert();", true);
-            Response.Redirect("~/Views/Administrador/Pregunta/ListarPreguntas.aspx");
+            ClientScript.RegisterStartupScript(this.GetType(), "mensaje", "<script> swal({position: 'center',type: 'success',title: 'Exitoso!',text:'Pregunta creada satisfatoriamente.',timer:3000}) </script>");
             }
+        //    Response.Redirect("~/Views/Administrador/Pregunta/ListarPreguntas.aspx");
         }
 
 

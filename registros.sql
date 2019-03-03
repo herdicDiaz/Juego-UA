@@ -9,7 +9,7 @@ insert into vista values("5","#","activo","Gestionar Prueba","fas fa-eye","5");
 
 insert into vista values("6","#","activo","Preguntas y respuestas","fas fa-eye-dropper","6");
 insert into vista values("7","#","activo","Gestionar Sancion","fas fa-thumbs-down","7");
-insert into vista values("8","#","activo","Gestionar Premiacion","mdi mdi-apple","8");
+insert into vista values("8","#","activo","Gestionar Puntuacion","far fa-gem","8");
 
 insert into vista values("9","#","activo","Gestionar Tablas Basicas","mdi mdi-security","9");
 
@@ -105,8 +105,8 @@ insert into vista values("191","/Views/Administrador/Sancion/ListarSancion.aspx"
 -- --------------------------------------------------
 -- GESTIONAR PREMIACION 210 - 230                       |
 -- --------------------------------------------------
-insert into vista values("210","/Views/Administrador/Premiacion/CrearPremiacion.aspx","activo","Crear premiacion","mdi mdi-check-all","8");
-insert into vista values("211","/Views/Administrador/Premiacion/ListarPremiacion.aspx","activo","Listar premiacion","mdi mdi-check-all","8");
+insert into vista values("210","/Views/Administrador/Puntuacion/Puntuación.aspx","activo","Ver puntuacion","mdi mdi-check-all","8");
+
 
 
 -- --------------------------------------------------
@@ -241,7 +241,7 @@ insert into vista_rol values("142","191","7","1");
 -- --------------------------------------------------
 insert into vista_rol values("160","8","8","1");
 insert into vista_rol values("161","210","8","1");
-insert into vista_rol values("162","211","8","1");
+
 
 
 
@@ -344,10 +344,10 @@ insert into contenido values('12',"Parqueaderos","Servicio de aparcamiento para 
 -- ---------------------------------------------------------------------------------------------------------------------------------------------
 -- -----------------------------------------------------------------------------------------------------------------------------------------------
 
-insert into prueba values('1',"Prueba de enfermeria",'A','1');
-insert into prueba values('2',"Prueba programas académicos",'A','4');
-insert into prueba values('3',"Prueba de futbol",'A','7');
-insert into prueba values('4',"Prueba de cafeterias",'A','10');
+insert into prueba values('1',"Enfermeria",'A','1');
+insert into prueba values('2',"Programas académicos",'A','4');
+insert into prueba values('3',"Futbol",'A','7');
+insert into prueba values('4',"Cafeterias",'A','10');
 
 
 -- ------------------------------------------------------------------------------------------------------------------------------
@@ -378,6 +378,10 @@ insert into sancion values ("2","Sancion de Cultura general","https://www.youtub
 insert into sancion values ("3","Sancion de informativa","https://www.youtube.com/embed/S6AdH8dGm7E","0");
 insert into sancion values ("4","Sancion Conociendo la UA","https://www.youtube.com/embed/kNbr01d5ePU","0");
 insert into sancion values ("5","Sancion programas academicos","https://www.youtube.com/watch?v=_NNGB-jQhtU&t=52s","0");
+
+-- ------------------------------------------------------------------------------------------------------------------------------
+-- --------------------------------------------------------------------------------------------------------------------------------------
+INSERT INTO puntuacion VALUES ('1','1');
 
 -- ------------------------------------------------------------------------------------------------------------------------------
 -- --------------------------------------------------------------------------------------------------------------------------------------

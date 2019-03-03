@@ -1299,6 +1299,8 @@
     <Content Include="Datos\Preguntas.xsc">
       <DependentUpon>Preguntas.xsd</DependentUpon>
     </Content>
+    <Content Include="Views\Administrador\Puntuacion\EditarPuntuacion.aspx" />
+    <Content Include="Views\Administrador\Puntuacion\Puntuación.aspx" />
     <Content Include="Views\VistasJugador\Ranking\Ranking.aspx" />
     <Content Include="Web_forms_reports\ReporteListaPruebas.aspx" />
     <Content Include="Web_forms_reports\ReporteListaSancion.aspx" />
@@ -1492,9 +1494,6 @@
     <Content Include="Views\Administrador\Pregunta\CrearPregunta.aspx" />
     <Content Include="Views\Administrador\Pregunta\EditarPregunta.aspx" />
     <Content Include="Views\Administrador\Pregunta\ListarPreguntas.aspx" />
-    <Content Include="Views\Administrador\Premiacion\CrearPremiacion.aspx" />
-    <Content Include="Views\Administrador\Premiacion\EditarPremiacion.aspx" />
-    <Content Include="Views\Administrador\Premiacion\ListarPremiacion.aspx" />
     <Content Include="Views\Administrador\Programa\Programa.aspx" />
     <Content Include="Views\Administrador\Prueba\AsignarPregunta.aspx" />
     <Content Include="Views\Administrador\Prueba\AsignarSancion.aspx" />
@@ -1547,7 +1546,7 @@
     <Compile Include="Controllers\ModuloController.cs" />
     <Compile Include="Controllers\PosicionController.cs" />
     <Compile Include="Controllers\PreguntaController.cs" />
-    <Compile Include="Controllers\PremiacionController.cs" />
+    <Compile Include="Controllers\PuntuacionController.cs" />
     <Compile Include="Controllers\ProgramaController.cs" />
     <Compile Include="Controllers\PruebaController.cs" />
     <Compile Include="Controllers\prueba_sancionController.cs" />
@@ -1590,7 +1589,7 @@
     <Compile Include="Models\Modulo.cs" />
     <Compile Include="Models\Posicion.cs" />
     <Compile Include="Models\Pregunta.cs" />
-    <Compile Include="Models\Premiacion.cs" />
+    <Compile Include="Models\Puntuacion.cs" />
     <Compile Include="Models\Programa.cs" />
     <Compile Include="Models\Prueba.cs" />
     <Compile Include="Models\prueba_sancion.cs" />
@@ -1756,27 +1755,6 @@
     <Compile Include="Views\Administrador\Pregunta\ListarPreguntas.aspx.designer.cs">
       <DependentUpon>ListarPreguntas.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Administrador\Premiacion\CrearPremiacion.aspx.cs">
-      <DependentUpon>CrearPremiacion.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Administrador\Premiacion\CrearPremiacion.aspx.designer.cs">
-      <DependentUpon>CrearPremiacion.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Administrador\Premiacion\EditarPremiacion.aspx.cs">
-      <DependentUpon>EditarPremiacion.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Administrador\Premiacion\EditarPremiacion.aspx.designer.cs">
-      <DependentUpon>EditarPremiacion.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Administrador\Premiacion\ListarPremiacion.aspx.cs">
-      <DependentUpon>ListarPremiacion.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Administrador\Premiacion\ListarPremiacion.aspx.designer.cs">
-      <DependentUpon>ListarPremiacion.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Views\Administrador\Programa\Programa.aspx.cs">
       <DependentUpon>Programa.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1839,6 +1817,20 @@
     </Compile>
     <Compile Include="Views\Administrador\Prueba\VerSancionesAsignadas.aspx.designer.cs">
       <DependentUpon>VerSancionesAsignadas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Administrador\Puntuacion\EditarPuntuacion.aspx.cs">
+      <DependentUpon>EditarPuntuacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Administrador\Puntuacion\EditarPuntuacion.aspx.designer.cs">
+      <DependentUpon>EditarPuntuacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Administrador\Puntuacion\Puntuación.aspx.cs">
+      <DependentUpon>Puntuación.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Administrador\Puntuacion\Puntuación.aspx.designer.cs">
+      <DependentUpon>Puntuación.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Administrador\Sancion\CrearSancion.aspx.cs">
       <DependentUpon>CrearSancion.aspx</DependentUpon>

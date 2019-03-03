@@ -1,3 +1,8 @@
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 -- -----------------------------------------------------
 -- Schema mydb
@@ -245,13 +250,12 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `aprender`.`premios_referencia`
+-- Table `aprender`.`Puntuacion`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `aprender`.`premios_referencia` (
-  `pk_premios_referencia` INT(11) NOT NULL AUTO_INCREMENT,
-  `puntos_referencia` INT(11) NULL DEFAULT NULL,
-  `estrellas_referencia` INT(11) NULL DEFAULT NULL,
-  PRIMARY KEY (`pk_premios_referencia`))
+CREATE TABLE IF NOT EXISTS `aprender`.`Puntuacion` (
+  `id_puntuacion` INT(11) NOT NULL AUTO_INCREMENT,
+  `valor_punto` INT(11) NULL DEFAULT NULL,
+  PRIMARY KEY (`id_puntuacion`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
@@ -431,3 +435,8 @@ CREATE TABLE IF NOT EXISTS `aprender`.`vista_rol` (
 ENGINE = InnoDB
 AUTO_INCREMENT = 163
 DEFAULT CHARACTER SET = utf8;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
