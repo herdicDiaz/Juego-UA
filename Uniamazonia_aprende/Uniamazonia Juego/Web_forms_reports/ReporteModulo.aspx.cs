@@ -18,26 +18,25 @@ using System.Data;
 using Uniamazonia_Juego.Controllers;
 namespace Uniamazonia_Juego.Web_forms_reports
 {
-    public partial class ReporteListaSancion : System.Web.UI.Page
+    public partial class ReporteModulo : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             Connection con = new Connection();
             DataTable dt = new DataTable();
             DataSet ds = new DataSet();
-            CrystalReportSancion cr = new CrystalReportSancion();
+            CrystalReportModulo cr = new CrystalReportModulo();
             AdministradorController administradorC = new AdministradorController();
 
-            dt = con.consultar_BD("Select *from sancion where estado_sancion=0;");
+            dt = con.consultar_BD("SELECT id_modulo, nombre_modulo, COUNT(id_contenido), estado_modulo FROM modulo INNER JOIN contenido WHERE modulo.id_modulo=contenido.fk_id_modulo GROUP BY contenido.fk_id_modulo; ");
             ds.Tables.Add(dt);
             cr.SetDataSource(ds.Tables[0]);
-            int id_administrador =Convert.ToInt32( Session["id_usuario"].ToString());
+            int id_administrador = Convert.ToInt32(Session["id_usuario"].ToString());
             DataTable consulta = administradorC.ConsultaParametroFkUsuario(id_administrador);
             String nombre1 = consulta.Rows[0]["nombres_admin"].ToString();
             String apellidos = consulta.Rows[0]["apellidos_admin"].ToString();
-            cr.SetParameterValue("autor", nombre1 + apellidos );
-            CrystalReportViewerSancion.ReportSource = cr;
-
+            cr.SetParameterValue("autor", nombre1 + apellidos);
+            CrystalReportViewer1.ReportSource = cr;
         }
     }
 }

@@ -20,17 +20,17 @@ namespace Uniamazonia_Juego.Datos {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("prueba")]
+    [global::System.Xml.Serialization.XmlRootAttribute("contenido")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class prueba : global::System.Data.DataSet {
+    public partial class contenido : global::System.Data.DataSet {
         
-        private pruebaDataTable tableprueba;
+        private contenidoDataTable tablecontenido;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public prueba() {
+        public contenido() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace Uniamazonia_Juego.Datos {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected prueba(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected contenido(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace Uniamazonia_Juego.Datos {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["prueba"] != null)) {
-                    base.Tables.Add(new pruebaDataTable(ds.Tables["prueba"]));
+                if ((ds.Tables["contenido"] != null)) {
+                    base.Tables.Add(new contenidoDataTable(ds.Tables["contenido"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace Uniamazonia_Juego.Datos {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public pruebaDataTable _prueba {
+        public contenidoDataTable _contenido {
             get {
-                return this.tableprueba;
+                return this.tablecontenido;
             }
         }
         
@@ -127,7 +127,7 @@ namespace Uniamazonia_Juego.Datos {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            prueba cln = ((prueba)(base.Clone()));
+            contenido cln = ((contenido)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace Uniamazonia_Juego.Datos {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["prueba"] != null)) {
-                    base.Tables.Add(new pruebaDataTable(ds.Tables["prueba"]));
+                if ((ds.Tables["contenido"] != null)) {
+                    base.Tables.Add(new contenidoDataTable(ds.Tables["contenido"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace Uniamazonia_Juego.Datos {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableprueba = ((pruebaDataTable)(base.Tables["prueba"]));
+            this.tablecontenido = ((contenidoDataTable)(base.Tables["contenido"]));
             if ((initTable == true)) {
-                if ((this.tableprueba != null)) {
-                    this.tableprueba.InitVars();
+                if ((this.tablecontenido != null)) {
+                    this.tablecontenido.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace Uniamazonia_Juego.Datos {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "prueba";
+            this.DataSetName = "contenido";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/prueba.xsd";
+            this.Namespace = "http://tempuri.org/contenido.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableprueba = new pruebaDataTable();
-            base.Tables.Add(this.tableprueba);
+            this.tablecontenido = new contenidoDataTable();
+            base.Tables.Add(this.tablecontenido);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerialize_prueba() {
+        private bool ShouldSerialize_contenido() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace Uniamazonia_Juego.Datos {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            prueba ds = new prueba();
+            contenido ds = new contenido();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,27 +270,29 @@ namespace Uniamazonia_Juego.Datos {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void pruebaRowChangeEventHandler(object sender, pruebaRowChangeEvent e);
+        public delegate void contenidoRowChangeEventHandler(object sender, contenidoRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class pruebaDataTable : global::System.Data.TypedTableBase<pruebaRow> {
+        public partial class contenidoDataTable : global::System.Data.TypedTableBase<contenidoRow> {
             
-            private global::System.Data.DataColumn columnid_prueba;
+            private global::System.Data.DataColumn columnid_contenido;
             
-            private global::System.Data.DataColumn columnnombre_prueba;
+            private global::System.Data.DataColumn columnnombre_contenido;
             
-            private global::System.Data.DataColumn columnestado_prueba;
+            private global::System.Data.DataColumn _columnCOUNT_id_prueba_;
             
-            private global::System.Data.DataColumn columnfk_contenido;
+            private global::System.Data.DataColumn columnnombre_modulo;
+            
+            private global::System.Data.DataColumn columnestado_modulo;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public pruebaDataTable() {
-                this.TableName = "prueba";
+            public contenidoDataTable() {
+                this.TableName = "contenido";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -298,7 +300,7 @@ namespace Uniamazonia_Juego.Datos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal pruebaDataTable(global::System.Data.DataTable table) {
+            internal contenidoDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -315,40 +317,48 @@ namespace Uniamazonia_Juego.Datos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected pruebaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected contenidoDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn id_pruebaColumn {
+            public global::System.Data.DataColumn id_contenidoColumn {
                 get {
-                    return this.columnid_prueba;
+                    return this.columnid_contenido;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn nombre_pruebaColumn {
+            public global::System.Data.DataColumn nombre_contenidoColumn {
                 get {
-                    return this.columnnombre_prueba;
+                    return this.columnnombre_contenido;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn estado_pruebaColumn {
+            public global::System.Data.DataColumn _COUNT_id_prueba_Column {
                 get {
-                    return this.columnestado_prueba;
+                    return this._columnCOUNT_id_prueba_;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn fk_contenidoColumn {
+            public global::System.Data.DataColumn nombre_moduloColumn {
                 get {
-                    return this.columnfk_contenido;
+                    return this.columnnombre_modulo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn estado_moduloColumn {
+                get {
+                    return this.columnestado_modulo;
                 }
             }
             
@@ -363,48 +373,49 @@ namespace Uniamazonia_Juego.Datos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public pruebaRow this[int index] {
+            public contenidoRow this[int index] {
                 get {
-                    return ((pruebaRow)(this.Rows[index]));
+                    return ((contenidoRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event pruebaRowChangeEventHandler pruebaRowChanging;
+            public event contenidoRowChangeEventHandler contenidoRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event pruebaRowChangeEventHandler pruebaRowChanged;
+            public event contenidoRowChangeEventHandler contenidoRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event pruebaRowChangeEventHandler pruebaRowDeleting;
+            public event contenidoRowChangeEventHandler contenidoRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event pruebaRowChangeEventHandler pruebaRowDeleted;
+            public event contenidoRowChangeEventHandler contenidoRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddpruebaRow(pruebaRow row) {
+            public void AddcontenidoRow(contenidoRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public pruebaRow AddpruebaRow(string id_prueba, string nombre_prueba, string estado_prueba, string fk_contenido) {
-                pruebaRow rowpruebaRow = ((pruebaRow)(this.NewRow()));
+            public contenidoRow AddcontenidoRow(string id_contenido, string nombre_contenido, string _COUNT_id_prueba_, string nombre_modulo, string estado_modulo) {
+                contenidoRow rowcontenidoRow = ((contenidoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        id_prueba,
-                        nombre_prueba,
-                        estado_prueba,
-                        fk_contenido};
-                rowpruebaRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowpruebaRow);
-                return rowpruebaRow;
+                        id_contenido,
+                        nombre_contenido,
+                        _COUNT_id_prueba_,
+                        nombre_modulo,
+                        estado_modulo};
+                rowcontenidoRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowcontenidoRow);
+                return rowcontenidoRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                pruebaDataTable cln = ((pruebaDataTable)(base.Clone()));
+                contenidoDataTable cln = ((contenidoDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -412,57 +423,62 @@ namespace Uniamazonia_Juego.Datos {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new pruebaDataTable();
+                return new contenidoDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columnid_prueba = base.Columns["id_prueba"];
-                this.columnnombre_prueba = base.Columns["nombre_prueba"];
-                this.columnestado_prueba = base.Columns["estado_prueba"];
-                this.columnfk_contenido = base.Columns["fk_contenido"];
+                this.columnid_contenido = base.Columns["id_contenido"];
+                this.columnnombre_contenido = base.Columns["nombre_contenido"];
+                this._columnCOUNT_id_prueba_ = base.Columns["COUNT(id_prueba)"];
+                this.columnnombre_modulo = base.Columns["nombre_modulo"];
+                this.columnestado_modulo = base.Columns["estado_modulo"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnid_prueba = new global::System.Data.DataColumn("id_prueba", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid_prueba);
-                this.columnnombre_prueba = new global::System.Data.DataColumn("nombre_prueba", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnombre_prueba);
-                this.columnestado_prueba = new global::System.Data.DataColumn("estado_prueba", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnestado_prueba);
-                this.columnfk_contenido = new global::System.Data.DataColumn("fk_contenido", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfk_contenido);
-                this.ExtendedProperties.Add("Generator_TablePropName", "_prueba");
-                this.ExtendedProperties.Add("Generator_UserTableName", "prueba");
+                this.columnid_contenido = new global::System.Data.DataColumn("id_contenido", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_contenido);
+                this.columnnombre_contenido = new global::System.Data.DataColumn("nombre_contenido", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnombre_contenido);
+                this._columnCOUNT_id_prueba_ = new global::System.Data.DataColumn("COUNT(id_prueba)", typeof(string), null, global::System.Data.MappingType.Element);
+                this._columnCOUNT_id_prueba_.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnCOUNT_id_prueba_");
+                this._columnCOUNT_id_prueba_.ExtendedProperties.Add("Generator_UserColumnName", "COUNT(id_prueba)");
+                base.Columns.Add(this._columnCOUNT_id_prueba_);
+                this.columnnombre_modulo = new global::System.Data.DataColumn("nombre_modulo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnombre_modulo);
+                this.columnestado_modulo = new global::System.Data.DataColumn("estado_modulo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnestado_modulo);
+                this.ExtendedProperties.Add("Generator_TablePropName", "_contenido");
+                this.ExtendedProperties.Add("Generator_UserTableName", "contenido");
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public pruebaRow NewpruebaRow() {
-                return ((pruebaRow)(this.NewRow()));
+            public contenidoRow NewcontenidoRow() {
+                return ((contenidoRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new pruebaRow(builder);
+                return new contenidoRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(pruebaRow);
+                return typeof(contenidoRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.pruebaRowChanged != null)) {
-                    this.pruebaRowChanged(this, new pruebaRowChangeEvent(((pruebaRow)(e.Row)), e.Action));
+                if ((this.contenidoRowChanged != null)) {
+                    this.contenidoRowChanged(this, new contenidoRowChangeEvent(((contenidoRow)(e.Row)), e.Action));
                 }
             }
             
@@ -470,8 +486,8 @@ namespace Uniamazonia_Juego.Datos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.pruebaRowChanging != null)) {
-                    this.pruebaRowChanging(this, new pruebaRowChangeEvent(((pruebaRow)(e.Row)), e.Action));
+                if ((this.contenidoRowChanging != null)) {
+                    this.contenidoRowChanging(this, new contenidoRowChangeEvent(((contenidoRow)(e.Row)), e.Action));
                 }
             }
             
@@ -479,8 +495,8 @@ namespace Uniamazonia_Juego.Datos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.pruebaRowDeleted != null)) {
-                    this.pruebaRowDeleted(this, new pruebaRowChangeEvent(((pruebaRow)(e.Row)), e.Action));
+                if ((this.contenidoRowDeleted != null)) {
+                    this.contenidoRowDeleted(this, new contenidoRowChangeEvent(((contenidoRow)(e.Row)), e.Action));
                 }
             }
             
@@ -488,14 +504,14 @@ namespace Uniamazonia_Juego.Datos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.pruebaRowDeleting != null)) {
-                    this.pruebaRowDeleting(this, new pruebaRowChangeEvent(((pruebaRow)(e.Row)), e.Action));
+                if ((this.contenidoRowDeleting != null)) {
+                    this.contenidoRowDeleting(this, new contenidoRowChangeEvent(((contenidoRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemovepruebaRow(pruebaRow row) {
+            public void RemovecontenidoRow(contenidoRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -504,7 +520,7 @@ namespace Uniamazonia_Juego.Datos {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                prueba ds = new prueba();
+                contenido ds = new contenido();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -522,7 +538,7 @@ namespace Uniamazonia_Juego.Datos {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "pruebaDataTable";
+                attribute2.FixedValue = "contenidoDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -566,127 +582,155 @@ namespace Uniamazonia_Juego.Datos {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class pruebaRow : global::System.Data.DataRow {
+        public partial class contenidoRow : global::System.Data.DataRow {
             
-            private pruebaDataTable tableprueba;
+            private contenidoDataTable tablecontenido;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal pruebaRow(global::System.Data.DataRowBuilder rb) : 
+            internal contenidoRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableprueba = ((pruebaDataTable)(this.Table));
+                this.tablecontenido = ((contenidoDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string id_prueba {
+            public string id_contenido {
                 get {
                     try {
-                        return ((string)(this[this.tableprueba.id_pruebaColumn]));
+                        return ((string)(this[this.tablecontenido.id_contenidoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_prueba\' de la tabla \'prueba\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_contenido\' de la tabla \'contenido\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableprueba.id_pruebaColumn] = value;
+                    this[this.tablecontenido.id_contenidoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string nombre_prueba {
+            public string nombre_contenido {
                 get {
                     try {
-                        return ((string)(this[this.tableprueba.nombre_pruebaColumn]));
+                        return ((string)(this[this.tablecontenido.nombre_contenidoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nombre_prueba\' de la tabla \'prueba\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nombre_contenido\' de la tabla \'contenido\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableprueba.nombre_pruebaColumn] = value;
+                    this[this.tablecontenido.nombre_contenidoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string estado_prueba {
+            public string _COUNT_id_prueba_ {
                 get {
                     try {
-                        return ((string)(this[this.tableprueba.estado_pruebaColumn]));
+                        return ((string)(this[this.tablecontenido._COUNT_id_prueba_Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'estado_prueba\' de la tabla \'prueba\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'COUNT(id_prueba)\' de la tabla \'contenido\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableprueba.estado_pruebaColumn] = value;
+                    this[this.tablecontenido._COUNT_id_prueba_Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string fk_contenido {
+            public string nombre_modulo {
                 get {
                     try {
-                        return ((string)(this[this.tableprueba.fk_contenidoColumn]));
+                        return ((string)(this[this.tablecontenido.nombre_moduloColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fk_contenido\' de la tabla \'prueba\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nombre_modulo\' de la tabla \'contenido\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableprueba.fk_contenidoColumn] = value;
+                    this[this.tablecontenido.nombre_moduloColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Isid_pruebaNull() {
-                return this.IsNull(this.tableprueba.id_pruebaColumn);
+            public string estado_modulo {
+                get {
+                    try {
+                        return ((string)(this[this.tablecontenido.estado_moduloColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'estado_modulo\' de la tabla \'contenido\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecontenido.estado_moduloColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void Setid_pruebaNull() {
-                this[this.tableprueba.id_pruebaColumn] = global::System.Convert.DBNull;
+            public bool Isid_contenidoNull() {
+                return this.IsNull(this.tablecontenido.id_contenidoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Isnombre_pruebaNull() {
-                return this.IsNull(this.tableprueba.nombre_pruebaColumn);
+            public void Setid_contenidoNull() {
+                this[this.tablecontenido.id_contenidoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void Setnombre_pruebaNull() {
-                this[this.tableprueba.nombre_pruebaColumn] = global::System.Convert.DBNull;
+            public bool Isnombre_contenidoNull() {
+                return this.IsNull(this.tablecontenido.nombre_contenidoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Isestado_pruebaNull() {
-                return this.IsNull(this.tableprueba.estado_pruebaColumn);
+            public void Setnombre_contenidoNull() {
+                this[this.tablecontenido.nombre_contenidoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void Setestado_pruebaNull() {
-                this[this.tableprueba.estado_pruebaColumn] = global::System.Convert.DBNull;
+            public bool Is_COUNT_id_prueba_Null() {
+                return this.IsNull(this.tablecontenido._COUNT_id_prueba_Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Isfk_contenidoNull() {
-                return this.IsNull(this.tableprueba.fk_contenidoColumn);
+            public void Set_COUNT_id_prueba_Null() {
+                this[this.tablecontenido._COUNT_id_prueba_Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void Setfk_contenidoNull() {
-                this[this.tableprueba.fk_contenidoColumn] = global::System.Convert.DBNull;
+            public bool Isnombre_moduloNull() {
+                return this.IsNull(this.tablecontenido.nombre_moduloColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setnombre_moduloNull() {
+                this[this.tablecontenido.nombre_moduloColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isestado_moduloNull() {
+                return this.IsNull(this.tablecontenido.estado_moduloColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setestado_moduloNull() {
+                this[this.tablecontenido.estado_moduloColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -694,22 +738,22 @@ namespace Uniamazonia_Juego.Datos {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class pruebaRowChangeEvent : global::System.EventArgs {
+        public class contenidoRowChangeEvent : global::System.EventArgs {
             
-            private pruebaRow eventRow;
+            private contenidoRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public pruebaRowChangeEvent(pruebaRow row, global::System.Data.DataRowAction action) {
+            public contenidoRowChangeEvent(contenidoRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public pruebaRow Row {
+            public contenidoRow Row {
                 get {
                     return this.eventRow;
                 }

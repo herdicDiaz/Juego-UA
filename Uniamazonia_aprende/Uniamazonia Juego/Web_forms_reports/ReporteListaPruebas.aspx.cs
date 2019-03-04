@@ -15,6 +15,8 @@ using System.Web.Services.Protocols;
 using System.Drawing;
 using CrystalDecisions.Web;
 using CrystalDecisions.Shared;
+using Uniamazonia_Juego.Controllers;
+
 namespace Uniamazonia_Juego.Web_forms_reports
 {
     public partial class ReporteListaPruebas : System.Web.UI.Page
@@ -24,13 +26,20 @@ namespace Uniamazonia_Juego.Web_forms_reports
             Connection con = new Connection();
             DataTable dt = new DataTable();
             DataSet ds = new DataSet();
-            CrystalReportListaPruebas cr = new CrystalReportListaPruebas();
+            CrystalReportPartida cr = new CrystalReportPartida();
+            AdministradorController administradorC = new AdministradorController();
 
-            dt = con.consultaReportes("select id_prueba, nombre_prueba from prueba;");
+            dt = con.consultar_BD("SELECT id_prueba, nombre_prueba,estado_prueba FROM prueba;");
             ds.Tables.Add(dt);
             cr.SetDataSource(ds.Tables[0]);
-            cr.SetParameterValue("Nombre_autor", "Herdic Diaz Munevar");
+            int id_administrador = Convert.ToInt32(Session["id_usuario"].ToString());
+            DataTable consulta = administradorC.ConsultaParametroFkUsuario(id_administrador);
+            String nombre1 = consulta.Rows[0]["nombres_admin"].ToString();
+            String apellidos = consulta.Rows[0]["apellidos_admin"].ToString();
+            cr.SetParameterValue("autor", nombre1 + apellidos);
             CrystalReportViewerListaPruebas.ReportSource = cr;
+
+
 
         }
     }
