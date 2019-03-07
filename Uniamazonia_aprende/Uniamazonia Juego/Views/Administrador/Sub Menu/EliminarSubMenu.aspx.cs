@@ -49,22 +49,6 @@ namespace Uniamazonia_Juego.Views.Administrador.Sub_Menu
         protected void eliminar_menu_HIJO_Click(object sender, EventArgs e)
         {
 
-            controlador_vista = new VistaController(0, "", "D", this.lista_menu_hijo.SelectedValue, "", 0);
-
-            if (controlador_vista.eliminar_sub_menu())
-            {
-
-                ClientScript.RegisterStartupScript(this.GetType(), "mensaje", "<script> swal({position: 'center',type: 'success',title: 'Eliminacion Exitosa!',showConfirmButton: false,timer: 2500}) </script>");
-               
-            }
-            else
-            {
-
-                ClientScript.RegisterStartupScript(this.GetType(), "mensaje", "<script> swal({type: 'error',title: 'Sub Menu No! Eliminado',text: 'Algo salió mal!',timer: 3200}) </script>");
-            }
-
-            // actualziando los campos lista menu hijo
-            actualizar_campo_menu_hijo();
 
 
         }
@@ -89,6 +73,25 @@ namespace Uniamazonia_Juego.Views.Administrador.Sub_Menu
             cargar_menu_padre_aux();
         }
 
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
 
+            controlador_vista = new VistaController(0, "", "D", this.lista_menu_hijo.SelectedValue, "", 0);
+
+            if (controlador_vista.eliminar_sub_menu())
+            {
+
+                ClientScript.RegisterStartupScript(this.GetType(), "mensaje", "<script> swal({position: 'center',type: 'success',title: 'Eliminacion Exitosa!',showConfirmButton: false,timer: 2500}) </script>");
+
+            }
+            else
+            {
+
+                ClientScript.RegisterStartupScript(this.GetType(), "mensaje", "<script> swal({type: 'error',title: 'Sub Menu No! Eliminado',text: 'Algo salió mal!',timer: 3200}) </script>");
+            }
+
+            // actualziando los campos lista menu hijo
+            actualizar_campo_menu_hijo();
+        }
     }
 }

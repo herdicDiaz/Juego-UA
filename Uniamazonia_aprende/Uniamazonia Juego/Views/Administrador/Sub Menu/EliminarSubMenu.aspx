@@ -76,14 +76,32 @@
                     <div class="form-group col-md-5">
                     </div>
                     <div class="form-group col-md-6">
-
-                        <asp:Button ID="eliminar_menu_HIJO" runat="server" CssClass="btn btn-danger" Text="Eliminar" OnClick="eliminar_menu_HIJO_Click" />
-
+                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Eliminar</button>
                     </div>
                 </div>
             </div>
             <hr />
         </div>
     </div>
+       <!-- Delete Record Modal Starts here-->
+    <div id="deleteModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Eliminar Pregunta</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    ¿Está seguro que desea eliminar el Contenido?
+                              <asp:HiddenField ID="hfCode" runat="server" />
+                </div>
 
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <asp:LinkButton ID="btnEliminar" runat="server" class="btn btn-danger" Text='Eliminar' OnClick="btnEliminar_Click" runat="server">Eliminar</asp:LinkButton>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Delete Record Modal Ends here -->
 </asp:Content>
