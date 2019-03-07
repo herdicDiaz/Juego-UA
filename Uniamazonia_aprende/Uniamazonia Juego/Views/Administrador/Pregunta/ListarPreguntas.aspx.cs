@@ -107,16 +107,6 @@ namespace Uniamazonia_Juego.Views.Administrador.Pregunta
         protected void BuscarEnGrid(object sender, EventArgs e)
         {
             String palabra = Txt_busqueda.Text;
-            //int id_prueba;
-            //if (Lista_pruebas.Text=="0")
-            //{
-            //    id_prueba = 1;
-            //}
-            //else
-            //{
-            //    DataTable consultaPrueba = pruebaC.consultar_pruebas(Lista_pruebas.Text);
-            //    id_prueba = Convert.ToInt32(consultaPrueba.Rows[0]["id_prueba"].ToString());
-            //}
             DataTable consulta = preguntaC.buscarEnGridParametroPalabra(palabra);
             Tabla_Preguntas.DataSource = consulta;
             Tabla_Preguntas.DataBind();

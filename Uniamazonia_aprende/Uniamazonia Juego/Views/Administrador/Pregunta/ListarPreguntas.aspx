@@ -81,31 +81,31 @@
                                                 </ItemTemplate>
                                             </asp:TemplateField>
 
-                                            <asp:TemplateField HeaderText="A" SortExpression="respuesta_a" ItemStyle-HorizontalAlign="Center">
+                                            <asp:TemplateField HeaderText="A" SortExpression="respuesta_a" ItemStyle-HorizontalAlign="Center" HeaderStyle-Width="100">
                                                 <ItemTemplate>
                                                     <asp:Label ID="Label3" runat="server" Text='<%# Bind("respuesta_a") %>'></asp:Label>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
 
-                                            <asp:TemplateField HeaderText="B" SortExpression="respuesta_b" ItemStyle-HorizontalAlign="Center">
+                                            <asp:TemplateField HeaderText="B" SortExpression="respuesta_b" ItemStyle-HorizontalAlign="Center" HeaderStyle-Width="100" >
                                                 <ItemTemplate>
                                                     <asp:Label ID="Label4" runat="server" Text='<%# Bind("respuesta_b") %>'></asp:Label>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
 
-                                            <asp:TemplateField HeaderText="C" SortExpression="respuesta_c" ItemStyle-HorizontalAlign="Center">
+                                            <asp:TemplateField HeaderText="C" SortExpression="respuesta_c" ItemStyle-HorizontalAlign="Center" HeaderStyle-Width="100">
                                                 <ItemTemplate>
                                                     <asp:Label ID="Label5" runat="server" Text='<%# Bind("respuesta_c") %>'></asp:Label>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
 
-                                            <asp:TemplateField HeaderText="D" SortExpression="respuesta_d" ItemStyle-HorizontalAlign="Center">
+                                            <asp:TemplateField HeaderText="D" SortExpression="respuesta_d" ItemStyle-HorizontalAlign="Center" HeaderStyle-Width="100">
                                                 <ItemTemplate>
                                                     <asp:Label ID="Label6" runat="server" Text='<%# Bind("respuesta_d") %>'></asp:Label>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
 
-                                            <asp:TemplateField HeaderText="R correcta" SortExpression="respuesta_correcta" ItemStyle-HorizontalAlign="Center">
+                                            <asp:TemplateField HeaderText="Correcta" SortExpression="respuesta_correcta" ItemStyle-HorizontalAlign="Center">
                                                 <ItemTemplate>
                                                     <asp:Label ID="Label7" runat="server" Text='<%# Bind("respuesta_correcta") %>'></asp:Label>
                                                 </ItemTemplate>

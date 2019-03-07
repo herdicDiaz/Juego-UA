@@ -16,14 +16,14 @@ namespace Uniamazonia_Juego.Reportes {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class CrystalReportListaPruebas : ReportClass {
+    public class CrystalReportPartida : ReportClass {
         
-        public CrystalReportListaPruebas() {
+        public CrystalReportPartida() {
         }
         
         public override string ResourceName {
             get {
-                return "CrystalReportListaPruebas.rpt";
+                return "CrystalReportPartida.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Uniamazonia_Juego.Reportes {
         
         public override string FullResourceName {
             get {
-                return "Uniamazonia_Juego.Reportes.CrystalReportListaPruebas.rpt";
+                return "Uniamazonia_Juego.Reportes.CrystalReportPartida.rpt";
             }
             set {
                 // Do nothing
@@ -90,7 +90,7 @@ namespace Uniamazonia_Juego.Reportes {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Nombre_autor {
+        public CrystalDecisions.Shared.IParameterField Parameter_autor {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }
@@ -98,9 +98,9 @@ namespace Uniamazonia_Juego.Reportes {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedCrystalReportListaPruebas : Component, ICachedReport {
+    public class CachedCrystalReportPartida : Component, ICachedReport {
         
-        public CachedCrystalReportListaPruebas() {
+        public CachedCrystalReportPartida() {
         }
         
         [Browsable(false)]
@@ -137,7 +137,7 @@ namespace Uniamazonia_Juego.Reportes {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            CrystalReportListaPruebas rpt = new CrystalReportListaPruebas();
+            CrystalReportPartida rpt = new CrystalReportPartida();
             rpt.Site = this.Site;
             return rpt;
         }

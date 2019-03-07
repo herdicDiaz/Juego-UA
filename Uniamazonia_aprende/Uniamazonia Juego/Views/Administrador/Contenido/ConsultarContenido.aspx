@@ -80,9 +80,12 @@
                             </asp:GridView>
                     </ContentTemplate>
                 </asp:UpdatePanel>
-
+               
 
             </div>
+                <div class="row justify-content-end">
+                            <asp:ImageButton runat="server" ID="imageButton" ImageUrl="~/Images/icon-pdf.png" Width="50px" Height="50px" OnClick="imageButton_Click" />
+                        </div>
             <hr />
 
         </div>

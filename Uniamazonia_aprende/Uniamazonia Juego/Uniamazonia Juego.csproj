@@ -1302,9 +1302,33 @@
     <Content Include="Views\Administrador\Puntuacion\EditarPuntuacion.aspx" />
     <Content Include="Views\Administrador\Puntuacion\Puntuación.aspx" />
     <Content Include="Views\VistasJugador\Ranking\Ranking.aspx" />
+    <Content Include="Web_forms_reports\ReporteContenido.aspx" />
     <Content Include="Web_forms_reports\ReporteListaPruebas.aspx" />
     <Content Include="Web_forms_reports\ReporteListaSancion.aspx" />
+    <Content Include="Web_forms_reports\ReporteModulo.aspx" />
     <Content Include="Web_forms_reports\ReportePreguntas.aspx" />
+    <Content Include="Datos\Modulo.xsc">
+      <DependentUpon>Modulo.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datos\Contenido.xsc">
+      <DependentUpon>Contenido.xsd</DependentUpon>
+    </Content>
+    <None Include="Datos\Contenido.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Contenido1.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Datos\Contenido.xss">
+      <DependentUpon>Contenido.xsd</DependentUpon>
+    </Content>
+    <None Include="Datos\Modulo.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Modulo.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Datos\Modulo.xss">
+      <DependentUpon>Modulo.xsd</DependentUpon>
+    </Content>
     <None Include="Datos\Preguntas.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
@@ -1313,19 +1337,19 @@
     <Content Include="Datos\Preguntas.xss">
       <DependentUpon>Preguntas.xsd</DependentUpon>
     </Content>
-    <Content Include="Datos\prueba.xsc">
-      <DependentUpon>prueba.xsd</DependentUpon>
-    </Content>
-    <None Include="Datos\prueba.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>prueba.Designer.cs</LastGenOutput>
-    </None>
-    <Content Include="Datos\prueba.xss">
-      <DependentUpon>prueba.xsd</DependentUpon>
-    </Content>
     <Content Include="Datos\Sancion.xsc">
       <DependentUpon>Sancion.xsd</DependentUpon>
+    </Content>
+    <Content Include="Datos\pruebas.xsc">
+      <DependentUpon>pruebas.xsd</DependentUpon>
+    </Content>
+    <None Include="Datos\pruebas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>pruebas.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Datos\pruebas.xss">
+      <DependentUpon>pruebas.xsd</DependentUpon>
     </Content>
     <None Include="Datos\Sancion.xsd">
       <SubType>Designer</SubType>
@@ -1559,15 +1583,25 @@
     <Compile Include="Controllers\Usuario_PruebaController.cs" />
     <Compile Include="Controllers\VistaController.cs" />
     <Compile Include="Controllers\Vista_RolController.cs" />
+    <Compile Include="Datos\Contenido1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Contenido.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datos\Modulo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Modulo.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Datos\Preguntas.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Preguntas.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Datos\prueba.Designer.cs">
+    <Compile Include="Datos\pruebas.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>prueba.xsd</DependentUpon>
+      <DependentUpon>pruebas.xsd</DependentUpon>
     </Compile>
     <Compile Include="Datos\Sancion.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -1611,10 +1645,22 @@
       <DependentUpon>Principal.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reportes\CrystalReportListaPruebas.cs">
+    <Compile Include="Reportes\CrystalReportContenido.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReportListaPruebas.rpt</DependentUpon>
+      <DependentUpon>CrystalReportContenido.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\CrystalReportModulo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportModulo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\CrystalReportPartida.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportPartida.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reportes\CrystalReportPreguntas.cs">
@@ -1938,6 +1984,13 @@
     <Compile Include="Views\VistasJugador\Test\Test.aspx.designer.cs">
       <DependentUpon>Test.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Web_forms_reports\ReporteContenido.aspx.cs">
+      <DependentUpon>ReporteContenido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web_forms_reports\ReporteContenido.aspx.designer.cs">
+      <DependentUpon>ReporteContenido.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Web_forms_reports\ReporteListaPruebas.aspx.cs">
       <DependentUpon>ReporteListaPruebas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1951,6 +2004,13 @@
     </Compile>
     <Compile Include="Web_forms_reports\ReporteListaSancion.aspx.designer.cs">
       <DependentUpon>ReporteListaSancion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web_forms_reports\ReporteModulo.aspx.cs">
+      <DependentUpon>ReporteModulo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web_forms_reports\ReporteModulo.aspx.designer.cs">
+      <DependentUpon>ReporteModulo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Web_forms_reports\ReportePreguntas.aspx.cs">
       <DependentUpon>ReportePreguntas.aspx</DependentUpon>
@@ -2000,9 +2060,17 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Reportes\CrystalReportListaPruebas.rpt">
+    <EmbeddedResource Include="Reportes\CrystalReportContenido.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReportListaPruebas.cs</LastGenOutput>
+      <LastGenOutput>CrystalReportContenido.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\CrystalReportModulo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportModulo.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\CrystalReportPartida.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportPartida.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\CrystalReportPreguntas.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

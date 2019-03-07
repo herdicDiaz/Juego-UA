@@ -35,6 +35,11 @@ namespace Uniamazonia_Juego.Views.Administrador
             }
         }
 
+        public void imageButton_Click(object sender, EventArgs e)
+        {
+
+            ClientScript.RegisterClientScriptBlock(this.GetType(), "Pruebas", "window.open('/Web_forms_reports/ReporteModulo.aspx', '_blank');", true);
+        }
 
 
 

@@ -10,7 +10,8 @@
             <h3>Editar puntuación</h3>
         </div>
         <div class="card-body">
-                <asp:Label ID="Label" Text="Puntos" runat="server"></asp:Label>
+                <asp:Label ID="Label" Text="Puntos por pregunta" runat="server"></asp:Label>
+            <br />
                 <div class="row ">
                     <div class="col-md-11">
                         <asp:TextBox ID="TexboxPuntos" CssClass="form-control" runat="server"></asp:TextBox>
