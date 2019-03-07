@@ -9,7 +9,7 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/Views/Administrador/Welcome.aspx"><span class="mdi mdi-home"></span>&nbsp;Inicio</a></li>
                 <li class="breadcrumb-item"><a href="#">Gestionar Contenido</a></li>
-                <li class="breadcrumb-i tem active" aria-current="page">Consultar Contenido</li>
+                <li class="breadcrumb-item active" aria-current="page"> Consultar Contenido</li>
             </ol>
         </nav>
     </div>

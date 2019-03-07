@@ -22,33 +22,6 @@ namespace Uniamazonia_Juego.Views.Administrador.Menu_Dic {
         protected global::System.Web.UI.WebControls.TextBox nombre_menu_hijo;
         
         /// <summary>
-        /// url_munu_hijo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox url_munu_hijo;
-        
-        /// <summary>
-        /// rd_admin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton rd_admin;
-        
-        /// <summary>
-        /// rd_jugador control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton rd_jugador;
-        
-        /// <summary>
         /// lista_menu_padre control.
         /// </summary>
         /// <remarks>
@@ -56,6 +29,15 @@ namespace Uniamazonia_Juego.Views.Administrador.Menu_Dic {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList lista_menu_padre;
+        
+        /// <summary>
+        /// url_munu_hijo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox url_munu_hijo;
         
         /// <summary>
         /// crear_menu_hijo control.

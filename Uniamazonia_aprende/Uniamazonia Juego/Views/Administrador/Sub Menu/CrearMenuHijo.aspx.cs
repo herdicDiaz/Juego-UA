@@ -36,27 +36,15 @@ namespace Uniamazonia_Juego.Views.Administrador.Menu_Dic
             int aux_id_vista_nueva = controlador_vista.id_vista_hija(); ;
 
             controlador_vista = new VistaController(aux_id_vista_nueva,this.url_munu_hijo.Text,"Activo",this.nombre_menu_hijo.Text, "mdi mdi-check-all", 0);
-            int aux_rol = 0;
-            if (rd_admin.Checked)
-            {
-                aux_rol = 1;
-            }
-            else {
-                if (rd_jugador.Checked)
-                {
-                    aux_rol = 2;
-                }
-            }
-
+     
             if (controlador_vista.crear_vista_hijas(this.lista_menu_padre.SelectedValue))
             {
-                controlador_vista_rol = new Vista_RolController(0,aux_id_vista_nueva,0,aux_rol);
+                controlador_vista_rol = new Vista_RolController(0,aux_id_vista_nueva,0,0);
 
                 if (controlador_vista_rol.crear_vista_rol_hija(this.lista_menu_padre.SelectedValue))
                 {
                     ClientScript.RegisterStartupScript(this.GetType(), "mensaje", "<script> swal({position: 'center',type: 'success',title: 'Registro Exitoso',showConfirmButton: false,timer: 2500}) </script>");
                     this.nombre_menu_hijo.Text = "";
-                    Response.Redirect("~/Views/Administrador/Welcome.aspx");
 
                 }
             }

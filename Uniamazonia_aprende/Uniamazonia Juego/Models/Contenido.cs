@@ -119,7 +119,10 @@ namespace Uniamazonia_Juego.Models
         }
 
         public Boolean eliminar_contenido() {
-            String Query = "update contenido set estado_contenido ='D' where nombre_contenido = '" + this.nombre_contenido + "';";
+            String query = "select id_contenido from contenido where nombre_contenido= '"+this.nombre_contenido+"'";
+            this.id_contenido = conexion.buscar_ID_BD(query);
+
+            String Query = "update contenido set estado_contenido = 'D' where id_contenido = '"+this.id_contenido+"';";
             if (conexion.delete_BD(Query))
             {
                 return true;

@@ -56,7 +56,11 @@ namespace Uniamazonia_Juego.Models
             // traer id menu padre 
             String Query_new = "select id_vista from vista where descripcion ='"+aux_nombre_padre+"';";
             this.fk_master = (conexion.buscar_ID_BD(Query_new)) ;
-            
+
+            // traer el rol de la vista padre
+
+            String query_rol = "select fk_id_rol from vista_rol where fk_id_vista='"+this.fk_master+"';";
+            this.fk_id_rol = (conexion.buscar_ID_BD(query_rol));
 
             String Query_real = "insert into vista_rol values('"+this.id_vista_rol+"','"+this.fk_id_vista+"','"+this.fk_master+"','"+this.fk_id_rol+"');";
 

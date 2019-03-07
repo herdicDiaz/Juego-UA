@@ -31,21 +31,7 @@ namespace Uniamazonia_Juego.Views.Administrador.Menu_Dic
 
         }
 
-        protected void eliminar_menu_PADRE_Click(object sender, EventArgs e)
-        {
-            controlador_vista = new VistaController(0,"","D",this.lista_menu_padre.SelectedValue,"",0);
-            if (controlador_vista.eliminar_menu())
-            {
-                ClientScript.RegisterStartupScript(this.GetType(), "mensaje", "<script> swal({position: 'center',type: 'success',title: 'Eliminacion Exitosa!',showConfirmButton: false,timer: 2500}) </script>");
-                Response.Redirect("~/Views/Administrador/Welcome.aspx");
-            }
-            else {
 
-                ClientScript.RegisterStartupScript(this.GetType(), "mensaje", "<script> swal({type: 'error',title: 'Menu No! Eliminado',text: 'Algo salió mal!',timer: 3200}) </script>");
-            }
-            // actualziando los campos lista menu padre
-            actualizar_campos_padre();
-        }
 
         public void actualizar_campos_padre() {
             if (!Page.IsPostBack) return;
@@ -54,7 +40,21 @@ namespace Uniamazonia_Juego.Views.Administrador.Menu_Dic
             cargar_menu_padre();
         }
 
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            controlador_vista = new VistaController(0, "", "D", this.lista_menu_padre.SelectedValue, "", 0);
+            if (controlador_vista.eliminar_menu())
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "mensaje", "<script> swal({position: 'center',type: 'success',title: 'Eliminacion Exitosa!',showConfirmButton: false,timer: 2500}) </script>");
+         
+            }
+            else
+            {
 
-
+                ClientScript.RegisterStartupScript(this.GetType(), "mensaje", "<script> swal({type: 'error',title: 'Menu No! Eliminado',text: 'Algo salió mal!',timer: 3200}) </script>");
+            }
+            // actualziando los campos lista menu padre
+            actualizar_campos_padre();
+        }
     }
 }

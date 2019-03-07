@@ -141,7 +141,10 @@ namespace Uniamazonia_Juego.Models
 
 
         public Boolean eliminar_pruebas() {
-            String Query = "update prueba set estado_prueba='D' where nombre_prueba='"+this.nombre_prueba+"';";
+            String query = "select id_prueba from prueba where nombre_prueba='"+this.nombre_prueba+"';";
+            this.id_prueba = conexion.buscar_ID_BD(query);
+
+            String Query = "update prueba set estado_prueba = 'D' where id_prueba = '"+this.id_prueba+"';";
 
             if (conexion.delete_BD(Query))
             {

@@ -56,7 +56,6 @@ namespace Uniamazonia_Juego.Views.Administrador.Menu_Dic
                 {
                     ClientScript.RegisterStartupScript(this.GetType(), "mensaje", "<script> swal({position: 'center',type: 'success',title: 'Registro Exitoso',showConfirmButton: false,timer: 2500}) </script>");
                     this.nombre_menu_padre.Text = "";
-                    Response.Redirect("~/Views/Administrador/Welcome.aspx");
                 }
 
 

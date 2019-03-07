@@ -83,7 +83,7 @@
             <h2>Iniciar Sesión</h2>
             <asp:TextBox runat="server" placeholder="&#128274; Usuario" type="text" ID="usuario_actual"></asp:TextBox>
             <asp:TextBox runat="server" placeholder="&#128273; Contraseña" type="password" ID="password_actual"></asp:TextBox>
-            <asp:Button id="iniciar"  type="submit" name="submit" BackColor="#3366ff" value="Ingresar" class="btn-login"  OnClick="iniciar_Click" runat="server" Text="ingresar" />
+            <asp:Button id="iniciar" type="submit" name="submit" BackColor="#3366ff" value="Ingresar" class="btn-login"  OnClick="iniciar_Click" runat="server" Text="ingresar" />
 
 
 

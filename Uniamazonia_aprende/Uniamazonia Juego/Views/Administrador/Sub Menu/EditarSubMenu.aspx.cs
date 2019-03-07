@@ -59,7 +59,6 @@ namespace Uniamazonia_Juego.Views.Administrador.Menu_Dic
                 this.nueva_url_menu_hijo.Text = "";
                 
                 
-                //Response.Redirect("~/Views/Administrador/Welcome.aspx");
             }
             else
             {

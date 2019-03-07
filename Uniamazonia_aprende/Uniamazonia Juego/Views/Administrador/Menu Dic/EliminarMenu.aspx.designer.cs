@@ -22,12 +22,21 @@ namespace Uniamazonia_Juego.Views.Administrador.Menu_Dic {
         protected global::System.Web.UI.WebControls.DropDownList lista_menu_padre;
         
         /// <summary>
-        /// eliminar_menu_PADRE control.
+        /// hfCode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button eliminar_menu_PADRE;
+        protected global::System.Web.UI.WebControls.HiddenField hfCode;
+        
+        /// <summary>
+        /// btnEliminar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnEliminar;
     }
 }

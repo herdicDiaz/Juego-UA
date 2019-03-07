@@ -106,7 +106,9 @@ namespace Uniamazonia_Juego.Models
         {
             String query = "select id_modulo from modulo where nombre_modulo='"+nombre_modulo+"';";
             int id_modulo_aux = conexion.buscar_ID_BD(query);
-            String Query = "call eliminar_en_cascada('"+id_modulo_aux+"')";
+
+
+            String Query = "update modulo set estado_modulo = 'D' where id_modulo = '"+id_modulo_aux+"';";
             if (conexion.delete_BD(Query))
 
             {
